@@ -1,0 +1,1064 @@
+---
+source: src/parser/treesitter/parser.rs
+expression: index.index.symbols.iter().sorted()
+---
+IntoIter(
+    [
+        Symbol {
+            kind: Boolean,
+            name: "true",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 8,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Blue = 3",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 32,
+                        end_column: 40,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Green = 2",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 21,
+                        end_column: 30,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Red = 1",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 12,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "age = 25",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 26,
+                        end_column: 34,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "name = \"Bob\"",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 12,
+                        end_column: 24,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "Blue",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 32,
+                        end_column: 36,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "Green",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 21,
+                        end_column: 26,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "Red",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 12,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "age",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 26,
+                        end_column: 29,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "name",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 12,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "add",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 8,
+                        end_line: 8,
+                        start_column: 10,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Method,
+            name: "printName",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 15,
+                        end_line: 15,
+                        start_column: 18,
+                        end_column: 27,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Null,
+            name: "nil",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 45,
+                        end_line: 45,
+                        start_column: 9,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "0",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 38,
+                        end_line: 38,
+                        start_column: 15,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "1",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 18,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "1",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 39,
+                        end_line: 39,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "100",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 35,
+                        end_line: 35,
+                        start_column: 13,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "2",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 29,
+                        end_column: 30,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "25",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 32,
+                        end_column: 34,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "3",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 39,
+                        end_column: 40,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "3.1415",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 34,
+                        end_line: 34,
+                        start_column: 6,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "30",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 26,
+                        end_line: 26,
+                        start_column: 15,
+                        end_column: 17,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "42",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 7,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "Green",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 5,
+                        end_line: 5,
+                        start_column: 21,
+                        end_column: 26,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "Red",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 4,
+                        end_line: 4,
+                        start_column: 19,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "age",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 26,
+                        end_line: 26,
+                        start_column: 9,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "age",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 31,
+                        end_line: 31,
+                        start_column: 8,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "name",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 16,
+                        end_line: 16,
+                        start_column: 16,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "name",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 25,
+                        end_line: 25,
+                        start_column: 9,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "name",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 30,
+                        end_line: 30,
+                        start_column: 8,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"Alice\"",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 25,
+                        end_line: 25,
+                        start_column: 16,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"Bob\"",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 19,
+                        end_column: 24,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"Hello World\"",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 48,
+                        end_line: 48,
+                        start_column: 7,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"hello\"",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 42,
+                        end_line: 42,
+                        start_column: 7,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "Colors",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 1,
+                        end_column: 7,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "GreenValue",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 5,
+                        end_line: 5,
+                        start_column: 1,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "MAX_COUNT",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 35,
+                        end_line: 35,
+                        start_column: 1,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "RedValue",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 4,
+                        end_line: 4,
+                        start_column: 1,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "empty",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 45,
+                        end_line: 45,
+                        start_column: 1,
+                        end_column: 6,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "flag",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 1,
+                        end_column: 5,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "level",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 39,
+                        end_line: 39,
+                        start_column: 1,
+                        end_column: 6,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "myTable",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 12,
+                        end_line: 12,
+                        start_column: 1,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "num",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 1,
+                        end_column: 4,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "person",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 1,
+                        end_column: 7,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "score",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 38,
+                        end_line: 38,
+                        start_column: 7,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "str",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 42,
+                        end_line: 42,
+                        start_column: 1,
+                        end_column: 4,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "subtract",
+            definition: Some(
+                Occurrence {
+                    language: Lua,
+                    absolute_path: "tests/fixtures/lua.lua",
+                    range: Range {
+                        start_line: 20,
+                        end_line: 20,
+                        start_column: 1,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+    ],
+)

@@ -1,0 +1,1130 @@
+---
+source: src/parser/treesitter/parser.rs
+expression: index.index.symbols.iter().sorted()
+---
+IntoIter(
+    [
+        Symbol {
+            kind: Boolean,
+            name: "true",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 39,
+                        end_line: 39,
+                        start_column: 12,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Boolean,
+            name: "true",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 47,
+                        end_line: 47,
+                        start_column: 13,
+                        end_column: 17,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Class,
+            name: "MyClass",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 5,
+                        end_line: 5,
+                        start_column: 7,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Blue",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 22,
+                        end_line: 22,
+                        start_column: 5,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Red",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 21,
+                        end_line: 21,
+                        start_column: 5,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "active",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 47,
+                        end_line: 47,
+                        start_column: 5,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "age",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 46,
+                        end_line: 46,
+                        start_column: 5,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 21,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "y",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 27,
+                        end_column: 28,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "(x, y)",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 32,
+                        end_line: 32,
+                        start_column: 18,
+                        end_column: 24,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "add",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 26,
+                        end_line: 26,
+                        start_column: 10,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "greet",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 10,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "x * y",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 32,
+                        end_line: 32,
+                        start_column: 28,
+                        end_column: 33,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Method,
+            name: "constructor",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 6,
+                        end_line: 6,
+                        start_column: 5,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Method,
+            name: "sum",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 11,
+                        end_line: 11,
+                        start_column: 5,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Module,
+            name: "const MODULE_NAME = \"my_module\";",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 8,
+                        end_column: 40,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Null,
+            name: "null",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 40,
+                        end_line: 40,
+                        start_column: 12,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "0",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 24,
+                        end_column: 25,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "0",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 30,
+                        end_column: 31,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "0",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 38,
+                        end_line: 38,
+                        start_column: 13,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "30",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 46,
+                        end_line: 46,
+                        start_column: 10,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "42",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 42,
+                        end_line: 42,
+                        start_column: 13,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "5",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 35,
+                        end_line: 35,
+                        start_column: 21,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "a",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 11,
+                        end_line: 11,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "a",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 26,
+                        end_line: 26,
+                        start_column: 14,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "b",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 11,
+                        end_line: 11,
+                        start_column: 12,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "b",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 26,
+                        end_line: 26,
+                        start_column: 17,
+                        end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "person",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 16,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 6,
+                        end_line: 6,
+                        start_column: 17,
+                        end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 32,
+                        end_line: 32,
+                        start_column: 19,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "y",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 6,
+                        end_line: 6,
+                        start_column: 20,
+                        end_column: 21,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "y",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 32,
+                        end_line: 32,
+                        start_column: 22,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "this.x",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 7,
+                        end_line: 7,
+                        start_column: 9,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "this.y",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 8,
+                        end_line: 8,
+                        start_column: 9,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"Hello \"",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 52,
+                        end_line: 52,
+                        start_column: 12,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"blue\"",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 22,
+                        end_line: 22,
+                        start_column: 11,
+                        end_column: 17,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"hello\"",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 16,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"my_module\"",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 28,
+                        end_column: 39,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "\"red\"",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 21,
+                        end_line: 21,
+                        start_column: 10,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TypeAlias,
+            name: "Color",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 20,
+                        end_line: 20,
+                        start_column: 7,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TypeAlias,
+            name: "MAX_RETRIES",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 35,
+                        end_line: 35,
+                        start_column: 7,
+                        end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TypeAlias,
+            name: "MODULE_NAME",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 14,
+                        end_column: 25,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TypeAlias,
+            name: "PointType",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 7,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "count",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 38,
+                        end_line: 38,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "done",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 39,
+                        end_line: 39,
+                        start_column: 5,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "greeting",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 5,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "multiply",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 32,
+                        end_line: 32,
+                        start_column: 7,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "name",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 40,
+                        end_line: 40,
+                        start_column: 5,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "obj",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 45,
+                        end_line: 45,
+                        start_column: 7,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "result",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 27,
+                        end_line: 27,
+                        start_column: 11,
+                        end_column: 17,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "score",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 42,
+                        end_line: 42,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+    ],
+)

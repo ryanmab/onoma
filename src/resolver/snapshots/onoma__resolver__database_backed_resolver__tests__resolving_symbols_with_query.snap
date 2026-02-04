@@ -1,0 +1,94 @@
+---
+source: src/resolver/database_backed_resolver.rs
+expression: resolved_symbols
+---
+[
+  {
+    "id": 0,
+    "name": "ArrowFunctional",
+    "kind": "TypeAlias",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1062,
+    "start_line": 39,
+    "end_line": 39,
+    "start_column": 7,
+    "end_column": 22
+  },
+  {
+    "id": 0,
+    "name": "FunctionalComponent",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1063,
+    "start_line": 30,
+    "end_line": 30,
+    "start_column": 10,
+    "end_column": 29
+  },
+  {
+    "id": 0,
+    "name": "GrandChild",
+    "kind": "Value",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1002,
+    "start_line": 78,
+    "end_line": 78,
+    "start_column": 14,
+    "end_column": 24
+  },
+  {
+    "id": 0,
+    "name": "arrowFunc",
+    "kind": "Variable",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1032,
+    "start_line": 25,
+    "end_line": 25,
+    "start_column": 7,
+    "end_column": 16
+  },
+  {
+    "id": 0,
+    "name": "regularFunction",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1062,
+    "start_line": 21,
+    "end_line": 21,
+    "start_column": 10,
+    "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "genericFunction",
+    "kind": "Function",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1062,
+    "start_line": 44,
+    "end_line": 44,
+    "start_column": 10,
+    "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "myFunction",
+    "kind": "Function",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1062,
+    "start_line": 39,
+    "end_line": 39,
+    "start_column": 10,
+    "end_column": 20
+  },
+  {
+    "id": 0,
+    "name": "increment",
+    "kind": "Method",
+    "path": "tests/fixtures/typescript.tsx",
+    "score": 1039,
+    "start_line": 23,
+    "end_line": 23,
+    "start_column": 5,
+    "end_column": 14
+  }
+]

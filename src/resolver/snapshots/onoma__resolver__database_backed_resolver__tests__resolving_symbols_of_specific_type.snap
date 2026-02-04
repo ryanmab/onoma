@@ -1,0 +1,391 @@
+---
+source: src/resolver/database_backed_resolver.rs
+expression: resolved_symbols
+---
+[
+  {
+    "id": 0,
+    "name": "#(* % 2)",
+    "kind": "Function",
+    "path": "tests/fixtures/clojure.clj",
+    "score": 1030,
+    "start_line": 44,
+    "end_line": 44,
+    "start_column": 2,
+    "end_column": 10
+  },
+  {
+    "id": 0,
+    "name": "#(+ % 1)",
+    "kind": "Function",
+    "path": "tests/fixtures/clojure.clj",
+    "score": 1030,
+    "start_line": 43,
+    "end_line": 43,
+    "start_column": 2,
+    "end_column": 10
+  },
+  {
+    "id": 0,
+    "name": "add",
+    "kind": "Function",
+    "path": "tests/fixtures/clojure.clj",
+    "score": 1030,
+    "start_line": 19,
+    "end_line": 19,
+    "start_column": 7,
+    "end_column": 10
+  },
+  {
+    "id": 0,
+    "name": "greet",
+    "kind": "Function",
+    "path": "tests/fixtures/clojure.clj",
+    "score": 1030,
+    "start_line": 22,
+    "end_line": 22,
+    "start_column": 7,
+    "end_column": 12
+  },
+  {
+    "id": 0,
+    "name": "Add",
+    "kind": "Function",
+    "path": "tests/fixtures/go.go",
+    "score": 1030,
+    "start_line": 24,
+    "end_line": 24,
+    "start_column": 6,
+    "end_column": 9
+  },
+  {
+    "id": 0,
+    "name": "Move",
+    "kind": "Method",
+    "path": "tests/fixtures/go.go",
+    "score": 1030,
+    "start_line": 29,
+    "end_line": 29,
+    "start_column": 16,
+    "end_column": 20
+  },
+  {
+    "id": 0,
+    "name": "Multiply",
+    "kind": "Function",
+    "path": "tests/fixtures/go.go",
+    "score": 1030,
+    "start_line": 35,
+    "end_line": 35,
+    "start_column": 6,
+    "end_column": 14
+  },
+  {
+    "id": 0,
+    "name": "(x, y)",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.js",
+    "score": 1030,
+    "start_line": 32,
+    "end_line": 32,
+    "start_column": 18,
+    "end_column": 24
+  },
+  {
+    "id": 0,
+    "name": "add",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.js",
+    "score": 1030,
+    "start_line": 26,
+    "end_line": 26,
+    "start_column": 10,
+    "end_column": 13
+  },
+  {
+    "id": 0,
+    "name": "constructor",
+    "kind": "Method",
+    "path": "tests/fixtures/javascript.js",
+    "score": 1030,
+    "start_line": 6,
+    "end_line": 6,
+    "start_column": 5,
+    "end_column": 16
+  },
+  {
+    "id": 0,
+    "name": "greet",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.js",
+    "score": 1030,
+    "start_line": 51,
+    "end_line": 51,
+    "start_column": 10,
+    "end_column": 15
+  },
+  {
+    "id": 0,
+    "name": "sum",
+    "kind": "Method",
+    "path": "tests/fixtures/javascript.js",
+    "score": 1030,
+    "start_line": 11,
+    "end_line": 11,
+    "start_column": 5,
+    "end_column": 8
+  },
+  {
+    "id": 0,
+    "name": "x * y",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.js",
+    "score": 1030,
+    "start_line": 32,
+    "end_line": 32,
+    "start_column": 28,
+    "end_column": 33
+  },
+  {
+    "id": 0,
+    "name": "(\n    <section>\n        <p>Hello {name}</p>\n    </section>\n)",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 39,
+    "end_line": 43,
+    "start_column": 39,
+    "end_column": 2
+  },
+  {
+    "id": 0,
+    "name": "(y)",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 25,
+    "end_line": 25,
+    "start_column": 19,
+    "end_column": 22
+  },
+  {
+    "id": 0,
+    "name": "({ name })",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 39,
+    "end_line": 39,
+    "start_column": 25,
+    "end_column": 35
+  },
+  {
+    "id": 0,
+    "name": "FunctionalComponent",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 30,
+    "end_line": 30,
+    "start_column": 10,
+    "end_column": 29
+  },
+  {
+    "id": 0,
+    "name": "constructor",
+    "kind": "Method",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 8,
+    "end_line": 8,
+    "start_column": 5,
+    "end_column": 16
+  },
+  {
+    "id": 0,
+    "name": "methodExample",
+    "kind": "Method",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 12,
+    "end_line": 12,
+    "start_column": 5,
+    "end_column": 18
+  },
+  {
+    "id": 0,
+    "name": "regularFunction",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 21,
+    "end_line": 21,
+    "start_column": 10,
+    "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "y + 3",
+    "kind": "Function",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1030,
+    "start_line": 25,
+    "end_line": 25,
+    "start_column": 26,
+    "end_column": 31
+  },
+  {
+    "id": 0,
+    "name": "add",
+    "kind": "Function",
+    "path": "tests/fixtures/lua.lua",
+    "score": 1030,
+    "start_line": 8,
+    "end_line": 8,
+    "start_column": 10,
+    "end_column": 13
+  },
+  {
+    "id": 0,
+    "name": "printName",
+    "kind": "Method",
+    "path": "tests/fixtures/lua.lua",
+    "score": 1030,
+    "start_line": 15,
+    "end_line": 15,
+    "start_column": 18,
+    "end_column": 27
+  },
+  {
+    "id": 0,
+    "name": "move_by",
+    "kind": "Method",
+    "path": "tests/fixtures/rust.rs",
+    "score": 1030,
+    "start_line": 50,
+    "end_line": 50,
+    "start_column": 12,
+    "end_column": 19
+  },
+  {
+    "id": 0,
+    "name": "vars_example",
+    "kind": "Function",
+    "path": "tests/fixtures/rust.rs",
+    "score": 1030,
+    "start_line": 41,
+    "end_line": 41,
+    "start_column": 8,
+    "end_column": 20
+  },
+  {
+    "id": 0,
+    "name": "constructor",
+    "kind": "Method",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1030,
+    "start_line": 10,
+    "end_line": 10,
+    "start_column": 5,
+    "end_column": 16
+  },
+  {
+    "id": 0,
+    "name": "genericFunction",
+    "kind": "Function",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1030,
+    "start_line": 44,
+    "end_line": 44,
+    "start_column": 10,
+    "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "myFunction",
+    "kind": "Function",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1030,
+    "start_line": 39,
+    "end_line": 39,
+    "start_column": 10,
+    "end_column": 20
+  },
+  {
+    "id": 0,
+    "name": "myGetter",
+    "kind": "Method",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1030,
+    "start_line": 12,
+    "end_line": 12,
+    "start_column": 9,
+    "end_column": 17
+  },
+  {
+    "id": 0,
+    "name": "myMethod",
+    "kind": "Method",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1030,
+    "start_line": 11,
+    "end_line": 11,
+    "start_column": 5,
+    "end_column": 13
+  },
+  {
+    "id": 0,
+    "name": "mySetter",
+    "kind": "Method",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1030,
+    "start_line": 13,
+    "end_line": 13,
+    "start_column": 9,
+    "end_column": 17
+  },
+  {
+    "id": 0,
+    "name": "App",
+    "kind": "Function",
+    "path": "tests/fixtures/typescript.tsx",
+    "score": 1030,
+    "start_line": 41,
+    "end_line": 41,
+    "start_column": 10,
+    "end_column": 13
+  },
+  {
+    "id": 0,
+    "name": "Header",
+    "kind": "Function",
+    "path": "tests/fixtures/typescript.tsx",
+    "score": 1030,
+    "start_line": 51,
+    "end_line": 51,
+    "start_column": 10,
+    "end_column": 16
+  },
+  {
+    "id": 0,
+    "name": "add",
+    "kind": "Function",
+    "path": "tests/fixtures/typescript.tsx",
+    "score": 1030,
+    "start_line": 29,
+    "end_line": 29,
+    "start_column": 10,
+    "end_column": 13
+  },
+  {
+    "id": 0,
+    "name": "increment",
+    "kind": "Method",
+    "path": "tests/fixtures/typescript.tsx",
+    "score": 1030,
+    "start_line": 23,
+    "end_line": 23,
+    "start_column": 5,
+    "end_column": 14
+  }
+]

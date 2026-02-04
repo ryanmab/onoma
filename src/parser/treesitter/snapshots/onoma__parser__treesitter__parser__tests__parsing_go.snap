@@ -1,0 +1,514 @@
+---
+source: src/parser/treesitter/parser.rs
+expression: index.index.symbols.iter().sorted()
+---
+IntoIter(
+    [
+        Symbol {
+            kind: Constant,
+            name: "Pi",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 7,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "X",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 9,
+                        end_line: 9,
+                        start_column: 5,
+                        end_column: 6,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "Y",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 10,
+                        end_line: 10,
+                        start_column: 5,
+                        end_column: 6,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "Add",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 24,
+                        end_line: 24,
+                        start_column: 6,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "Multiply",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 35,
+                        end_line: 35,
+                        start_column: 6,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Method,
+            name: "Move",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 16,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Module,
+            name: "myapp",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 1,
+                        end_line: 1,
+                        start_column: 9,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Namespace,
+            name: "\"fmt\"",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 3,
+                        end_line: 3,
+                        start_column: 8,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Namespace,
+            name: "\"math\"",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 4,
+                        end_line: 4,
+                        start_column: 8,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "a",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 24,
+                        end_line: 24,
+                        start_column: 10,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "b",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 24,
+                        end_line: 24,
+                        start_column: 17,
+                        end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "dx",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 21,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "dy",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 29,
+                        end_column: 31,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "p",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 13,
+                        end_line: 13,
+                        start_column: 10,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "p",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 7,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 35,
+                        end_line: 35,
+                        start_column: 15,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "y",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 35,
+                        end_line: 35,
+                        start_column: 22,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Type,
+            name: "MyType",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 7,
+                        end_line: 7,
+                        start_column: 6,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Type,
+            name: "Point",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 8,
+                        end_line: 8,
+                        start_column: 6,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Type,
+            name: "Reader",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 12,
+                        end_line: 12,
+                        start_column: 6,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Type,
+            name: "int",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 7,
+                        end_line: 7,
+                        start_column: 13,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "globalVar",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 20,
+                        end_line: 20,
+                        start_column: 5,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "localVar",
+            definition: Some(
+                Occurrence {
+                    language: Go,
+                    absolute_path: "tests/fixtures/go.go",
+                    range: Range {
+                        start_line: 21,
+                        end_line: 21,
+                        start_column: 1,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+    ],
+)

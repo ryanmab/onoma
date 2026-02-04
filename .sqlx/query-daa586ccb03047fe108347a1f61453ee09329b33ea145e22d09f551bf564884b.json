@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "DELETE FROM file WHERE path LIKE ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": []
+  },
+  "hash": "daa586ccb03047fe108347a1f61453ee09329b33ea145e22d09f551bf564884b"
+}

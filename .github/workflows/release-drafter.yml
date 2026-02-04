@@ -1,0 +1,62 @@
+name: Release Drafter
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, labeled, unlabeled, synchronize]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update_release:
+    name: Prepare Release
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  check_labels:
+    name: Validate Labels
+    runs-on: ubuntu-latest
+    needs: update_release
+    if: ${{ github.event_name == 'pull_request' }}
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - uses: mheap/github-action-required-labels@v5
+        if: ${{ always() }}
+        with:
+          mode: exactly
+          count: 1
+          labels: "bump-patch, bump-minor, bump-major, skip-changelog"
+          add_comment: true
+          message: |
+            This PR needs **{{ errorString }}** one label added to indicate whether it is a major, minor, or patch change.
+
+            The available labels are: `bump-patch`, `bump-minor`, `bump-major` and `skip-changelog`.
+
+      - uses: mheap/github-action-required-labels@v5
+        if: ${{ always() }}
+        with:
+          mode: exactly
+          count: 1
+          labels: "feature, chore, bug"
+          add_comment: true
+          message: |
+            This PR needs **{{ errorString }}** one label added to indicate whether it is a feature, bug, or chore.
+
+            The available labels are: `feature`, `chore`, `bug`.

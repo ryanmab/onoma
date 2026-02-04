@@ -1,0 +1,602 @@
+---
+source: src/parser/treesitter/parser.rs
+expression: index.index.symbols.iter().sorted()
+---
+IntoIter(
+    [
+        Symbol {
+            kind: Constant,
+            name: "MAX",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 37,
+                        end_line: 37,
+                        start_column: 11,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Enum,
+            name: "Color",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 13,
+                        end_line: 13,
+                        start_column: 14,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Blue",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 9,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Green",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 16,
+                        end_line: 16,
+                        start_column: 9,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Red",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 15,
+                        end_line: 15,
+                        start_column: 9,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "f",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 24,
+                        end_line: 24,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "i",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 23,
+                        end_line: 23,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 8,
+                        end_line: 8,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "y",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 9,
+                        end_line: 9,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "vars_example",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 8,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Macro,
+            name: "hello",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 58,
+                        end_line: 58,
+                        start_column: 18,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Method,
+            name: "move_by",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 50,
+                        end_line: 50,
+                        start_column: 12,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Module,
+            name: "my_module",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 5,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "a",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 21,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "b",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 29,
+                        end_column: 30,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "dx",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 50,
+                        end_line: 50,
+                        start_column: 31,
+                        end_column: 33,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "dy",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 50,
+                        end_line: 50,
+                        start_column: 40,
+                        end_column: 42,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: SelfParameter,
+            name: "&mut self",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 50,
+                        end_line: 50,
+                        start_column: 20,
+                        end_column: 29,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: SelfParameter,
+            name: "&self",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 30,
+                        end_line: 30,
+                        start_column: 16,
+                        end_column: 21,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: StaticVariable,
+            name: "COUNTER",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 38,
+                        end_line: 38,
+                        start_column: 16,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Struct,
+            name: "Point",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 6,
+                        end_line: 6,
+                        start_column: 16,
+                        end_column: 21,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Trait,
+            name: "Display",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 28,
+                        end_line: 28,
+                        start_column: 15,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TraitMethod,
+            name: "fmt",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 30,
+                        end_line: 30,
+                        start_column: 12,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TypeAlias,
+            name: "MyInt",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 34,
+                        end_line: 34,
+                        start_column: 10,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Union,
+            name: "Value",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 21,
+                        end_line: 21,
+                        start_column: 15,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 13,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "y",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 13,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+    ],
+)

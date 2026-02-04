@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n                    INSERT INTO symbol (\n                        kind,\n                        name,\n                        file_id,\n                        start_line,\n                        start_column,\n                        end_line,\n                        end_column,\n                        indexed_at\n                    )\n                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)\n                    ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 8
+    },
+    "nullable": []
+  },
+  "hash": "c130e846356fdfdb1ec2311ed807695187bf1a22322d9a97e828158c68b24b95"
+}

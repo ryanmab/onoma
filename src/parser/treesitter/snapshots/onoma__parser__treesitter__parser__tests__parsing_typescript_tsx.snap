@@ -1,0 +1,646 @@
+---
+source: src/parser/treesitter/parser.rs
+expression: index.index.symbols.iter().sorted()
+---
+IntoIter(
+    [
+        Symbol {
+            kind: Class,
+            name: "Counter",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 20,
+                        end_line: 20,
+                        start_column: 7,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Enum,
+            name: "Color",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 13,
+                        end_line: 13,
+                        start_column: 6,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Blue",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 16,
+                        end_line: 16,
+                        start_column: 5,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Green",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 15,
+                        end_line: 15,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Red",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 14,
+                        end_line: 14,
+                        start_column: 5,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "count",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 24,
+                        end_line: 24,
+                        start_column: 14,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "title",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 9,
+                        end_line: 9,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "title",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 34,
+                        end_column: 39,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "title",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 30,
+                        end_column: 35,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "count",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 21,
+                        end_line: 21,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "App",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 10,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "Header",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 10,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "add",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 10,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Interface,
+            name: "Props",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 8,
+                        end_line: 8,
+                        start_column: 11,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Method,
+            name: "increment",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 23,
+                        end_line: 23,
+                        start_column: 5,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Module,
+            name: "const moduleValue = 1;",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 8,
+                        end_column: 30,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "a",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 14,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "b",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 25,
+                        end_column: 26,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "props",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 14,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "step",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 23,
+                        end_line: 23,
+                        start_column: 15,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 34,
+                        end_line: 34,
+                        start_column: 19,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "className",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 14,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "title",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 21,
+                        end_column: 26,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "hello",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 45,
+                        end_line: 45,
+                        start_column: 19,
+                        end_column: 24,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TypeAlias,
+            name: "ID",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 5,
+                        end_line: 5,
+                        start_column: 6,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "MAX_COUNT",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 38,
+                        end_line: 38,
+                        start_column: 7,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "moduleValue",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 14,
+                        end_column: 25,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "multiply",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 34,
+                        end_line: 34,
+                        start_column: 7,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "value",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 37,
+                        end_line: 37,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+    ],
+)

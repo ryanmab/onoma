@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n                DELETE FROM symbol WHERE file_id = ?\n                ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": []
+  },
+  "hash": "850ebda470a9499a2f5fa21140e5b81e9413b32f0aa58282e3e772ca86993816"
+}
