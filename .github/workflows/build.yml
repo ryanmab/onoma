@@ -139,9 +139,9 @@ jobs:
       - name: cargo install cargo-llvm-cov
         uses: taiki-e/install-action@cargo-llvm-cov
 
-      - run: cargo +nightly-2025-09-30 llvm-cov --locked --all-features --lcov --output-path lcov_unit.info
+      - run: cargo +nightly llvm-cov --locked --all-features --lcov --output-path lcov_unit.info
 
-      - run: cargo +nightly-2025-09-30 llvm-cov --locked --doc --all-features --lcov --output-path lcov_docs.info
+      - run: cargo +nightly llvm-cov --locked --doc --all-features --lcov --output-path lcov_docs.info
 
       - uses: actions/upload-artifact@v6
         with:
