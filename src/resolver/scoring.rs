@@ -15,8 +15,8 @@ use crate::{
 pub fn fuzzy_match(
     query: &str,
     symbol: &models::resolved::ResolvedSymbol,
-    config: &neo_frizbee::Config,
-) -> Vec<neo_frizbee::Match> {
+    config: &frizbee::Config,
+) -> Vec<frizbee::Match> {
     let path = symbol.path.to_str().unwrap_or_default();
 
     let path_symbol_prefix = format!("{path}:{}", symbol.name.as_str());
@@ -26,7 +26,7 @@ pub fn fuzzy_match(
     // and SIMD performance. But, is the difference that much? Is it in fact
     // faster because SIMD is more efficient and the bridges aren't having to
     // continually repaint for every drip-fed result?
-    neo_frizbee::match_list(
+    frizbee::match_list(
         query,
         &[path_symbol_prefix.as_str(), symbol.name.as_str()],
         config,
@@ -45,7 +45,7 @@ pub fn fuzzy_match(
 /// than bonuses, and thus not a good match.
 pub fn calculate_score<'a, 'b>(
     symbol: &models::resolved::ResolvedSymbol,
-    fuzzy_matches: impl Iterator<Item = &'a neo_frizbee::Match>,
+    fuzzy_matches: impl Iterator<Item = &'a frizbee::Match>,
     current_file: Option<&'b Path>,
 ) -> i64 {
     let filename = if let Some(Some(filename)) = symbol.path.file_name().map(OsStr::to_str) {
@@ -278,17 +278,17 @@ mod tests {
             end_column: 9,
         };
 
-        let config = neo_frizbee::Config {
+        let config = frizbee::Config {
             prefilter: true,
             max_typos: Some(1),
             sort: false,
-            scoring: neo_frizbee::Scoring::default(),
+            scoring: frizbee::Scoring::default(),
         };
 
         // Broadly matches the behavior defined in scoring.rs, though not a requirement,
         // this test just confirms we _are_ factoring in the fuzzy matches, and that the
         // results are deterministic
-        let fuzzy_matches = neo_frizbee::match_list(
+        let fuzzy_matches = frizbee::match_list(
             query,
             &[
                 format!("{}:{name}", path.to_str().unwrap()).as_str(),

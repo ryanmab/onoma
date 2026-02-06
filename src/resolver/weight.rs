@@ -37,7 +37,7 @@ pub fn calculate_distance_score_penalty(distance: usize) -> i64 {
 ///
 /// Broadly these are arbitrary, but the bonus should be enough that exact (and similar) matches
 /// are scored higher than those which are only loosely matched.
-pub fn calculate_fuzzy_match_bonus(fuzzy_match: &neo_frizbee::Match) -> i64 {
+pub fn calculate_fuzzy_match_bonus(fuzzy_match: &frizbee::Match) -> i64 {
     match fuzzy_match {
         fuzzy_match if fuzzy_match.exact => {
             let score = i64::from(fuzzy_match.score);

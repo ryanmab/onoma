@@ -112,11 +112,11 @@ impl Resolver for DatabaseBackedResolver {
             let mut results = sqlx::query_as::<_, ResolvedSymbol>(&sql_query).fetch(&pool);
 
             let mut count = 0;
-            let config = neo_frizbee::Config {
+            let config = frizbee::Config {
                 prefilter: true,
 
                 // NOTE: This range must never be below the length of the query, otherwise
-                // neo_frizbee will panic
+                // frizbee will panic
                 max_typos: Some(
                     (u16::try_from(query.len())
                         .expect("Query length should always be at most 16 unsigned integer")
@@ -125,7 +125,7 @@ impl Resolver for DatabaseBackedResolver {
                 ),
                 sort: false,
 
-                scoring: neo_frizbee::Scoring::default(),
+                scoring: frizbee::Scoring::default(),
             };
 
             while let Some(result) = results.next().await {
