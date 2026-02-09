@@ -328,18 +328,24 @@ impl Indexer for DatabaseBackedIndexer {
 
                 let walker = ignore::WalkBuilder::new(path)
                     .types(types)
+                    .git_global(true)
+                    .ignore_case_insensitive(true)
                     .git_ignore(true)
                     .git_exclude(true)
+                    // By default ignore will only observe `.gitignore` files if in a git repository unless we explicitly
+                    // don't require git.
+                    //
+                    // If we don't do this, it can lead to unexpected scenarios where files are indexed
+                    // which are part of `.gitignore` simply because the repository hasn't yet been
+                    // initialised.
+                    .require_git(false)
                     .build();
 
                 Box::new(walker.into_iter().filter_map(|entry| match entry {
-                    Ok(entry) => {
-                        if entry.metadata().map(|m| m.is_file()).unwrap_or(false) {
-                            Some(Ok(entry.into_path()))
-                        } else {
-                            None
-                        }
+                    Ok(entry) if entry.metadata().is_ok_and(|m| m.is_file()) => {
+                        Some(Ok(entry.into_path()))
                     }
+                    Ok(_) => None,
                     Err(e) => Some(Err(e)),
                 }))
             } else {
@@ -398,6 +404,10 @@ mod tests {
 
     use insta::assert_json_snapshot;
     use tempfile::tempdir;
+    use tokio::{
+        fs::{self, File},
+        io::AsyncWriteExt,
+    };
     use tokio_stream::StreamExt;
 
     use crate::{
@@ -477,6 +487,52 @@ mod tests {
         assert_json_snapshot!(
             resolved_symbols,
             {"[].id" => 0} // IDs are non-deterministic, so just blank them out
+        );
+    }
+
+    #[tokio::test]
+    pub async fn test_ignores_files_in_gitignore() {
+        let storage_path = tempdir()
+            .expect("Should never fail when creating a temporary path for testing indexing");
+
+        let test_project = tempdir()
+            .expect("Should never fail when creating a temp directory for testing gitignores");
+
+        let test_project = test_project.path();
+
+        // Copy a test fixture in the project
+        fs::copy(
+            PathBuf::from("tests/fixtures/").join("rust.rs"),
+            test_project.join("rust.rs"),
+        )
+        .await
+        .expect("Should never fail to copy a file into the temporary project");
+
+        // Write a gitignore which covers the test fixture
+        File::create(test_project.join(".gitignore"))
+            .await
+            .expect("Should never fail to write the gitignore")
+            .write_all(b"**/rust.rs")
+            .await
+            .expect("Should never fail to write to the .gitignore");
+
+        let workspaces = vec![test_project];
+
+        let indexer = super::DatabaseBackedIndexer::new(storage_path.path(), workspaces.clone())
+            .await
+            .expect("Should be able to create the empty index");
+
+        let resolver =
+            resolver::DatabaseBackedResolver::new(storage_path.path(), workspaces.clone());
+
+        assert!(indexer.index_workspaces().await.is_ok());
+
+        assert!(
+            resolver
+                .query(String::new(), resolver::Context::default())
+                .collect::<Vec<models::resolved::ResolvedSymbol>>()
+                .await
+                .is_empty()
         );
     }
 }
