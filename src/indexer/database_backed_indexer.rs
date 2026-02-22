@@ -330,6 +330,11 @@ impl Indexer for DatabaseBackedIndexer {
                     .types(types)
                     .git_global(true)
                     .ignore_case_insensitive(true)
+                    // This prevents files from nested directories being indexed when not tracked
+                    // by git (usually as part of a full index run).
+                    //
+                    // There's similar logic (handled by the `ignored` crate) in the Watcher, which
+                    // filters out individual filesystem events for files which are matched by `.gitignore`.
                     .git_ignore(true)
                     .git_exclude(true)
                     // By default ignore will only observe `.gitignore` files if in a git repository unless we explicitly
