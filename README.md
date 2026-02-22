@@ -51,7 +51,7 @@ Currently, Onoma is integrated with:
 
 ```toml
 [dependencies]
-onoma = "0.0.3"
+onoma = "0.0.4"
 ```
 
 #### Documentation
