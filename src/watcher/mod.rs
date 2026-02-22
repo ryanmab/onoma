@@ -2,6 +2,7 @@
 
 use std::{path::Path, sync::Arc, time::Duration};
 
+use ignored::is_ignored;
 use itertools::Itertools;
 use notify::{RecommendedWatcher, RecursiveMode};
 use notify_debouncer_mini::{DebouncedEvent, Debouncer, new_debouncer_opt};
@@ -156,6 +157,14 @@ where
         for path in events.into_iter().map(|event| event.path).dedup() {
             match path {
                 path if path.exists() && path.is_file() => {
+                    if is_ignored!(path.as_path()) {
+                        log::debug!(
+                            "File change is ignored by .gitignore, not indexing: {}",
+                            path.display()
+                        );
+                        continue;
+                    }
+
                     log::debug!("Indexing file change: {}", path.display());
 
                     indexer
