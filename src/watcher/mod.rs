@@ -212,9 +212,9 @@ where
         })
         .map_err(watcher::Error::NotifySetupFailed)?;
 
-        let watcher = debouncer.watcher();
-
         let workspaces = self.indexer.lock().await.get_workspaces();
+
+        let watcher = debouncer.watcher();
 
         for path in workspaces {
             watcher
@@ -242,7 +242,11 @@ mod tests {
     async fn test_watcher_new_file_event() {
         let mut mock_indexer = MockIndexer::default();
 
-        let workspace = Arc::new(tempdir().unwrap().keep());
+        let workspace = Arc::new(
+            tempdir()
+                .expect("Should always be able to create a temporary project folder")
+                .keep(),
+        );
         let workspaces = vec![workspace.clone()];
 
         mock_indexer
@@ -271,13 +275,20 @@ mod tests {
         tokio::time::sleep(std::time::Duration::from_secs(3)).await;
 
         watcher.stop().await;
+
+        fs::remove_dir_all(workspace.as_path())
+            .expect("Should always be able to clean up temporary project folder");
     }
 
     #[tokio::test]
     async fn test_watcher_deleting_file_event() {
         let mut mock_indexer = MockIndexer::default();
 
-        let workspace = Arc::new(tempdir().unwrap().keep());
+        let workspace = Arc::new(
+            tempdir()
+                .expect("Should always be able to create a temporary project folder")
+                .keep(),
+        );
         let workspaces = vec![workspace.clone()];
 
         mock_indexer
@@ -306,5 +317,54 @@ mod tests {
         tokio::time::sleep(std::time::Duration::from_secs(3)).await;
 
         watcher.stop().await;
+
+        fs::remove_dir_all(workspace.as_path())
+            .expect("Should always be able to clean up temporary project folder");
+    }
+
+    #[tokio::test]
+    async fn test_watcher_changed_ignored_file() {
+        let mut mock_indexer = MockIndexer::default();
+
+        let workspace = Arc::new(
+            tempfile::tempdir()
+                .expect("Should always be able to create a temporary project folder")
+                .keep(),
+        );
+        let workspaces = vec![workspace.clone()];
+
+        mock_indexer
+            .expect_get_workspaces()
+            .returning(move || workspaces.clone());
+
+        mock_indexer.expect_is_inside_workspace().return_const(true);
+
+        // Indexer should never be called for the foo.txt file, because it is in a ignored
+        // directory
+        mock_indexer
+            .expect_index()
+            .times(0)
+            .withf(|path| path.ends_with("target/foo.txt"))
+            .returning(|_| Box::pin(future::ready(Ok(()))));
+
+        let watcher = super::Watcher::new(mock_indexer);
+
+        watcher.start().await.expect("Watcher to start");
+
+        fs::copy(".gitignore", workspace.clone().join(".gitignore"))
+            .expect("Should always be able to setup the .gitignore");
+
+        fs::create_dir_all(workspace.clone().join("target"))
+            .expect("Should always be able to create a test directory");
+
+        File::create(workspace.clone().join("target").join("foo.txt"))
+            .expect("Should always be able to create a test file");
+
+        tokio::time::sleep(std::time::Duration::from_secs(3)).await;
+
+        watcher.stop().await;
+
+        fs::remove_dir_all(workspace.as_path())
+            .expect("Should always be able to clean up temporary project folder");
     }
 }
