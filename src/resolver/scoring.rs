@@ -279,7 +279,6 @@ mod tests {
         };
 
         let config = frizbee::Config {
-            prefilter: true,
             max_typos: Some(1),
             sort: false,
             scoring: frizbee::Scoring::default(),

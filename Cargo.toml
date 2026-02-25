@@ -2,6 +2,8 @@
 name = "onoma"
 version = "0.0.4"
 edition = "2024"
+rust-version = "1.88.0"
+
 authors = ["Ryan Maber <ryan@ryanmaber.com>"]
 license = "MIT"
 description = "A fast, language-agnostic semantic symbol indexer and typo-resistant fuzzy finder, enabling real-time search across virtually unlimited code symbols without the need for language servers."
@@ -35,7 +37,7 @@ tokio-stream = { version = "0.1.17", features = ["sync"] }
 serde = { version = "1.0.228", features = ["serde_derive"] }
 serde_json = "1.0.149"
 ignored = "0.0.1"
-frizbee = "0.7.0" # Requires nightly
+frizbee = "0.8.2"
 
 # Supported languages
 tree-sitter-go = "0.25.0"

@@ -113,8 +113,6 @@ impl Resolver for DatabaseBackedResolver {
 
             let mut count = 0;
             let config = frizbee::Config {
-                prefilter: true,
-
                 // NOTE: This range must never be below the length of the query, otherwise
                 // frizbee will panic
                 max_typos: Some(
@@ -124,7 +122,6 @@ impl Resolver for DatabaseBackedResolver {
                     .clamp(0, 4),
                 ),
                 sort: false,
-
                 scoring: frizbee::Scoring::default(),
             };
 
