@@ -19,22 +19,11 @@ expression: resolved_symbols
     "name": "FunctionalComponent",
     "kind": "Function",
     "path": "tests/fixtures/javascript.jsx",
-    "score": 1063,
+    "score": 1064,
     "start_line": 30,
     "end_line": 30,
     "start_column": 10,
     "end_column": 29
-  },
-  {
-    "id": 0,
-    "name": "GrandChild",
-    "kind": "Value",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1002,
-    "start_line": 78,
-    "end_line": 78,
-    "start_column": 14,
-    "end_column": 24
   },
   {
     "id": 0,
