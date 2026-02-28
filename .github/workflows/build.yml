@@ -168,7 +168,7 @@ jobs:
 
       - run: cargo +nightly llvm-cov --locked --doc --all-features --lcov --output-path lcov_docs.info
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: coverage
           path: lcov_*.info
