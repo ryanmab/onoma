@@ -28,7 +28,7 @@ tree-sitter =  "0.26.3"
 tree-sitter-language = "0.1.6"
 ignore = "0.4.25"
 sqlx = { version = "0.8.6", features = ["chrono", "runtime-tokio", "sqlite"] }
-chrono = "0.4.42"
+chrono = "0.4.44"
 sha2 = "0.10.9"
 hex = "0.4.3"
 strum = { version = "0.27.2", features = ["strum_macros"] }
