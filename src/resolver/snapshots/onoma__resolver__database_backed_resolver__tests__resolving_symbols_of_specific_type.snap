@@ -258,6 +258,72 @@ expression: resolved_symbols
   },
   {
     "id": 0,
+    "name": "__init__",
+    "kind": "Method",
+    "path": "tests/fixtures/python.py",
+    "score": 1030,
+    "start_line": 34,
+    "end_line": 34,
+    "start_column": 9,
+    "end_column": 17
+  },
+  {
+    "id": 0,
+    "name": "async_function",
+    "kind": "Function",
+    "path": "tests/fixtures/python.py",
+    "score": 1030,
+    "start_line": 48,
+    "end_line": 48,
+    "start_column": 11,
+    "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "async_method",
+    "kind": "Method",
+    "path": "tests/fixtures/python.py",
+    "score": 1030,
+    "start_line": 37,
+    "end_line": 37,
+    "start_column": 15,
+    "end_column": 27
+  },
+  {
+    "id": 0,
+    "name": "decorated_function",
+    "kind": "Function",
+    "path": "tests/fixtures/python.py",
+    "score": 1030,
+    "start_line": 23,
+    "end_line": 23,
+    "start_column": 5,
+    "end_column": 23
+  },
+  {
+    "id": 0,
+    "name": "decorator",
+    "kind": "Function",
+    "path": "tests/fixtures/python.py",
+    "score": 1030,
+    "start_line": 19,
+    "end_line": 19,
+    "start_column": 5,
+    "end_column": 14
+  },
+  {
+    "id": 0,
+    "name": "regular_method",
+    "kind": "Method",
+    "path": "tests/fixtures/python.py",
+    "score": 1030,
+    "start_line": 40,
+    "end_line": 40,
+    "start_column": 9,
+    "end_column": 23
+  },
+  {
+    "id": 0,
     "name": "move_by",
     "kind": "Method",
     "path": "tests/fixtures/rust.rs",

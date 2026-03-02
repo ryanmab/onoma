@@ -292,4 +292,19 @@ mod tests {
 
         assert_debug_snapshot!(index.index.symbols.iter().sorted());
     }
+
+    #[tokio::test]
+    pub async fn test_parsing_python() {
+        let parser = super::Parser::default();
+
+        let ctx = Context::default();
+
+        let output = parser
+            .parse(PathBuf::from("tests/fixtures/python.py").as_path(), &ctx)
+            .await;
+
+        let index = output.expect("Index should always be available");
+
+        assert_debug_snapshot!(index.index.symbols.iter().sorted());
+    }
 }

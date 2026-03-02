@@ -46,6 +46,7 @@ tree-sitter-lua = "0.2.0"
 tree-sitter-typescript = "0.23.2"
 tree-sitter-clojure-orchard = "0.2.5"
 tree-sitter-javascript = "0.25.0"
+tree-sitter-python = "0.25.0"
 
 [dev-dependencies]
 rstest = { version = "0.26.1", features = []}
