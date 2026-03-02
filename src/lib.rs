@@ -38,7 +38,7 @@
 //! > _Feel free to [open an issue](https://github.com/ryanmab/onoma/issues) with ideas for additional
 //! > editor integrations._
 //!
-//! ![onoma.nvim](https://github.com/user-attachments/assets/cadc6d39-2491-4ce9-9f61-8a4f8598d62a)
+//! ![onoma.nvim](https://github.com/user-attachments/assets/045c76ae-1f2e-4954-80fc-2773a16f393c)
 //!
 //! Currently, Onoma is integrated with:
 //!
