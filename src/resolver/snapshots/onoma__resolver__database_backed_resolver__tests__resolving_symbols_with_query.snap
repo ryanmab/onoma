@@ -6,9 +6,9 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "ArrowFunctional",
-    "kind": "TypeAlias",
+    "kind": "Variable",
     "path": "tests/fixtures/javascript.jsx",
-    "score": 1062,
+    "score": 1032,
     "start_line": 39,
     "end_line": 39,
     "start_column": 7,
@@ -127,7 +127,7 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "decorator",
-    "kind": "Value",
+    "kind": "Attribute",
     "path": "tests/fixtures/python.py",
     "score": 1004,
     "start_line": 22,

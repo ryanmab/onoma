@@ -71,61 +71,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Function,
-            name: "(\n    <section>\n        <p>Hello {name}</p>\n    </section>\n)",
+            kind: Constructor,
+            name: "constructor",
             definition: Some(
                 Occurrence {
                     language: JavascriptJsx,
                     absolute_path: "tests/fixtures/javascript.jsx",
                     range: Range {
-                        start_line: 39,
-                        end_line: 43,
-                        start_column: 39,
-                        end_column: 2,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Function,
-            name: "(y)",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 25,
-                        end_line: 25,
-                        start_column: 19,
-                        end_column: 22,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Function,
-            name: "({ name })",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 39,
-                        end_line: 39,
-                        start_column: 25,
-                        end_column: 35,
+                        start_line: 8,
+                        end_line: 8,
+                        start_column: 5,
+                        end_column: 16,
                     },
                     roles: Roles(
                         [
@@ -170,50 +126,6 @@ IntoIter(
                         end_line: 21,
                         start_column: 10,
                         end_column: 25,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Function,
-            name: "y + 3",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 25,
-                        end_line: 25,
-                        start_column: 26,
-                        end_column: 31,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Method,
-            name: "constructor",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 8,
-                        end_line: 8,
-                        start_column: 5,
-                        end_column: 16,
                     },
                     roles: Roles(
                         [
@@ -688,60 +600,16 @@ IntoIter(
         },
         Symbol {
             kind: Property,
-            name: "obj.prop",
+            name: "prop",
             definition: Some(
                 Occurrence {
                     language: JavascriptJsx,
                     absolute_path: "tests/fixtures/javascript.jsx",
                     range: Range {
-                        start_line: 56,
-                        end_line: 56,
-                        start_column: 25,
-                        end_column: 33,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Property,
-            name: "this.field",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 9,
-                        end_line: 9,
-                        start_column: 9,
+                        start_line: 55,
+                        end_line: 55,
+                        start_column: 15,
                         end_column: 19,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Property,
-            name: "this.field",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 14,
-                        end_line: 14,
-                        start_column: 16,
-                        end_column: 26,
                     },
                     roles: Roles(
                         [
@@ -973,116 +841,6 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: TypeAlias,
-            name: "ArrowFunctional",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 39,
-                        end_line: 39,
-                        start_column: 7,
-                        end_column: 22,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: TypeAlias,
-            name: "MAX_VALUE",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 48,
-                        end_line: 48,
-                        start_column: 7,
-                        end_column: 16,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: TypeAlias,
-            name: "ModuleExample",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 2,
-                        end_line: 2,
-                        start_column: 14,
-                        end_column: 27,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: TypeAlias,
-            name: "MyTypeAlias",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 49,
-                        end_line: 49,
-                        start_column: 7,
-                        end_column: 18,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: TypeAlias,
-            name: "Number",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 49,
-                        end_line: 49,
-                        start_column: 21,
-                        end_column: 27,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
             kind: Value,
             name: "ChildComponent",
             definition: Some(
@@ -1216,6 +974,72 @@ IntoIter(
         },
         Symbol {
             kind: Value,
+            name: "field",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 9,
+                        end_line: 9,
+                        start_column: 14,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Value,
+            name: "field",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 14,
+                        end_line: 14,
+                        start_column: 21,
+                        end_column: 26,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Value,
+            name: "obj",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 56,
+                        end_line: 56,
+                        start_column: 25,
+                        end_column: 28,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Value,
             name: "p",
             definition: Some(
                 Occurrence {
@@ -1226,6 +1050,28 @@ IntoIter(
                         end_line: 41,
                         start_column: 10,
                         end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Value,
+            name: "prop",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 56,
+                        end_line: 56,
+                        start_column: 29,
+                        end_column: 33,
                     },
                     roles: Roles(
                         [
@@ -1270,6 +1116,160 @@ IntoIter(
                         end_line: 33,
                         start_column: 14,
                         end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Value,
+            name: "this",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 9,
+                        end_line: 9,
+                        start_column: 9,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Value,
+            name: "this",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 14,
+                        end_line: 14,
+                        start_column: 16,
+                        end_column: 20,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "ArrowFunctional",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 39,
+                        end_line: 39,
+                        start_column: 7,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "MAX_VALUE",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 48,
+                        end_line: 48,
+                        start_column: 7,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "ModuleExample",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 14,
+                        end_column: 27,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "MyTypeAlias",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 49,
+                        end_line: 49,
+                        start_column: 7,
+                        end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "Number",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 49,
+                        end_line: 49,
+                        start_column: 21,
+                        end_column: 27,
                     },
                     roles: Roles(
                         [

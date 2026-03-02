@@ -19,10 +19,12 @@
   name: (identifier) @Enum)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Enum members
+;; Enum members (only inside enums)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(property_identifier) @EnumMember
+(enum_declaration
+  (enum_body
+    (property_identifier) @EnumMember))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Classes
@@ -49,17 +51,27 @@
   (identifier) @Function)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Methods
+;; Methods & Constructors
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Capture methods but exclude the constructor
 (method_definition
-  name: (property_identifier) @Method)
+  name: (property_identifier) @Method
+  (#not-eq? @Method "constructor"))
+
+;; Capture the constructor specifically
+(method_definition
+  name: (property_identifier) @Constructor
+  (#eq? @Constructor "constructor"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Parameters
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (required_parameter
+  (identifier) @Parameter)
+
+(optional_parameter
   (identifier) @Parameter)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

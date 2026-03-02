@@ -5,6 +5,28 @@ expression: index.index.symbols.iter().sorted()
 IntoIter(
     [
         Symbol {
+            kind: Attribute,
+            name: "decorator",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 22,
+                        end_line: 22,
+                        start_column: 2,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Boolean,
             name: "False",
             definition: Some(
@@ -786,28 +808,6 @@ IntoIter(
                         end_line: 62,
                         start_column: 16,
                         end_column: 23,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "decorator",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 22,
-                        end_line: 22,
-                        start_column: 2,
-                        end_column: 11,
                     },
                     roles: Roles(
                         [

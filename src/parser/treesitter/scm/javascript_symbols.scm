@@ -13,37 +13,45 @@
   name: (identifier) @Class)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Type aliases / constants (heuristic)
+;; Variables / constants (all identifiers)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (variable_declarator
-  (identifier) @TypeAlias
-  (#match? @TypeAlias "^[A-Z][A-Za-z0-9_]*$"))
-
-(variable_declarator
-  (identifier) @Constant
-  (#match? @Constant "^[A-Z_][A-Z0-9_]*$"))
+  name: (identifier) @Variable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Enum-like objects
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(object
-  (pair
-    key: (property_identifier) @EnumMember))
+(variable_declarator
+  name: (identifier) @Enum
+  (#match? @Enum "^[A-Z][A-Za-z0-9_]*$")
+  value: (object
+    (pair
+      key: (property_identifier) @EnumMember)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Functions & Methods
+;; Functions & Arrow Functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (function_declaration
   name: (identifier) @Function)
 
-(method_definition
-  name: (property_identifier) @Method)
+(variable_declarator
+  name: (identifier) @Variable
+  value: (arrow_function))
 
-(arrow_function
-  (_) @Function)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Methods & Constructor
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(method_definition
+  name: (property_identifier) @Method
+  (#not-eq? @Method "constructor"))
+
+(method_definition
+  name: (property_identifier) @Constructor
+  (#eq? @Constructor "constructor"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Parameters
@@ -53,14 +61,17 @@
   (identifier) @Parameter)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Variables / Values
+;; Class fields via constructor assignments
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(variable_declarator
-  (identifier) @Variable)
-
-(expression_statement
-  (identifier) @Value)
+(method_definition
+  name: (property_identifier) @Constructor
+  body: (statement_block
+    (expression_statement
+      (assignment_expression
+        left: (member_expression
+                object: (this) @ThisParameter
+                property: (property_identifier) @Field)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Literals
@@ -73,8 +84,12 @@
 (null) @Null
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Member expressions (properties & fields)
-;; JS grammar does not allow capturing property separately
+;; Member expressions (refined)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(member_expression) @Property
+(object
+  (pair
+    key: (property_identifier) @Property))
+
+(member_expression
+  (_) @Value)
