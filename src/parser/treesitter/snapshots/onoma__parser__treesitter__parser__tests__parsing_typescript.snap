@@ -71,6 +71,28 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
+            kind: Constructor,
+            name: "constructor",
+            definition: Some(
+                Occurrence {
+                    language: TypeScript,
+                    absolute_path: "tests/fixtures/typescript.ts",
+                    range: Range {
+                        start_line: 10,
+                        end_line: 10,
+                        start_column: 5,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Enum,
             name: "MyEnum",
             definition: Some(
@@ -192,28 +214,6 @@ IntoIter(
                         end_line: 61,
                         start_column: 5,
                         end_column: 8,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Method,
-            name: "constructor",
-            definition: Some(
-                Occurrence {
-                    language: TypeScript,
-                    absolute_path: "tests/fixtures/typescript.ts",
-                    range: Range {
-                        start_line: 10,
-                        end_line: 10,
-                        start_column: 5,
-                        end_column: 16,
                     },
                     roles: Roles(
                         [
@@ -973,28 +973,6 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Value,
-            name: "importedValue",
-            definition: Some(
-                Occurrence {
-                    language: TypeScript,
-                    absolute_path: "tests/fixtures/typescript.ts",
-                    range: Range {
-                        start_line: 55,
-                        end_line: 55,
-                        start_column: 10,
-                        end_column: 23,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
             kind: Variable,
             name: "bFalse",
             definition: Some(
@@ -1028,6 +1006,28 @@ IntoIter(
                         end_line: 70,
                         start_column: 7,
                         end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "importedValue",
+            definition: Some(
+                Occurrence {
+                    language: TypeScript,
+                    absolute_path: "tests/fixtures/typescript.ts",
+                    range: Range {
+                        start_line: 55,
+                        end_line: 55,
+                        start_column: 10,
+                        end_column: 23,
                     },
                     roles: Roles(
                         [

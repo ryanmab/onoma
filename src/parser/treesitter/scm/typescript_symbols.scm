@@ -40,9 +40,12 @@
 ;; Methods & Constructors
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Capture methods but exclude the constructor
 (method_definition
-  (property_identifier) @Method)
+  (property_identifier) @Method
+  (#not-eq? @Method "constructor"))
 
+;; Capture the constructor specifically
 (method_definition
   (property_identifier) @Constructor
   (#eq? @Constructor "constructor"))
@@ -105,10 +108,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (import_clause
-  (identifier) @Value)
+  (identifier) @Variable)
 
 (import_specifier
-  (identifier) @Value)
+  (identifier) @Variable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Object literal keys

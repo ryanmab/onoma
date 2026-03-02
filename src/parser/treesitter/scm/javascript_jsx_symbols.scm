@@ -14,12 +14,15 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Type aliases / Constants (heuristic)
+;; Note: Pure JS doesn't have type aliases
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Capitalized identifiers could be classes (references)
 (variable_declarator
-  (identifier) @TypeAlias
-  (#match? @TypeAlias "^[A-Z][A-Za-z0-9_]*$"))
+  (identifier) @Variable
+  (#match? @Variable "^[A-Z][A-Za-z0-9_]*$"))
 
+;; Uppercase constants (convention)
 (variable_declarator
   (identifier) @Constant
   (#match? @Constant "^[A-Z_][A-Z0-9_]*$"))
@@ -31,11 +34,19 @@
 (function_declaration
   name: (identifier) @Function)
 
-(method_definition
-  name: (property_identifier) @Method)
+(variable_declarator
+  name: (identifier) @Variable
+  value: (arrow_function))
 
-(arrow_function
-  (_) @Function)
+;; Capture methods but exclude constructor
+(method_definition
+  name: (property_identifier) @Method
+  (#not-eq? @Method "constructor"))
+
+;; Capture the constructor specifically
+(method_definition
+  name: (property_identifier) @Constructor
+  (#eq? @Constructor "constructor"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Parameters
@@ -52,13 +63,20 @@
   (identifier) @Variable)
 
 (expression_statement
-  (identifier) @Value)
+  (identifier) @Variable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Member expressions (general object.prop)
+;; Member expressions (refined)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(member_expression) @Property
+;; Object literal property declaration → Property
+(object
+  (pair
+    key: (property_identifier) @Property))
+
+;; Accessing a member → Value
+(member_expression
+  (_) @Value)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Literals
@@ -71,15 +89,26 @@
 (null) @Null
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; JSX Elements
+;; JSX Elements (references)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Component names as values
+;; Uppercase JSX components → references to component classes
 (jsx_opening_element
-  (identifier) @Value)
+  (identifier) @Value
+  (#match? @Value "^[A-Z]"))
 
 (jsx_self_closing_element
-  (identifier) @Value)
+  (identifier) @Value
+  (#match? @Value "^[A-Z]"))
+
+;; Lowercase JSX elements (HTML tags) → generic Value
+(jsx_opening_element
+  (identifier) @Value
+  (#match? @Value "^[a-z]"))
+
+(jsx_self_closing_element
+  (identifier) @Value
+  (#match? @Value "^[a-z]"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; JSX Props

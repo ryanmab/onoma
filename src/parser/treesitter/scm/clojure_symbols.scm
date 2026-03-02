@@ -19,11 +19,11 @@
 ;; Literals -> Value
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(num_lit) @Value
-(str_lit) @Value
-(bool_lit) @Value
-(nil_lit) @Value
-(kwd_lit) @Value
+(num_lit) @Number
+(str_lit) @String
+(bool_lit) @Boolean
+(nil_lit) @Null
+(kwd_lit) @Key
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Symbols (for variables, functions, macros, namespace)

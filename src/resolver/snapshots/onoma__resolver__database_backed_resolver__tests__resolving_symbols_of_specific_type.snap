@@ -82,17 +82,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "(x, y)",
-    "kind": "Function",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1030,
-    "start_line": 32,
-    "end_line": 32,
-    "start_column": 18,
-    "end_column": 24
-  },
-  {
-    "id": 0,
     "name": "add",
     "kind": "Function",
     "path": "tests/fixtures/javascript.js",
@@ -101,17 +90,6 @@ expression: resolved_symbols
     "end_line": 26,
     "start_column": 10,
     "end_column": 13
-  },
-  {
-    "id": 0,
-    "name": "constructor",
-    "kind": "Method",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1030,
-    "start_line": 6,
-    "end_line": 6,
-    "start_column": 5,
-    "end_column": 16
   },
   {
     "id": 0,
@@ -137,50 +115,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "x * y",
-    "kind": "Function",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1030,
-    "start_line": 32,
-    "end_line": 32,
-    "start_column": 28,
-    "end_column": 33
-  },
-  {
-    "id": 0,
-    "name": "(\n    <section>\n        <p>Hello {name}</p>\n    </section>\n)",
-    "kind": "Function",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1030,
-    "start_line": 39,
-    "end_line": 43,
-    "start_column": 39,
-    "end_column": 2
-  },
-  {
-    "id": 0,
-    "name": "(y)",
-    "kind": "Function",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1030,
-    "start_line": 25,
-    "end_line": 25,
-    "start_column": 19,
-    "end_column": 22
-  },
-  {
-    "id": 0,
-    "name": "({ name })",
-    "kind": "Function",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1030,
-    "start_line": 39,
-    "end_line": 39,
-    "start_column": 25,
-    "end_column": 35
-  },
-  {
-    "id": 0,
     "name": "FunctionalComponent",
     "kind": "Function",
     "path": "tests/fixtures/javascript.jsx",
@@ -189,17 +123,6 @@ expression: resolved_symbols
     "end_line": 30,
     "start_column": 10,
     "end_column": 29
-  },
-  {
-    "id": 0,
-    "name": "constructor",
-    "kind": "Method",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1030,
-    "start_line": 8,
-    "end_line": 8,
-    "start_column": 5,
-    "end_column": 16
   },
   {
     "id": 0,
@@ -222,17 +145,6 @@ expression: resolved_symbols
     "end_line": 21,
     "start_column": 10,
     "end_column": 25
-  },
-  {
-    "id": 0,
-    "name": "y + 3",
-    "kind": "Function",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1030,
-    "start_line": 25,
-    "end_line": 25,
-    "start_column": 26,
-    "end_column": 31
   },
   {
     "id": 0,
@@ -343,17 +255,6 @@ expression: resolved_symbols
     "end_line": 41,
     "start_column": 8,
     "end_column": 20
-  },
-  {
-    "id": 0,
-    "name": "constructor",
-    "kind": "Method",
-    "path": "tests/fixtures/typescript.ts",
-    "score": 1030,
-    "start_line": 10,
-    "end_line": 10,
-    "start_column": 5,
-    "end_column": 16
   },
   {
     "id": 0,

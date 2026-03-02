@@ -445,6 +445,50 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
+            kind: Boolean,
+            name: "false",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 62,
+                        end_line: 62,
+                        start_column: 1,
+                        end_column: 6,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Boolean,
+            name: "true",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 61,
+                        end_line: 61,
+                        start_column: 1,
+                        end_column: 5,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Function,
             name: "#(* % 2)",
             definition: Some(
@@ -533,6 +577,116 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
+            kind: Key,
+            name: ":a",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 54,
+                        end_line: 54,
+                        start_column: 2,
+                        end_column: 4,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Key,
+            name: ":a",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 66,
+                        end_line: 66,
+                        start_column: 1,
+                        end_column: 3,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Key,
+            name: ":b",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 54,
+                        end_line: 54,
+                        start_column: 7,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Key,
+            name: ":c",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 54,
+                        end_line: 54,
+                        start_column: 12,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Key,
+            name: ":keyword",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 13,
+                        end_line: 13,
+                        start_column: 8,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Macro,
             name: "log",
             definition: Some(
@@ -577,6 +731,468 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
+            kind: Null,
+            name: "nil",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 12,
+                        end_line: 12,
+                        start_column: 8,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Null,
+            name: "nil",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 63,
+                        end_line: 63,
+                        start_column: 1,
+                        end_column: 4,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "1",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 36,
+                        end_line: 36,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "1",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 8,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "1",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 2,
+                        end_column: 3,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "1",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 54,
+                        end_line: 54,
+                        start_column: 5,
+                        end_column: 6,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "1",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 73,
+                        end_line: 73,
+                        start_column: 7,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "10",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 11,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "100",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 64,
+                        end_line: 64,
+                        start_column: 1,
+                        end_column: 4,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "2",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 36,
+                        end_line: 36,
+                        start_column: 13,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "2",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 8,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "2",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 4,
+                        end_column: 5,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "2",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 54,
+                        end_line: 54,
+                        start_column: 10,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "2",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 73,
+                        end_line: 73,
+                        start_column: 9,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "3",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 6,
+                        end_column: 7,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "3",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 54,
+                        end_line: 54,
+                        start_column: 15,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "3",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 73,
+                        end_line: 73,
+                        start_column: 11,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "3.14",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 65,
+                        end_line: 65,
+                        start_column: 1,
+                        end_column: 5,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "4",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 8,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "42",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 11,
+                        end_line: 11,
+                        start_column: 8,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Number,
+            name: "5",
+            definition: Some(
+                Occurrence {
+                    language: Clojure,
+                    absolute_path: "tests/fixtures/clojure.clj",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 11,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Object,
             name: "{:a 1 :b 2 :c 3}",
             definition: Some(
@@ -599,7 +1215,7 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Value,
+            kind: String,
             name: "\"Hello, \"",
             definition: Some(
                 Occurrence {
@@ -621,7 +1237,7 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Value,
+            kind: String,
             name: "\"Hello, World!\"",
             definition: Some(
                 Occurrence {
@@ -632,622 +1248,6 @@ IntoIter(
                         end_line: 60,
                         start_column: 1,
                         end_column: 16,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "1",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 36,
-                        end_line: 36,
-                        start_column: 9,
-                        end_column: 10,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "1",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 43,
-                        end_line: 43,
-                        start_column: 8,
-                        end_column: 9,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "1",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 51,
-                        end_line: 51,
-                        start_column: 2,
-                        end_column: 3,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "1",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 54,
-                        end_line: 54,
-                        start_column: 5,
-                        end_column: 6,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "1",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 73,
-                        end_line: 73,
-                        start_column: 7,
-                        end_column: 8,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "10",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 44,
-                        end_line: 44,
-                        start_column: 11,
-                        end_column: 13,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "100",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 64,
-                        end_line: 64,
-                        start_column: 1,
-                        end_column: 4,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "2",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 36,
-                        end_line: 36,
-                        start_column: 13,
-                        end_column: 14,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "2",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 44,
-                        end_line: 44,
-                        start_column: 8,
-                        end_column: 9,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "2",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 51,
-                        end_line: 51,
-                        start_column: 4,
-                        end_column: 5,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "2",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 54,
-                        end_line: 54,
-                        start_column: 10,
-                        end_column: 11,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "2",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 73,
-                        end_line: 73,
-                        start_column: 9,
-                        end_column: 10,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "3",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 51,
-                        end_line: 51,
-                        start_column: 6,
-                        end_column: 7,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "3",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 54,
-                        end_line: 54,
-                        start_column: 15,
-                        end_column: 16,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "3",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 73,
-                        end_line: 73,
-                        start_column: 11,
-                        end_column: 12,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "3.14",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 65,
-                        end_line: 65,
-                        start_column: 1,
-                        end_column: 5,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "4",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 51,
-                        end_line: 51,
-                        start_column: 8,
-                        end_column: 9,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "42",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 11,
-                        end_line: 11,
-                        start_column: 8,
-                        end_column: 10,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "5",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 43,
-                        end_line: 43,
-                        start_column: 11,
-                        end_column: 12,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: ":a",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 54,
-                        end_line: 54,
-                        start_column: 2,
-                        end_column: 4,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: ":a",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 66,
-                        end_line: 66,
-                        start_column: 1,
-                        end_column: 3,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: ":b",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 54,
-                        end_line: 54,
-                        start_column: 7,
-                        end_column: 9,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: ":c",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 54,
-                        end_line: 54,
-                        start_column: 12,
-                        end_column: 14,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: ":keyword",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 13,
-                        end_line: 13,
-                        start_column: 8,
-                        end_column: 16,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "false",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 62,
-                        end_line: 62,
-                        start_column: 1,
-                        end_column: 6,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "nil",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 12,
-                        end_line: 12,
-                        start_column: 8,
-                        end_column: 11,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "nil",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 63,
-                        end_line: 63,
-                        start_column: 1,
-                        end_column: 4,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Value,
-            name: "true",
-            definition: Some(
-                Occurrence {
-                    language: Clojure,
-                    absolute_path: "tests/fixtures/clojure.clj",
-                    range: Range {
-                        start_line: 61,
-                        end_line: 61,
-                        start_column: 1,
-                        end_column: 5,
                     },
                     roles: Roles(
                         [
