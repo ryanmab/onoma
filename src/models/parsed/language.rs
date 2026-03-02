@@ -32,6 +32,9 @@ pub enum Language {
 
     /// Clojure
     Clojure,
+
+    /// Python
+    Python,
 }
 
 /// A particular file extension for a supported language ([`Language`]).
@@ -59,6 +62,7 @@ impl TryFrom<&FileExtension<'_>> for Language {
             "js" => Ok(Self::Javascript),
             "jsx" => Ok(Self::JavascriptJsx),
             "clj" => Ok(Self::Clojure),
+            "py" => Ok(Self::Python),
             _ => Err(parser::Error::InvalidUri(value.0.to_string())),
         }
     }
@@ -75,6 +79,7 @@ impl From<Language> for FileExtension<'_> {
             Language::Javascript => "js",
             Language::JavascriptJsx => "jsx",
             Language::Clojure => "clj",
+            Language::Python => "py",
         })
     }
 }
@@ -106,6 +111,7 @@ impl From<Language> for LanguageFn {
             Language::TypeScriptJsx => tree_sitter_typescript::LANGUAGE_TSX,
             Language::Javascript | Language::JavascriptJsx => tree_sitter_javascript::LANGUAGE,
             Language::Clojure => tree_sitter_clojure_orchard::LANGUAGE,
+            Language::Python => tree_sitter_python::LANGUAGE,
         }
     }
 }
@@ -132,6 +138,7 @@ impl Language {
                 include_str!("./../../parser/treesitter/scm/javascript_jsx_symbols.scm")
             }
             Self::Clojure => include_str!("./../../parser/treesitter/scm/clojure_symbols.scm"),
+            Self::Python => include_str!("./../../parser/treesitter/scm/python_symbols.scm"),
         }
     }
 }
