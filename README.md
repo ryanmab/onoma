@@ -33,6 +33,7 @@ indexer and resolver which can be cross-compiled and integrated into text editor
 - Lua (`.lua`)
 - Clojure (`.clj`)
 - TypeScript (`.ts` and `.tsx`) / JavaScript (`.js` and `.jsx`)
+- Python (`.py`)
 
 ## Usage
 
