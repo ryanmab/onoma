@@ -25,7 +25,7 @@ notify-debouncer-mini =  "0.7.0"
 thiserror = "2.0.18"
 tokio = { version = "1.49.0", features=["macros"]}
 tree-sitter =  "0.26.3"
-tree-sitter-language = "0.1.6"
+tree-sitter-language = "0.1.7"
 ignore = "0.4.25"
 sqlx = { version = "0.8.6", features = ["chrono", "runtime-tokio", "sqlite"] }
 chrono = "0.4.44"
