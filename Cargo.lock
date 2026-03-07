@@ -754,9 +754,9 @@ dependencies = [
 
 [[package]]
 name = "ignored"
-version = "0.0.1"
+version = "0.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "51637ffa8724b5c05e3a8ff8ef99a6009af2467030040b95c5b8fc4136a197a0"
+checksum = "6113fe3624924e20f62662f486f4edeede89b18cf37b7192074ba11a7c9d6adb"
 dependencies = [
  "log",
  "regex",
