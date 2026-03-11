@@ -51,7 +51,7 @@ tree-sitter-python = "0.25.0"
 [dev-dependencies]
 rstest = { version = "0.26.1", features = []}
 insta = { version = "1.46.3", features = ["json", "redactions"]}
-tempfile = "3.26.0"
+tempfile = "3.27.0"
 mockall = "0.14.0"
 
 [profile.release]
