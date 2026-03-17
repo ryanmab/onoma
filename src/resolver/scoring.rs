@@ -17,20 +17,12 @@ pub fn fuzzy_match(
     symbol: &models::resolved::ResolvedSymbol,
     config: &frizbee::Config,
 ) -> Vec<frizbee::Match> {
-    let path = symbol.path.to_str().unwrap_or_default();
-
-    let path_symbol_prefix = format!("{path}:{}", symbol.name.as_str());
-
     // TODO: Should we batch the results from SQLite and perform matching on a
     // larger list? It'll be a tradeoff between Time to First Result (TTFR)
     // and SIMD performance. But, is the difference that much? Is it in fact
     // faster because SIMD is more efficient and the bridges aren't having to
     // continually repaint for every drip-fed result?
-    frizbee::match_list(
-        query,
-        &[path_symbol_prefix.as_str(), symbol.name.as_str()],
-        config,
-    )
+    frizbee::match_list(query, &[symbol.name.as_str()], config)
 }
 
 /// Calculate a score for a given symbol, using a set of results from fuzzy matching ([`fuzzy_match`]),
@@ -57,7 +49,7 @@ pub fn calculate_score<'a, 'b>(
     let entrypoint_file_penalty = if let Some(filename) = filename
         && utils::is_entrypoint_file(filename)
     {
-        // 1% penalty for symbols defined in an entrypoint - this helps to
+        // Penalty for symbols defined in an entrypoint - this helps to
         // filter out re-exports
         weight::ENTRYPOINT_FILE_SCORE_PENALTY
     } else {
@@ -67,7 +59,7 @@ pub fn calculate_score<'a, 'b>(
     let fuzzy_match_bonus: i64 = fuzzy_matches.map(weight::calculate_fuzzy_match_bonus).sum();
 
     let symbol_kind_bonus = match symbol.kind {
-        // 3.5% bonus for the most common symbol kinds
+        // Bonus for the most commonly jumped to symbol kinds
         models::parsed::SymbolKind::Function
         | models::parsed::SymbolKind::Method
         | models::parsed::SymbolKind::Struct
@@ -79,10 +71,10 @@ pub fn calculate_score<'a, 'b>(
         | models::parsed::SymbolKind::EnumMember
         | models::parsed::SymbolKind::Interface => weight::COMMON_SYMBOL_KINDS_SCORE_BONUS,
 
-        // 0.5% bonus for less frequently but helpful symbol kinds
+        // Bonus for less frequently used, but helpful, symbol kinds
         models::parsed::SymbolKind::Variable => weight::INFREQUENT_SYMBOL_KINDS_SCORE_BONUS,
 
-        // 1.5% PENALTY for uncommon symbols
+        // Penalty for uncommon symbols
         models::parsed::SymbolKind::Package
         | models::parsed::SymbolKind::Module
         | models::parsed::SymbolKind::SelfParameter => weight::UNCOMMON_SYMBOL_KINDS_SCORE_PENALTY,
@@ -92,14 +84,14 @@ pub fn calculate_score<'a, 'b>(
     };
 
     let test_harness_penalty = if utils::is_part_of_test_harness(symbol.path.as_path()) {
-        // 0.5% penalty for symbols which are part of a test harness (i.e. it's likely a test
+        // Penalty for symbols which are part of a test harness (i.e. it's likely a test
         // case, part of a test file, etc.)
         weight::TEST_HARNESS_SCORE_PENALTY
     } else {
         0
     };
 
-    // 1% penalty for each directory distance from the current focused file (up to max of 8 directories - or 8%)
+    // Penalty for each directory distance from the current focused file (up to max of 8 directories - or 8%)
     let distance_penalty = current_file.map_or(0, |current_file| {
         weight::calculate_distance_score_penalty(utils::get_path_distance(
             current_file,
@@ -145,8 +137,8 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 35; // Increase the score by 3.5%, because it is a struct
-        target_score -= 10; // Reduce the default score by 1% because the Symbol is in a module file
+        target_score += 15; // Increase the score by 1.5%, because it is a struct
+        target_score -= 20; // Reduce the default score by 2% because the Symbol is in a module file
 
         assert_eq!(target_score, score);
     }
@@ -169,7 +161,7 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 35; // Increase the score by 3.5%, because it is a struct
+        target_score += 15; // Increase the score by 1.5%, because it is a struct
         // Notice, no decrement for being defined in an entrypoint file - because the filename is not
         // available. Arguably this should be an invariant, and caught with a panic/assert.
 
@@ -206,8 +198,8 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 5; // Increase the score by 0.5%, because it is a variable
-        target_score -= 6; // Reduce the default score by 6% because the symbol is 6 directories apart
+        target_score += 10; // Increase the score by 1%, because it is a variable
+        target_score -= 12; // Reduce the default score by 12% because the symbol is 6 directories apart
 
         assert_eq!(target_score, score);
     }
@@ -253,8 +245,8 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 35; // Increase the score by 3.5%, because it is a Class
-        target_score -= 5; // Decrease the score by 0.5%, because its in a test file
+        target_score += 15; // Increase the score by 1.5%, because it is a Class
+        target_score -= 10; // Decrease the score by 1.0%, because its in a test file
 
         assert_eq!(target_score, score);
     }
