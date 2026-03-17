@@ -137,7 +137,7 @@ impl DatabaseBackedIndexer {
             .await
             .map_err(Error::ParsingFailed)?;
 
-        log::info!("Parsed file: {}", path.display());
+        log::trace!("Parsed file: {}", path.display());
         let now = chrono::Utc::now();
 
         let mut transaction = self
@@ -178,6 +178,13 @@ impl DatabaseBackedIndexer {
         .await
         .map_err(indexer::Error::QueryFailed)?;
 
+        log::debug!(
+            "Parsed {} symbols found in {}.",
+            index.symbols.len(),
+            path.display()
+        );
+
+        let mut symbols = 0;
         for symbol in index.symbols {
             let Some(definition) = symbol.definition else {
                 log::warn!("Symbol {} has no definition, skipping", symbol.name);
@@ -194,7 +201,7 @@ impl DatabaseBackedIndexer {
                 );
             }
 
-            log::info!(
+            log::trace!(
                 "Persisting {} found in {}.",
                 symbol.name,
                 definition.absolute_path.display(),
@@ -239,6 +246,8 @@ impl DatabaseBackedIndexer {
             .execute(&mut *transaction)
             .await
             .map_err(Error::QueryFailed)?;
+
+            symbols += 1;
         }
 
         // TODO: File bloom filter here?
@@ -246,6 +255,8 @@ impl DatabaseBackedIndexer {
             .commit()
             .await
             .map_err(indexer::Error::QueryFailed)?;
+
+        log::debug!("Persisted {} symbols found in {}.", symbols, path.display());
 
         Ok(())
     }

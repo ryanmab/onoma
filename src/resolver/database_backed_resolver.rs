@@ -79,7 +79,10 @@ impl Resolver for DatabaseBackedResolver {
         let pool = self.pool.clone();
 
         tokio::spawn(async move {
-            log::info!("Executing query: {query}");
+            log::info!(
+                "Executing query: \"{query}\" (from current file: {:?})",
+                ctx.current_file
+            );
 
             let mut supported_symbols = ctx.symbol_kinds.unwrap_or_default();
             if supported_symbols.is_empty() {
