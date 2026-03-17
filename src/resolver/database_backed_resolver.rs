@@ -113,14 +113,7 @@ impl Resolver for DatabaseBackedResolver {
 
             let mut count = 0;
             let config = frizbee::Config {
-                // NOTE: This range must never be below the length of the query, otherwise
-                // frizbee will panic
-                max_typos: Some(
-                    (u16::try_from(query.len())
-                        .expect("Query length should always be at most 16 unsigned integer")
-                        / 5)
-                    .clamp(0, 4),
-                ),
+                max_typos: Some(0),
                 sort: false,
                 scoring: frizbee::Scoring::default(),
             };
