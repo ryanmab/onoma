@@ -165,7 +165,7 @@ where
                         continue;
                     }
 
-                    log::debug!("Indexing file change: {}", path.display());
+                    log::trace!("Indexing file change: {}", path.display());
 
                     indexer
                         .lock()
@@ -175,7 +175,7 @@ where
                         .map_err(watcher::Error::IndexingFailed)?;
                 }
                 path if !path.exists() => {
-                    log::debug!(
+                    log::trace!(
                         "Deindexing as the file no longer exists: {}",
                         path.display()
                     );
