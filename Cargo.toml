@@ -41,7 +41,7 @@ frizbee = "0.8.3"
 
 # Supported languages
 tree-sitter-go = "0.25.0"
-tree-sitter-rust = "0.24.0"
+tree-sitter-rust = "0.24.1"
 tree-sitter-lua = "0.5.0"
 tree-sitter-typescript = "0.23.2"
 tree-sitter-clojure-orchard = "0.2.5"
