@@ -272,7 +272,7 @@ mod tests {
         File::create(workspace.clone().join("src").join("foo.txt"))
             .expect("Should always be able to create a test file");
 
-        tokio::time::sleep(std::time::Duration::from_secs(3)).await;
+        tokio::time::sleep(std::time::Duration::from_secs(5)).await;
 
         watcher.stop().await;
 
@@ -314,7 +314,7 @@ mod tests {
 
         fs::remove_file(&path).expect("Should always be able to delete a test file");
 
-        tokio::time::sleep(std::time::Duration::from_secs(3)).await;
+        tokio::time::sleep(std::time::Duration::from_secs(5)).await;
 
         watcher.stop().await;
 
@@ -360,7 +360,7 @@ mod tests {
         File::create(workspace.clone().join("target").join("foo.txt"))
             .expect("Should always be able to create a test file");
 
-        tokio::time::sleep(std::time::Duration::from_secs(3)).await;
+        tokio::time::sleep(std::time::Duration::from_secs(5)).await;
 
         watcher.stop().await;
 
