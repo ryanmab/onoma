@@ -324,14 +324,21 @@ mod tests {
 
     #[tokio::test]
     async fn test_watcher_changed_ignored_file() {
+        let temp_dir =
+            tempdir().expect("Should always be able to create a temporary project folder");
+
         let mut mock_indexer = MockIndexer::default();
 
-        let workspace = Arc::new(
-            tempfile::tempdir()
-                .expect("Should always be able to create a temporary project folder")
-                .keep(),
-        );
+        let workspace = Arc::new(temp_dir.path().to_path_buf());
         let workspaces = vec![workspace.clone()];
+
+        // Create a .git directory to ensure the `.gitignore` file is respected (they are only
+        // respected when in a git root)
+        fs::create_dir(temp_dir.path().join(".git"))
+            .expect("Should always be able to create a test directory");
+
+        fs::copy(".gitignore", temp_dir.path().join(".gitignore"))
+            .expect("Should always be able to setup the .gitignore");
 
         mock_indexer
             .expect_get_workspaces()
@@ -351,20 +358,14 @@ mod tests {
 
         watcher.start().await.expect("Watcher to start");
 
-        fs::copy(".gitignore", workspace.clone().join(".gitignore"))
-            .expect("Should always be able to setup the .gitignore");
-
-        fs::create_dir_all(workspace.clone().join("target"))
+        fs::create_dir_all(temp_dir.path().join("target"))
             .expect("Should always be able to create a test directory");
 
-        File::create(workspace.clone().join("target").join("foo.txt"))
+        File::create(temp_dir.path().join("target").join("foo.txt"))
             .expect("Should always be able to create a test file");
 
         tokio::time::sleep(std::time::Duration::from_secs(5)).await;
 
         watcher.stop().await;
-
-        fs::remove_dir_all(workspace.as_path())
-            .expect("Should always be able to clean up temporary project folder");
     }
 }
