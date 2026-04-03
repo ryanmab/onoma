@@ -116,7 +116,9 @@ impl Resolver for DatabaseBackedResolver {
 
             let mut count = 0;
             let config = frizbee::Config {
-                max_typos: Some(0),
+                // NOTE: This must never be below the length of the query, otherwise
+                // frizbee will panic
+                max_typos: Some(u16::try_from(query.len().div_euclid(3).min(4)).unwrap_or(0)),
                 sort: false,
                 scoring: frizbee::Scoring::default(),
             };
