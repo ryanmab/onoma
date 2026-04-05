@@ -17,6 +17,14 @@ pub const TEST_HARNESS_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 10) / 1
 /// filter out re-exports.
 pub const ENTRYPOINT_FILE_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 20) / 1000);
 
+/// 1% penalty for symbols defined in the same file as the one currently focussed.
+///
+/// Theres an interesting usability question here: the idea is that it's likely that the
+/// intent of a workspace-wide search would be to find symbols which are within close proximity
+/// ([`calculate_distance_score_penalty`]) but also not in the same file (i.e. since you could
+/// just navigate to that symbol in line). However, how true is this in practice?
+pub const SAME_FILE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 10) / 1000);
+
 /// 2% penalty for each directory distance from the current focused file (up to max of
 /// 8 directories - aka a 12% penalty)
 pub fn calculate_distance_score_penalty(distance: usize) -> i64 {
