@@ -93,6 +93,14 @@ pub fn calculate_score<'a, 'b>(
 
     // Penalty for each directory distance from the current focused file (up to max of 8 directories - or 8%)
     let distance_penalty = current_file.map_or(0, |current_file| {
+        if current_file == symbol.path {
+            // Apply a penalty to symbols inside the current file. The idea is that it's likely that the
+            // intent of a workspace-wide search is to find symbols which are within close proximity
+            // ([`calculate_distance_score_penalty`]), but also not in a place where it's more convenient
+            // to just grep/navigate to.
+            return weight::SAME_FILE_PENALTY;
+        }
+
         weight::calculate_distance_score_penalty(utils::get_path_distance(
             current_file,
             symbol.path.as_path(),
@@ -200,6 +208,36 @@ mod tests {
 
         target_score += 10; // Increase the score by 1%, because it is a variable
         target_score -= 12; // Reduce the default score by 12% because the symbol is 6 directories apart
+
+        assert_eq!(target_score, score);
+    }
+
+    #[test]
+    pub fn test_scoring_variable_in_same_file() {
+        let symbol = ResolvedSymbol {
+            id: 1,
+            name: "ResolvedSymbol".to_string(),
+            kind: SymbolKind::Variable,
+            path: PathBuf::from_iter(["", "some", "file", "over", "here", "file.rs"]),
+            score: Score::default(),
+            start_line: 1,
+            start_column: 1,
+            end_line: 1,
+            end_column: 14,
+        };
+
+        let score = super::calculate_score(
+            &symbol,
+            Vec::new().iter(),
+            Some(&PathBuf::from_iter([
+                "", "some", "file", "over", "here", "file.rs",
+            ])),
+        );
+
+        let mut target_score = DEFAULT_SCORE;
+
+        target_score += 10; // Increase the score by 1%, because it is a variable
+        target_score -= 10; // Reduce the default score by 1% because the symbol is in the current file
 
         assert_eq!(target_score, score);
     }
