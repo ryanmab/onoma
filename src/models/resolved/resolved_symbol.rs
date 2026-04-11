@@ -33,6 +33,9 @@ pub struct ResolvedSymbol {
     /// Rust project.
     pub kind: models::parsed::SymbolKind,
 
+    /// The language the symbol is defined in.
+    pub language: models::parsed::Language,
+
     /// The path to the file which contains the symbol.
     #[sqlx[try_from = "String"]]
     pub path: PathBuf,

@@ -1,4 +1,68 @@
-use std::{ffi::OsStr, path::Path};
+use std::{ffi::OsStr, path::Path, string::ToString};
+
+use sea_query::{Cond, Expr, ExprTrait, SqliteQueryBuilder};
+use sea_query_sqlx::SqlxBinder;
+
+use crate::resolver::{DatabaseBackedResolver, Resolver, SymbolKindFilter};
+
+/// Get the SQL for resolving symbols with specific parameters (namely, query and
+/// symbol kinds) for [`DatabaseBackedResolver::query`].
+pub fn get_resolver_query_sql(
+    ctx: &<DatabaseBackedResolver as Resolver>::QueryContext,
+) -> (String, sea_query_sqlx::SqlxValues) {
+    let mut query = sea_query::Query::select();
+
+    query
+        .columns([
+            ("symbol", "id"),
+            ("symbol", "kind"),
+            ("symbol", "language"),
+            ("file", "path"),
+            ("symbol", "name"),
+            ("symbol", "start_line"),
+            ("symbol", "end_line"),
+            ("symbol", "start_column"),
+            ("symbol", "end_column"),
+        ])
+        .from("symbol")
+        .join(
+            sea_query::JoinType::InnerJoin,
+            "file",
+            Expr::col(("symbol", "file_id")).equals(("file", "id")),
+        );
+
+    match &*ctx.symbol_kinds {
+        Some(SymbolKindFilter::Global(symbol_kinds)) => {
+            query.and_where(Expr::col(("symbol", "kind")).is_in(symbol_kinds.as_slice()));
+        }
+        Some(SymbolKindFilter::PerLanguage(language_map)) => {
+            let mut specified_languages = Cond::any();
+            for (language, symbol_kinds) in language_map {
+                specified_languages = specified_languages.add(
+                    Cond::all()
+                        .add(Expr::col(("symbol", "language")).eq(language))
+                        .add(Expr::col(("symbol", "kind")).is_in(symbol_kinds.as_slice())),
+                );
+            }
+
+            query.cond_where(
+                specified_languages.or(
+                    // Any languages not in the map should result in all symbols being returned
+                    Expr::col(("symbol", "language")).is_not_in(
+                        language_map
+                            .keys()
+                            .map(ToString::to_string)
+                            .collect::<Vec<_>>()
+                            .as_slice(),
+                    ),
+                ),
+            );
+        }
+        None => {}
+    }
+
+    query.build_sqlx(SqliteQueryBuilder)
+}
 
 /// Check if a given file (i.e. `path/to/some/file/lib.rs`) is in what would
 /// traditionally be an entrypoint file in various programming languages.

@@ -43,11 +43,17 @@ pub enum Error {
     #[error("Parsing error occurred while indexing file: {0:?}")]
     ParsingFailed(parser::Error),
 
+    /// A generated SQL query during indexing was not valid.
+    ///
+    /// This would usually indicate an internal error with the crate.
+    #[error("Invalid query during indexing: {0}")]
+    InvalidQuerySyntax(#[from] sea_query::error::Error),
+
     /// A database error occurred during indexing.
     ///
     /// This can happen while inserting, updating, or querying the index
     /// database. The wrapped `sqlx::Error` contains the underlying SQL error.
-    #[error("Database error occurred during indexing: {0}")]
+    #[error("Query error during indexing: {0}")]
     QueryFailed(#[from] sqlx::Error),
 
     /// Database migration failed.

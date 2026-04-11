@@ -1,4 +1,9 @@
-use std::{fmt::Debug, path::PathBuf};
+use std::{
+    collections::HashMap,
+    fmt::Debug,
+    path::{Path, PathBuf},
+    sync::Arc,
+};
 
 #[cfg(test)]
 use mockall::{automock, predicate::*};
@@ -10,6 +15,27 @@ use tokio_stream::wrappers::ReceiverStream;
 use crate::models::resolved::ResolvedSymbol;
 
 use crate::models::{self};
+
+/// Specifies which symbol kinds should be included when executing a query.
+///
+/// This acts as a filter over indexed symbols, allowing queries to either:
+///
+/// - restrict to a fixed set applied globally, or
+/// - restrict per language.
+#[derive(Debug)]
+pub enum SymbolKindFilter {
+    /// Restrict results to the given symbol kinds, regardless of language.
+    ///
+    /// This applies the same filter across all indexed files.
+    Global(Vec<models::parsed::SymbolKind>),
+
+    /// Restrict results to symbol kinds based on the language the symbol
+    /// is defined in.
+    ///
+    /// For symbols defined in a language not present in the map, no
+    /// language-specific filtering is applied.
+    PerLanguage(HashMap<models::parsed::Language, Vec<models::parsed::SymbolKind>>),
+}
 
 /// The Resolver trait defines the core functionality required for resolving
 /// semantic symbols from indexed source code, within registered workspaces.
@@ -42,27 +68,27 @@ pub struct Context {
     ///
     /// This helps influence scoring to favor symbols which are closer to
     /// the current file.
-    pub current_file: Option<PathBuf>,
+    pub current_file: Arc<Option<PathBuf>>,
 
-    /// The kinds of symbols which should be returned.
+    /// The kinds of symbols which should be returned from a query.
     ///
-    /// Queries where the context provides [`Option::None`] or an empty [`Vec`] will return symbols of all kinds.
-    pub symbol_kinds: Option<Vec<models::parsed::SymbolKind>>,
+    /// Queries where the context provides [`Option::None`] will return symbols of any kind.
+    pub symbol_kinds: Arc<Option<SymbolKindFilter>>,
 }
 
 impl Context {
     /// Set the current file.
     #[must_use]
-    pub fn with_current_file(mut self, current_file: PathBuf) -> Self {
-        self.current_file = Some(current_file);
+    pub fn with_current_file(mut self, current_file: impl AsRef<Path>) -> Self {
+        self.current_file = Arc::new(Some(current_file.as_ref().into()));
 
         self
     }
 
     /// Set the symbol kinds.
     #[must_use]
-    pub fn with_symbol_kinds(mut self, symbol_kinds: &[models::parsed::SymbolKind]) -> Self {
-        self.symbol_kinds = Some(symbol_kinds.to_vec());
+    pub fn with_symbol_kinds(mut self, symbol_kinds: SymbolKindFilter) -> Self {
+        self.symbol_kinds = Arc::new(Some(symbol_kinds));
 
         self
     }

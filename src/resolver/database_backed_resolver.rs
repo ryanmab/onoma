@@ -1,17 +1,16 @@
 use std::{path::Path, time::Duration};
 
-use itertools::Itertools;
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
-use strum::IntoEnumIterator;
 use tokio::sync::mpsc::{self, error::SendTimeoutError};
 use tokio_stream::StreamExt;
 use tokio_stream::wrappers::ReceiverStream;
 
 use crate::{
-    models::{self, resolved::ResolvedSymbol},
+    models::resolved::ResolvedSymbol,
     resolver::{
         Context, Resolver, constant,
         scoring::{self, fuzzy_match},
+        utils::{self},
     },
     utils::get_database_path,
 };
@@ -84,35 +83,10 @@ impl Resolver for DatabaseBackedResolver {
                 ctx.current_file
             );
 
-            let mut supported_symbols = ctx.symbol_kinds.unwrap_or_default();
-            if supported_symbols.is_empty() {
-                supported_symbols = models::parsed::SymbolKind::iter().collect();
-            }
+            let (sql, values) = utils::get_resolver_query_sql(&ctx);
 
-            let sql_query = format!(
-                r"
-                SELECT
-                    symbol.id,
-                    symbol.kind,
-                    file.path,
-                    symbol.name,
-                    symbol.start_line,
-                    symbol.end_column,
-                    symbol.end_line,
-                    symbol.start_column
-                FROM symbol
-                    JOIN file ON symbol.file_id = file.id
-                WHERE
-                    1=1
-                    AND symbol.kind IN ({})
-                ",
-                supported_symbols
-                    .iter()
-                    .map(|kind| format!("\"{kind}\""))
-                    .join(",")
-            );
-
-            let mut results = sqlx::query_as::<_, ResolvedSymbol>(&sql_query).fetch(&pool);
+            let mut results =
+                sqlx::query_as_with::<_, ResolvedSymbol, _>(&sql, values).fetch(&pool);
 
             let mut count = 0;
             let config = frizbee::Config {
@@ -202,7 +176,7 @@ impl Resolver for DatabaseBackedResolver {
 
 #[cfg(test)]
 mod tests {
-    use std::path::PathBuf;
+    use std::{collections::HashMap, path::PathBuf};
 
     use insta::assert_json_snapshot;
     use tempfile::tempdir;
@@ -210,8 +184,11 @@ mod tests {
 
     use crate::{
         indexer::{self, Indexer},
-        models::{self, parsed::SymbolKind},
-        resolver::Resolver,
+        models::{
+            self,
+            parsed::{Language, SymbolKind},
+        },
+        resolver::{Resolver, SymbolKindFilter},
     };
 
     #[tokio::test]
@@ -219,9 +196,9 @@ mod tests {
         let storage_path = tempdir()
             .expect("Should never fail when creating a temporary path for testing indexing");
 
-        let fixutes = PathBuf::from("tests/fixtures/");
+        let fixtures = PathBuf::from("tests/fixtures/");
 
-        let workspaces = vec![fixutes.as_path()];
+        let workspaces = vec![fixtures.as_path()];
 
         let indexer = indexer::DatabaseBackedIndexer::new(storage_path.path(), workspaces.clone())
             .await
@@ -251,9 +228,9 @@ mod tests {
         let storage_path = tempdir()
             .expect("Should never fail when creating a temporary path for testing indexing");
 
-        let fixutes = PathBuf::from("tests/fixtures/");
+        let fixtures = PathBuf::from("tests/fixtures/");
 
-        let workspaces = vec![fixutes.as_path()];
+        let workspaces = vec![fixtures.as_path()];
 
         let indexer = indexer::DatabaseBackedIndexer::new(storage_path.path(), workspaces.clone())
             .await
@@ -266,8 +243,53 @@ mod tests {
         let mut resolved_symbols: Vec<models::resolved::ResolvedSymbol> = resolver
             .query(
                 String::new(),
-                super::Context::default()
-                    .with_symbol_kinds(&[SymbolKind::Function, SymbolKind::Method]),
+                super::Context::default().with_symbol_kinds(SymbolKindFilter::Global(vec![
+                    SymbolKind::Function,
+                    SymbolKind::Method,
+                ])),
+            )
+            .collect()
+            .await;
+
+        // The order of symbols is not guaranteed, so we need the sort symbols to keep the
+        // snapshot predictable
+        resolved_symbols.sort_unstable();
+
+        assert_json_snapshot!(
+            resolved_symbols,
+            {"[].id" => 0} // IDs are non-deterministic, so just blank them out
+        );
+    }
+
+    #[tokio::test]
+    pub async fn test_resolving_symbols_of_specific_type_by_language() {
+        let storage_path = tempdir()
+            .expect("Should never fail when creating a temporary path for testing indexing");
+
+        let fixtures = PathBuf::from("tests/fixtures/");
+
+        let workspaces = vec![fixtures.as_path()];
+
+        let indexer = indexer::DatabaseBackedIndexer::new(storage_path.path(), workspaces.clone())
+            .await
+            .expect("Should be able to create the empty index");
+
+        let resolver = super::DatabaseBackedResolver::new(storage_path.path(), workspaces.clone());
+
+        assert!(indexer.index_workspaces().await.is_ok());
+
+        let mut resolved_symbols: Vec<models::resolved::ResolvedSymbol> = resolver
+            .query(
+                String::new(),
+                super::Context::default().with_symbol_kinds(SymbolKindFilter::PerLanguage(
+                    HashMap::from([
+                        (
+                            Language::TypeScript,
+                            vec![SymbolKind::Function, SymbolKind::Method],
+                        ),
+                        (Language::Lua, vec![SymbolKind::Function]),
+                    ]),
+                )),
             )
             .collect()
             .await;
