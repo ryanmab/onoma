@@ -392,6 +392,7 @@ mod tests {
             id: 1,
             name: name.clone(),
             kind: SymbolKind::Lemma,
+            language: Language::Clojure,
             path: path.clone(),
             score: Score::default(),
             start_line: 1,
