@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS symbol (
     start_column INTEGER NOT NULL,
     end_line INTEGER NOT NULL,
     end_column INTEGER NOT NULL,
+    language varchar(255) NOT NULL,
     indexed_at STRING NOT NULL,
     FOREIGN KEY (file_id) REFERENCES file(id) ON DELETE CASCADE
 );

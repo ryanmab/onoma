@@ -9,4 +9,4 @@ mod weight;
 
 pub use database_backed_resolver::DatabaseBackedResolver;
 
-pub use types::{Context, Resolver};
+pub use types::{Context, Resolver, SymbolKindFilter};

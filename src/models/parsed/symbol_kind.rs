@@ -786,3 +786,9 @@ impl From<String> for SymbolKind {
         Self::try_from(value.as_str()).unwrap_or_default()
     }
 }
+
+impl From<&SymbolKind> for sea_query::Value {
+    fn from(value: &SymbolKind) -> Self {
+        Self::String(Some(value.to_string()))
+    }
+}

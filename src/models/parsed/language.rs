@@ -1,39 +1,64 @@
 use std::{ops::Deref, path::Path};
 
+use serde::{Deserialize, Serialize};
 use strum_macros::EnumIter;
 use tree_sitter_language::LanguageFn;
 
 use crate::parser;
 
 /// The supported languages.
-#[derive(Debug, Clone, Copy, EnumIter, Hash, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(
+    Debug,
+    Clone,
+    Copy,
+    EnumIter,
+    Hash,
+    Eq,
+    PartialEq,
+    PartialOrd,
+    Ord,
+    sqlx::Type,
+    strum_macros::Display,
+    strum_macros::EnumString,
+    Serialize,
+    Deserialize,
+)]
 #[non_exhaustive]
 pub enum Language {
     /// Golang
+    #[strum(ascii_case_insensitive)]
     Go,
 
     /// Rust
+    #[strum(ascii_case_insensitive)]
     Rust,
 
     /// Lua
+    #[strum(ascii_case_insensitive)]
     Lua,
 
     /// TypeScript
+    #[strum(ascii_case_insensitive)]
     TypeScript,
 
     /// TypeScript JSX
+    #[strum(ascii_case_insensitive)]
     TypeScriptJsx,
 
     ///  Javascript
+    #[strum(ascii_case_insensitive)]
     Javascript,
 
     /// Javascript JSX
+    #[strum(ascii_case_insensitive)]
     JavascriptJsx,
 
     /// Clojure
+    #[strum(ascii_case_insensitive)]
     Clojure,
 
     /// Python
+    #[strum(ascii_case_insensitive)]
     Python,
 }
 
@@ -140,5 +165,11 @@ impl Language {
             Self::Clojure => include_str!("./../../parser/treesitter/scm/clojure_symbols.scm"),
             Self::Python => include_str!("./../../parser/treesitter/scm/python_symbols.scm"),
         }
+    }
+}
+
+impl From<&Language> for sea_query::Value {
+    fn from(value: &Language) -> Self {
+        Self::String(Some(value.to_string()))
     }
 }

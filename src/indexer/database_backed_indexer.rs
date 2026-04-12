@@ -5,6 +5,8 @@ use crate::{
     utils::get_database_path,
 };
 use itertools::Itertools;
+use sea_query::{Expr, ExprTrait, OnConflict, Query, SqliteQueryBuilder};
+use sea_query_sqlx::SqlxBinder;
 use sqlx::sqlite::SqliteConnectOptions;
 use std::{
     iter,
@@ -149,30 +151,33 @@ impl DatabaseBackedIndexer {
         let file_id: i64 = {
             let path = path.to_string_lossy();
 
-            sqlx::query_scalar!(
-                r#"
-                    INSERT INTO file (
-                        path,
-                        indexed_at
-                    )
-                    VALUES (?, ?)
-                    ON CONFLICT(path) DO UPDATE SET indexed_at = excluded.indexed_at
-                    RETURNING id
-                    "#,
-                path,
-                now
-            )
-            .fetch_one(&mut *transaction)
-            .await
-            .map_err(Error::QueryFailed)?
+            let (sql, values) = sea_query::Query::insert()
+                .into_table("file")
+                .columns(["path", "indexed_at"])
+                .values([path.into(), now.into()])
+                .map_err(indexer::Error::InvalidQuerySyntax)?
+                .on_conflict(
+                    OnConflict::column("path")
+                        .update_column("indexed_at")
+                        .value("indexed_at", now)
+                        .to_owned(),
+                )
+                .returning(Query::returning().column(("file", "id")))
+                .build_sqlx(SqliteQueryBuilder);
+
+            sqlx::query_scalar_with::<_, i64, _>(&sql, values)
+                .fetch_one(&mut *transaction)
+                .await
+                .map_err(Error::QueryFailed)?
         };
 
         // Remove all the old symbols, before persisting all the current symbols
-        sqlx::query!(
-            r#"
-                DELETE FROM symbol WHERE file_id = ?
-                "#,
-            file_id
+        sqlx::query(
+            &sea_query::Query::delete()
+                .from_table("symbol")
+                .and_where(Expr::col(("symbol", "file_id")).equals(file_id.to_string()))
+                .build_sqlx(SqliteQueryBuilder)
+                .0,
         )
         .execute(&mut *transaction)
         .await
@@ -219,33 +224,38 @@ impl DatabaseBackedIndexer {
             let end_column: i32 = i32::try_from(range.end_column)
                 .map_err(|_| indexer::Error::InvalidRange(range.clone()))?;
 
+            let (sql, values) = sea_query::Query::insert()
+                .into_table("symbol")
+                .columns([
+                    "kind",
+                    "name",
+                    "file_id",
+                    "start_line",
+                    "start_column",
+                    "end_line",
+                    "end_column",
+                    "language",
+                    "indexed_at",
+                ])
+                .values([
+                    symbol.kind.to_string().into(),
+                    symbol.name.into(),
+                    file_id.into(),
+                    start_line.into(),
+                    start_column.into(),
+                    end_line.into(),
+                    end_column.into(),
+                    definition.language.to_string().into(),
+                    now.into(),
+                ])
+                .map_err(indexer::Error::InvalidQuerySyntax)?
+                .build_sqlx(SqliteQueryBuilder);
+
             // Create new symbols
-            sqlx::query!(
-                r#"
-                    INSERT INTO symbol (
-                        kind,
-                        name,
-                        file_id,
-                        start_line,
-                        start_column,
-                        end_line,
-                        end_column,
-                        indexed_at
-                    )
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                    "#,
-                symbol.kind,
-                symbol.name,
-                file_id,
-                start_line,
-                start_column,
-                end_line,
-                end_column,
-                now
-            )
-            .execute(&mut *transaction)
-            .await
-            .map_err(Error::QueryFailed)?;
+            sqlx::query_with(&sql, values)
+                .execute(&mut *transaction)
+                .await
+                .map_err(Error::QueryFailed)?;
 
             symbols += 1;
         }
@@ -403,9 +413,14 @@ impl Indexer for DatabaseBackedIndexer {
     async fn deindex(&self, path: &Path) -> Result<()> {
         let path_pattern = format!("{}%", path.display());
 
+        let (sql, values) = sea_query::Query::delete()
+            .from_table("file")
+            .and_where(Expr::col(("file", "path")).like(path_pattern))
+            .build_sqlx(SqliteQueryBuilder);
+
         // Removing the file will trigger a removal of any associated symbols as the FK
         // is set to cascade delete
-        sqlx::query!(r#"DELETE FROM file WHERE path LIKE ?"#, path_pattern)
+        sqlx::query_with(&sql, values)
             .execute(&self.pool)
             .await
             .map_err(indexer::Error::QueryFailed)?;
