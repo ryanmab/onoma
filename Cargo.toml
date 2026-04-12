@@ -39,7 +39,7 @@ tokio-stream = { version = "0.1.18", features = ["sync"] }
 serde = { version = "1.0.228", features = ["serde_derive"] }
 serde_json = "1.0.149"
 ignored = "0.0.5"
-frizbee = "0.8.3"
+frizbee = "0.9.0"
 
 # Supported languages
 tree-sitter-go = "0.25.0"
