@@ -5,6 +5,45 @@ use crate::{
     resolver::{constant::DEFAULT_SCORE, utils, weight},
 };
 
+/// Get the fuzzy matching config for a particular query.
+///
+/// This factors in smart casing and typos to produce a best effort fuzzy match
+/// behaviour which behaves as you'd expect when searching.
+pub fn get_fuzzy_config(query: &str) -> frizbee::Config {
+    let has_uppercase = query.chars().any(char::is_uppercase);
+
+    frizbee::Config {
+        // Scale the number of typos with the length of the query.
+        //
+        // In other words, allow for more misplaced letters in fuzzy matching
+        // as more characters are typed.
+        //
+        // This is a trade off as symbols become less relevant the more typos you allow (as
+        // in, you'll see more symbols which are further from the original query).
+        //
+        // NOTE: This must never be below the length of the query, otherwise
+        // frizbee will panic
+        max_typos: Some(u16::try_from(query.len().div_euclid(3).min(4)).unwrap_or(0)),
+        sort: false,
+        scoring: frizbee::Scoring {
+            // Make the fuzzy matching act more like smart case grep in Vim, in that if the query
+            // is all lowercase, the query is treated as case insensitive (i.e. no favoring to
+            // matched casing).
+            capitalization_bonus: if has_uppercase {
+                weight::CASE_SENSITIVE_MATCHING_CAPITALISATION_BONUS
+            } else {
+                0
+            },
+            matching_case_bonus: if has_uppercase {
+                weight::CASE_SENSITIVE_MATCHING_CASE_BONUS
+            } else {
+                0
+            },
+            ..Default::default()
+        },
+    }
+}
+
 /// Run fuzzy matching on a given symbol, for a query, using a set of configuration.
 ///
 /// In practice, this fuzzy matches the symbols path (if available) and the symbols
@@ -237,7 +276,7 @@ mod tests {
         let mut target_score = DEFAULT_SCORE;
 
         target_score += 10; // Increase the score by 1%, because it is a variable
-        target_score -= 10; // Reduce the default score by 1% because the symbol is in the current file
+        target_score -= 10; // Reduce the default score by 1%
 
         assert_eq!(target_score, score);
     }

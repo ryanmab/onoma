@@ -115,13 +115,7 @@ impl Resolver for DatabaseBackedResolver {
             let mut results = sqlx::query_as::<_, ResolvedSymbol>(&sql_query).fetch(&pool);
 
             let mut count = 0;
-            let config = frizbee::Config {
-                // NOTE: This must never be below the length of the query, otherwise
-                // frizbee will panic
-                max_typos: Some(u16::try_from(query.len().div_euclid(3).min(4)).unwrap_or(0)),
-                sort: false,
-                scoring: frizbee::Scoring::default(),
-            };
+            let config = scoring::get_fuzzy_config(&query);
 
             while let Some(result) = results.next().await {
                 match result {

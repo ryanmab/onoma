@@ -1,5 +1,17 @@
 use crate::resolver::constant::{self, DEFAULT_SCORE};
 
+/// 8 point bonus during fuzzy matching when the fuzzy match is case-sensitive (i.e. query includes
+/// upper case characters), and a capital letter follows a lowercase letter
+///
+/// I.e. matching a capital letter after a lowercase letter (e.g. "b" on "fooBar" will receive a bonus on "B")
+pub const CASE_SENSITIVE_MATCHING_CAPITALISATION_BONUS: u16 = 8;
+
+/// 4 point bonus during fuzzy matching when the fuzzy match is case-sensitive (i.e. query includes
+/// upper case characters), and the case of a query and symbol character match.
+///
+/// I.e. matching the case of the needle (e.g. "WorLd" on "WoRld" will receive a bonus on "W", "o", "d")
+pub const CASE_SENSITIVE_MATCHING_CASE_BONUS: u16 = 4;
+
 /// 1.5% bonus for common symbol kinds.
 pub const COMMON_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 15) / 1000;
 
