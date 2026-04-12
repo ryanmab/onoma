@@ -376,7 +376,53 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 26; // Increase the score by 2.6% for the fuzzy matches
+        target_score += 26; // Increase the score by 2.6% for the fuzzy matches (with matching case)
+
+        assert_eq!(target_score, score);
+    }
+
+    #[test]
+    pub fn test_scoring_fuzzy_matched_symbol_smartcase_insensitive() {
+        let query = "lem";
+
+        let name = "TestLemma".to_string();
+        let path = PathBuf::from_iter(["some", "file", "over", "there.ts"]);
+
+        let symbol = ResolvedSymbol {
+            id: 1,
+            name: name.clone(),
+            kind: SymbolKind::Lemma,
+            path: path.clone(),
+            score: Score::default(),
+            start_line: 1,
+            start_column: 1,
+            end_line: 1,
+            end_column: 9,
+        };
+
+        let config = frizbee::Config {
+            max_typos: Some(1),
+            sort: false,
+            scoring: frizbee::Scoring::default(),
+        };
+
+        // Broadly matches the behavior defined in scoring.rs, though not a requirement,
+        // this test just confirms we _are_ factoring in the fuzzy matches, and that the
+        // results are deterministic
+        let fuzzy_matches = frizbee::match_list(
+            query,
+            &[
+                format!("{}:{name}", path.to_str().unwrap()).as_str(),
+                name.as_str(),
+            ],
+            &config,
+        );
+
+        let score = super::calculate_score(&symbol, fuzzy_matches.iter(), None);
+
+        let mut target_score = DEFAULT_SCORE;
+
+        target_score += 24; // Increase the score by 2.4% for the fuzzy matches (as the case does not match)
 
         assert_eq!(target_score, score);
     }
