@@ -185,8 +185,8 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 15; // Increase the score by 1.5%, because it is a struct
-        target_score -= 20; // Reduce the default score by 2% because the Symbol is in a module file
+        target_score += 35; // Increase the score by 3.5%, because it is a struct
+        target_score -= 10; // Reduce the default score by 1% because the Symbol is in a module file
 
         assert_eq!(target_score, score);
     }
@@ -210,7 +210,7 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 15; // Increase the score by 1.5%, because it is a struct
+        target_score += 35; // Increase the score by 3.5%, because it is a struct
         // Notice, no decrement for being defined in an entrypoint file - because the filename is not
         // available. Arguably this should be an invariant, and caught with a panic/assert.
 
@@ -248,7 +248,7 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 10; // Increase the score by 1%, because it is a variable
+        target_score += 15; // Increase the score by 1.5%, because it is a variable
         target_score -= 12; // Reduce the default score by 12% because the symbol is 6 directories apart
 
         assert_eq!(target_score, score);
@@ -279,7 +279,7 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 10; // Increase the score by 1%, because it is a variable
+        target_score += 15; // Increase the score by 1.5%, because it is a variable
         target_score -= 10; // Reduce the default score by 1%
 
         assert_eq!(target_score, score);
@@ -328,7 +328,7 @@ mod tests {
 
         let mut target_score = DEFAULT_SCORE;
 
-        target_score += 15; // Increase the score by 1.5%, because it is a Class
+        target_score += 35; // Increase the score by 3.5%, because it is a Class
         target_score -= 10; // Decrease the score by 1.0%, because its in a test file
 
         assert_eq!(target_score, score);

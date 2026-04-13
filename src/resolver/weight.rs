@@ -12,11 +12,11 @@ pub const CASE_SENSITIVE_MATCHING_CAPITALISATION_BONUS: u16 = 8;
 /// I.e. matching the case of the needle (e.g. "WorLd" on "WoRld" will receive a bonus on "W", "o", "d")
 pub const CASE_SENSITIVE_MATCHING_CASE_BONUS: u16 = 4;
 
-/// 1.5% bonus for common symbol kinds.
-pub const COMMON_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 15) / 1000;
+/// 3.5% bonus for common symbol kinds.
+pub const COMMON_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 35) / 1000;
 
-/// 1% bonus for infrequent symbol kinds.
-pub const INFREQUENT_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 10) / 1000;
+/// 1.5% bonus for infrequent symbol kinds.
+pub const INFREQUENT_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 15) / 1000;
 
 /// -1.5% penalty for uncommon symbol kinds.
 pub const UNCOMMON_SYMBOL_KINDS_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 15) / 1000);
@@ -25,9 +25,9 @@ pub const UNCOMMON_SYMBOL_KINDS_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE 
 /// case, part of a test file, etc.).
 pub const TEST_HARNESS_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 10) / 1000);
 
-/// 2% penalty for symbols defined in an entrypoint - this helps to
+/// 1% penalty for symbols defined in an entrypoint - this helps to
 /// filter out re-exports.
-pub const ENTRYPOINT_FILE_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 20) / 1000);
+pub const ENTRYPOINT_FILE_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 10) / 1000);
 
 /// 1% penalty for symbols defined in the same file as the one currently focussed.
 ///
@@ -62,8 +62,8 @@ pub fn calculate_fuzzy_match_bonus(fuzzy_match: &frizbee::Match) -> i64 {
         fuzzy_match if fuzzy_match.exact => {
             let score = i64::from(fuzzy_match.score);
 
-            // Prevent exact matches from going above 10% of the score
-            ((score / 4) * 3).min((DEFAULT_SCORE * 100) / 1000)
+            // Prevent exact matches from going above 6.5% of the score
+            ((score / 4) * 2).min((DEFAULT_SCORE * 65) / 1000)
         }
         fuzzy_match => {
             let score = i64::from(fuzzy_match.score);
