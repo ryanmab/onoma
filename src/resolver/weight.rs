@@ -12,6 +12,11 @@ pub const CASE_SENSITIVE_MATCHING_CAPITALISATION_BONUS: u16 = 8;
 /// I.e. matching the case of the needle (e.g. "WorLd" on "WoRld" will receive a bonus on "W", "o", "d")
 pub const CASE_SENSITIVE_MATCHING_CASE_BONUS: u16 = 4;
 
+/// 3.5% bonus for queries which show clear intent to specific symbol kinds.
+///
+/// For example, all uppper case queries are most commonly looking for constants.
+pub const CLEAR_QUERY_INTENT_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 35) / 1000;
+
 /// 3.5% bonus for common symbol kinds.
 pub const COMMON_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 35) / 1000;
 
@@ -25,9 +30,9 @@ pub const UNCOMMON_SYMBOL_KINDS_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE 
 /// case, part of a test file, etc.).
 pub const TEST_HARNESS_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 10) / 1000);
 
-/// 1% penalty for symbols defined in an entrypoint - this helps to
+/// 0.25% penalty for symbols defined in an entrypoint - this helps to
 /// filter out re-exports.
-pub const ENTRYPOINT_FILE_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 10) / 1000);
+pub const ENTRYPOINT_FILE_SCORE_PENALTY: i64 = -((constant::DEFAULT_SCORE * 25) / 10000);
 
 /// 1% penalty for symbols defined in the same file as the one currently focussed.
 ///
