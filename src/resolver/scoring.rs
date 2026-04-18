@@ -46,9 +46,6 @@ pub fn get_fuzzy_config(query: &str) -> frizbee::Config {
 
 /// Run fuzzy matching on a given symbol, for a query, using a set of configuration.
 ///
-/// In practice, this fuzzy matches the symbols path (if available) and the symbols
-/// name to provide zero or more fuzzy matches.
-///
 /// No matches returned means the query didn't match any elements of the Symbol, and
 /// therefore the symbol can be completely ignored.
 pub fn fuzzy_match(
@@ -61,7 +58,19 @@ pub fn fuzzy_match(
     // and SIMD performance. But, is the difference that much? Is it in fact
     // faster because SIMD is more efficient and the bridges aren't having to
     // continually repaint for every drip-fed result?
-    frizbee::match_list(query, &[symbol.name.as_str()], config)
+
+    frizbee::match_list(
+        query,
+        &[
+            symbol.name.as_str(),
+            // NB: Include the lowercase name here in order to favour exact matches on symbols
+            // who contain upper case characters. Frizbee by default only does case-sensitive exact
+            // matching meaning `watcher` and `Watcher` will not be treated as an exact match
+            // unless we include an explicit lowercase haystack element.
+            symbol.name.to_lowercase().as_str(),
+        ],
+        config,
+    )
 }
 
 /// Calculate a score for a given symbol, using a set of results from fuzzy matching ([`fuzzy_match`]),

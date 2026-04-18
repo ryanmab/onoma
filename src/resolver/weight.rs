@@ -14,7 +14,7 @@ pub const CASE_SENSITIVE_MATCHING_CASE_BONUS: u16 = 4;
 
 /// 3.5% bonus for queries which show clear intent to specific symbol kinds.
 ///
-/// For example, all uppper case queries are most commonly looking for constants.
+/// For example, all uppercase queries are most commonly looking for constants.
 pub const CLEAR_QUERY_INTENT_SYMBOL_KINDS_SCORE_BONUS: i64 = (constant::DEFAULT_SCORE * 35) / 1000;
 
 /// 3.5% bonus for common symbol kinds.
