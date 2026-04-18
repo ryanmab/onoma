@@ -117,6 +117,7 @@ pub fn calculate_score<'a, 'b>(
         models::parsed::SymbolKind::Function
         | models::parsed::SymbolKind::Method
         | models::parsed::SymbolKind::Struct
+        | models::parsed::SymbolKind::Trait
         | models::parsed::SymbolKind::Type
         | models::parsed::SymbolKind::TypeAlias
         | models::parsed::SymbolKind::Class
