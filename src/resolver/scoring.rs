@@ -2,7 +2,10 @@ use std::{ffi::OsStr, path::Path};
 
 use crate::{
     models::{self},
-    resolver::{constant::DEFAULT_SCORE, utils, weight},
+    resolver::{
+        constant::{self, DEFAULT_SCORE},
+        utils, weight,
+    },
 };
 
 /// Get the fuzzy matching config for a particular query.
@@ -177,7 +180,8 @@ pub fn calculate_clear_intent_bonus(query: &str, symbol: &models::resolved::Reso
     let has_lowercase = query.chars().any(char::is_lowercase);
     let has_underscores = query.chars().any(|c| c == '_');
 
-    let is_length_for_clear_intent = query.len() >= 3;
+    let is_length_for_clear_intent =
+        query.len() >= constant::MIN_CLEAR_INTENT_QUERY_LENGTH as usize;
     let is_upper_and_lower_mix = has_uppercase && has_lowercase && !has_underscores;
     let is_snake_case = has_underscores && !has_uppercase;
     let is_screaming_case = has_uppercase && !has_lowercase;
