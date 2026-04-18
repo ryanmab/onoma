@@ -14,3 +14,7 @@ pub const DEFAULT_SCORE: i64 = 1000;
 /// too long that the Resolving thread is holding a connection in the sqlx pool
 /// and starving future queries from being processed.
 pub const RESOLVER_SEND_TIMEOUT_SECS: u64 = 2;
+
+/// The minimum length a query must be for the clear intent scoring will be
+/// applied: [`scoring::calculate_clear_intent_bonus`]
+pub const MIN_CLEAR_INTENT_QUERY_LENGTH: u8 = 3;

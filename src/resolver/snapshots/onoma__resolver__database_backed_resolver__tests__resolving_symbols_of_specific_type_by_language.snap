@@ -989,6 +989,18 @@ expression: resolved_symbols
   },
   {
     "id": 0,
+    "name": "Display",
+    "kind": "Trait",
+    "language": "Rust",
+    "path": "tests/fixtures/rust.rs",
+    "score": 1025,
+    "start_line": 28,
+    "end_line": 28,
+    "start_column": 15,
+    "end_column": 22
+  },
+  {
+    "id": 0,
     "name": "Green",
     "kind": "EnumMember",
     "language": "Rust",
