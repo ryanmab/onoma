@@ -35,7 +35,7 @@
   name: (identifier) @Function)
 
 (variable_declarator
-  name: (identifier) @Variable
+  name: (identifier) @Function
   value: (arrow_function))
 
 ;; Capture methods but exclude constructor

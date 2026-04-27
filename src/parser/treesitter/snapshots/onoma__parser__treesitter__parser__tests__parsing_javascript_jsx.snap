@@ -380,28 +380,6 @@ IntoIter(
         },
         Symbol {
             kind: Variable,
-            name: "ArrowFunctional",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 39,
-                        end_line: 39,
-                        start_column: 7,
-                        end_column: 22,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
             name: "ModuleExample",
             definition: Some(
                 Occurrence {
@@ -456,28 +434,6 @@ IntoIter(
                         end_line: 49,
                         start_column: 21,
                         end_column: 27,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
-            name: "arrowFunc",
-            definition: Some(
-                Occurrence {
-                    language: JavascriptJsx,
-                    absolute_path: "tests/fixtures/javascript.jsx",
-                    range: Range {
-                        start_line: 25,
-                        end_line: 25,
-                        start_column: 7,
-                        end_column: 16,
                     },
                     roles: Roles(
                         [
@@ -1458,6 +1414,28 @@ IntoIter(
         },
         Symbol {
             kind: Function,
+            name: "ArrowFunctional",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 39,
+                        end_line: 39,
+                        start_column: 7,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
             name: "FunctionalComponent",
             definition: Some(
                 Occurrence {
@@ -1468,6 +1446,28 @@ IntoIter(
                         end_line: 30,
                         start_column: 10,
                         end_column: 29,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "arrowFunc",
+            definition: Some(
+                Occurrence {
+                    language: JavascriptJsx,
+                    absolute_path: "tests/fixtures/javascript.jsx",
+                    range: Range {
+                        start_line: 25,
+                        end_line: 25,
+                        start_column: 7,
+                        end_column: 16,
                     },
                     roles: Roles(
                         [

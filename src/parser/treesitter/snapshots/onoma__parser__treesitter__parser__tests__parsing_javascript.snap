@@ -204,28 +204,6 @@ IntoIter(
         },
         Symbol {
             kind: Variable,
-            name: "multiply",
-            definition: Some(
-                Occurrence {
-                    language: Javascript,
-                    absolute_path: "tests/fixtures/javascript.js",
-                    range: Range {
-                        start_line: 32,
-                        end_line: 32,
-                        start_column: 7,
-                        end_column: 15,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
             name: "name",
             definition: Some(
                 Occurrence {
@@ -1071,6 +1049,28 @@ IntoIter(
                         start_line: 51,
                         end_line: 51,
                         start_column: 10,
+                        end_column: 15,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "multiply",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 32,
+                        end_line: 32,
+                        start_column: 7,
                         end_column: 15,
                     },
                     roles: Roles(

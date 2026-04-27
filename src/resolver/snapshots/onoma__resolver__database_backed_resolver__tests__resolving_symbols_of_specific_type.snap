@@ -113,6 +113,18 @@ expression: resolved_symbols
   },
   {
     "id": 0,
+    "name": "multiply",
+    "kind": "Function",
+    "language": "Javascript",
+    "path": "tests/fixtures/javascript.js",
+    "score": 1025,
+    "start_line": 32,
+    "end_line": 32,
+    "start_column": 7,
+    "end_column": 15
+  },
+  {
+    "id": 0,
     "name": "sum",
     "kind": "Method",
     "language": "Javascript",
@@ -125,6 +137,18 @@ expression: resolved_symbols
   },
   {
     "id": 0,
+    "name": "ArrowFunctional",
+    "kind": "Function",
+    "language": "JavascriptJsx",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1025,
+    "start_line": 39,
+    "end_line": 39,
+    "start_column": 7,
+    "end_column": 22
+  },
+  {
+    "id": 0,
     "name": "FunctionalComponent",
     "kind": "Function",
     "language": "JavascriptJsx",
@@ -134,6 +158,18 @@ expression: resolved_symbols
     "end_line": 30,
     "start_column": 10,
     "end_column": 29
+  },
+  {
+    "id": 0,
+    "name": "arrowFunc",
+    "kind": "Function",
+    "language": "JavascriptJsx",
+    "path": "tests/fixtures/javascript.jsx",
+    "score": 1025,
+    "start_line": 25,
+    "end_line": 25,
+    "start_column": 7,
+    "end_column": 16
   },
   {
     "id": 0,
