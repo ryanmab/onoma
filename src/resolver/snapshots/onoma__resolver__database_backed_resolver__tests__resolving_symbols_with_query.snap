@@ -106,10 +106,22 @@ expression: resolved_symbols
     "language": "TypeScript",
     "path": "tests/fixtures/typescript.ts",
     "score": 1049,
-    "start_line": 44,
-    "end_line": 44,
+    "start_line": 45,
+    "end_line": 45,
     "start_column": 10,
     "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "myArrowFunction",
+    "kind": "Function",
+    "language": "TypeScript",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1049,
+    "start_line": 40,
+    "end_line": 40,
+    "start_column": 7,
+    "end_column": 22
   },
   {
     "id": 0,
@@ -122,5 +134,17 @@ expression: resolved_symbols
     "end_line": 39,
     "start_column": 10,
     "end_column": 20
+  },
+  {
+    "id": 0,
+    "name": "myGenericArrowFunction",
+    "kind": "Function",
+    "language": "TypeScript",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1049,
+    "start_line": 46,
+    "end_line": 46,
+    "start_column": 7,
+    "end_column": 29
   }
 ]

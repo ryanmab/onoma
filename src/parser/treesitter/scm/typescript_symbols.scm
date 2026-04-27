@@ -23,6 +23,19 @@
   (identifier) @Enum)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Enum members (only inside enums)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(enum_declaration
+  (enum_body
+    (property_identifier) @EnumMember))
+
+(enum_declaration
+  (enum_body
+    (enum_assignment
+      (property_identifier) @EnumMember)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Type aliases
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -36,16 +49,26 @@
 (function_declaration
   (identifier) @Function)
 
+;; Arrow functions assigned to variables (const/let/var)
+(lexical_declaration
+  (variable_declarator
+    name: (identifier) @Function
+    value: (arrow_function)))
+
+;; Function expressions assigned to variables
+(lexical_declaration
+  (variable_declarator
+    name: (identifier) @Function
+    value: (function_expression)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Methods & Constructors
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Capture methods but exclude the constructor
 (method_definition
   (property_identifier) @Method
   (#not-eq? @Method "constructor"))
 
-;; Capture the constructor specifically
 (method_definition
   (property_identifier) @Constructor
   (#eq? @Constructor "constructor"))
@@ -95,13 +118,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (lexical_declaration
-  (variable_declarator
-    (identifier) @Variable))
-
-(lexical_declaration
   kind: "const"
   (variable_declarator
     (identifier) @Constant))
+
+(lexical_declaration
+  (variable_declarator
+    (identifier) @Variable))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Imports

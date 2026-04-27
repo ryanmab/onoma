@@ -5,6 +5,50 @@ expression: index.index.symbols.iter().sorted()
 IntoIter(
     [
         Symbol {
+            kind: Module,
+            name: "const moduleValue = 1;",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 8,
+                        end_column: 30,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: TypeAlias,
+            name: "ID",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 5,
+                        end_line: 5,
+                        start_column: 6,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Class,
             name: "Counter",
             definition: Some(
@@ -115,94 +159,6 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Field,
-            name: "count",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 21,
-                        end_line: 21,
-                        start_column: 5,
-                        end_column: 10,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Function,
-            name: "App",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 41,
-                        end_line: 41,
-                        start_column: 10,
-                        end_column: 13,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Function,
-            name: "Header",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 51,
-                        end_line: 51,
-                        start_column: 10,
-                        end_column: 16,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Function,
-            name: "add",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 29,
-                        end_line: 29,
-                        start_column: 10,
-                        end_column: 13,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
             kind: Interface,
             name: "Props",
             definition: Some(
@@ -225,17 +181,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Method,
-            name: "increment",
+            kind: Variable,
+            name: "value",
             definition: Some(
                 Occurrence {
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 23,
-                        end_line: 23,
+                        start_line: 37,
+                        end_line: 37,
                         start_column: 5,
-                        end_column: 14,
+                        end_column: 10,
                     },
                     roles: Roles(
                         [
@@ -247,8 +203,30 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Module,
-            name: "const moduleValue = 1;",
+            kind: Constant,
+            name: "MAX_COUNT",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 38,
+                        end_line: 38,
+                        start_column: 7,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constant,
+            name: "moduleValue",
             definition: Some(
                 Occurrence {
                     language: TypeScriptJsx,
@@ -256,8 +234,96 @@ IntoIter(
                     range: Range {
                         start_line: 2,
                         end_line: 2,
-                        start_column: 8,
-                        end_column: 30,
+                        start_column: 14,
+                        end_column: 25,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: String,
+            name: "hello",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 45,
+                        end_line: 45,
+                        start_column: 19,
+                        end_column: 24,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "count",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 21,
+                        end_line: 21,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "className",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 14,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Property,
+            name: "title",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 44,
+                        end_line: 44,
+                        start_column: 21,
+                        end_column: 26,
                     },
                     roles: Roles(
                         [
@@ -379,17 +445,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Property,
-            name: "className",
+            kind: Function,
+            name: "App",
             definition: Some(
                 Occurrence {
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 43,
-                        end_line: 43,
-                        start_column: 14,
-                        end_column: 23,
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 10,
+                        end_column: 13,
                     },
                     roles: Roles(
                         [
@@ -401,82 +467,16 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Property,
-            name: "title",
+            kind: Function,
+            name: "Header",
             definition: Some(
                 Occurrence {
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 44,
-                        end_line: 44,
-                        start_column: 21,
-                        end_column: 26,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: String,
-            name: "hello",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 45,
-                        end_line: 45,
-                        start_column: 19,
-                        end_column: 24,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: TypeAlias,
-            name: "ID",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 5,
-                        end_line: 5,
-                        start_column: 6,
-                        end_column: 8,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
-            name: "MAX_COUNT",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 38,
-                        end_line: 38,
-                        start_column: 7,
+                        start_line: 51,
+                        end_line: 51,
+                        start_column: 10,
                         end_column: 16,
                     },
                     roles: Roles(
@@ -489,17 +489,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Variable,
-            name: "moduleValue",
+            kind: Function,
+            name: "add",
             definition: Some(
                 Occurrence {
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 2,
-                        end_line: 2,
-                        start_column: 14,
-                        end_column: 25,
+                        start_line: 29,
+                        end_line: 29,
+                        start_column: 10,
+                        end_column: 13,
                     },
                     roles: Roles(
                         [
@@ -511,7 +511,7 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Variable,
+            kind: Function,
             name: "multiply",
             definition: Some(
                 Occurrence {
@@ -533,17 +533,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Variable,
-            name: "value",
+            kind: Method,
+            name: "increment",
             definition: Some(
                 Occurrence {
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 37,
-                        end_line: 37,
+                        start_line: 23,
+                        end_line: 23,
                         start_column: 5,
-                        end_column: 10,
+                        end_column: 14,
                     },
                     roles: Roles(
                         [

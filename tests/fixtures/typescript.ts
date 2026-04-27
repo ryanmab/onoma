@@ -37,11 +37,13 @@ type MyAlias = string;
 // Functions
 // ==============================
 function myFunction(a: number, b?: string) { }
+const myArrowFunction = () => {}
 
 // ==============================
 // Parameters & Type Parameters
 // ==============================
 function genericFunction<T>(x: T, y?: number) { }
+const myGenericArrowFunction = <T>(x: T) => {}
 
 // ==============================
 // Variables & Constants
