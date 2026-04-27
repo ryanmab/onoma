@@ -115,6 +115,8 @@ pub fn calculate_score<'a, 'b>(
     let symbol_kind_bonus = match symbol.kind {
         // Bonus for the most commonly jumped to symbol kinds
         models::parsed::SymbolKind::Function
+        | models::parsed::SymbolKind::Getter
+        | models::parsed::SymbolKind::Setter
         | models::parsed::SymbolKind::Method
         | models::parsed::SymbolKind::Struct
         | models::parsed::SymbolKind::Trait

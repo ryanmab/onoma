@@ -16,10 +16,10 @@ class MyClass {                           // @Class
 // Type alias (heuristic: PascalCase const)       // @TypeAlias
 const PointType = { x: 0, y: 0 };
 
-// Enum-like object                                // @Enum
+// Enum-like object                                
 const Color = {
-    Red: "red",                                   // @EnumMember
-    Blue: "blue"                                  // @EnumMember
+    Red: "red",                                   
+    Blue: "blue"                                  
 };
 
 // -------------------- Functions --------------------

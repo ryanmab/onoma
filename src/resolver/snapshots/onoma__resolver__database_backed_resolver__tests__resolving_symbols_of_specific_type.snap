@@ -185,6 +185,18 @@ expression: resolved_symbols
   },
   {
     "id": 0,
+    "name": "subtract",
+    "kind": "Function",
+    "language": "Lua",
+    "path": "tests/fixtures/lua.lua",
+    "score": 1025,
+    "start_line": 20,
+    "end_line": 20,
+    "start_column": 1,
+    "end_column": 9
+  },
+  {
+    "id": 0,
     "name": "__init__",
     "kind": "Method",
     "language": "Python",
@@ -286,10 +298,22 @@ expression: resolved_symbols
     "language": "TypeScript",
     "path": "tests/fixtures/typescript.ts",
     "score": 1025,
-    "start_line": 44,
-    "end_line": 44,
+    "start_line": 45,
+    "end_line": 45,
     "start_column": 10,
     "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "myArrowFunction",
+    "kind": "Function",
+    "language": "TypeScript",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1025,
+    "start_line": 40,
+    "end_line": 40,
+    "start_column": 7,
+    "end_column": 22
   },
   {
     "id": 0,
@@ -302,6 +326,18 @@ expression: resolved_symbols
     "end_line": 39,
     "start_column": 10,
     "end_column": 20
+  },
+  {
+    "id": 0,
+    "name": "myGenericArrowFunction",
+    "kind": "Function",
+    "language": "TypeScript",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1025,
+    "start_line": 46,
+    "end_line": 46,
+    "start_column": 7,
+    "end_column": 29
   },
   {
     "id": 0,
@@ -386,5 +422,17 @@ expression: resolved_symbols
     "end_line": 23,
     "start_column": 5,
     "end_column": 14
+  },
+  {
+    "id": 0,
+    "name": "multiply",
+    "kind": "Function",
+    "language": "TypeScriptJsx",
+    "path": "tests/fixtures/typescript.tsx",
+    "score": 1025,
+    "start_line": 34,
+    "end_line": 34,
+    "start_column": 7,
+    "end_column": 15
   }
 ]

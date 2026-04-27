@@ -47,8 +47,17 @@
 (function_declaration
   (identifier) @Function)
 
-(arrow_function
-  (identifier) @Function)
+;; Arrow functions assigned to variables (const/let/var)
+(lexical_declaration
+  (variable_declarator
+    name: (identifier) @Function
+    value: (arrow_function)))
+
+;; Function expressions assigned to variables
+(lexical_declaration
+  (variable_declarator
+    name: (identifier) @Function
+    value: (function_expression)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Methods & Constructors
@@ -81,13 +90,10 @@
 (variable_declarator
   (identifier) @Variable)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Constants (heuristic: uppercase)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(variable_declarator
-  (identifier) @Constant
-  (#match? @Constant "^[A-Z_][A-Z0-9_]*$"))
+(lexical_declaration
+  kind: "const"
+  (variable_declarator
+    (identifier) @Constant))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; JSX components

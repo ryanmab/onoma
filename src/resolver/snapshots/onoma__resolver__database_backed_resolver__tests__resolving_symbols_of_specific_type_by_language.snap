@@ -29,18 +29,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "[p 1 q 2]",
-    "kind": "Variable",
-    "language": "Clojure",
-    "path": "tests/fixtures/clojure.clj",
-    "score": 1005,
-    "start_line": 36,
-    "end_line": 36,
-    "start_column": 6,
-    "end_column": 15
-  },
-  {
-    "id": 0,
     "name": "add",
     "kind": "Function",
     "language": "Clojure",
@@ -162,7 +150,7 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "Point",
-    "kind": "Type",
+    "kind": "Struct",
     "language": "Go",
     "path": "tests/fixtures/go.go",
     "score": 1025,
@@ -174,7 +162,7 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "Reader",
-    "kind": "Type",
+    "kind": "Interface",
     "language": "Go",
     "path": "tests/fixtures/go.go",
     "score": 1025,
@@ -217,18 +205,6 @@ expression: resolved_symbols
     "start_line": 21,
     "end_line": 21,
     "start_column": 1,
-    "end_column": 9
-  },
-  {
-    "id": 0,
-    "name": "Blue",
-    "kind": "EnumMember",
-    "language": "Javascript",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1025,
-    "start_line": 22,
-    "end_line": 22,
-    "start_column": 5,
     "end_column": 9
   },
   {
@@ -290,18 +266,6 @@ expression: resolved_symbols
     "end_line": 17,
     "start_column": 7,
     "end_column": 16
-  },
-  {
-    "id": 0,
-    "name": "Red",
-    "kind": "EnumMember",
-    "language": "Javascript",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1025,
-    "start_line": 21,
-    "end_line": 21,
-    "start_column": 5,
-    "end_column": 8
   },
   {
     "id": 0,
@@ -437,30 +401,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "x",
-    "kind": "EnumMember",
-    "language": "Javascript",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1025,
-    "start_line": 17,
-    "end_line": 17,
-    "start_column": 21,
-    "end_column": 22
-  },
-  {
-    "id": 0,
-    "name": "y",
-    "kind": "EnumMember",
-    "language": "Javascript",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1025,
-    "start_line": 17,
-    "end_line": 17,
-    "start_column": 27,
-    "end_column": 28
-  },
-  {
-    "id": 0,
     "name": "ArrowFunctional",
     "kind": "Variable",
     "language": "JavascriptJsx",
@@ -486,10 +426,10 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "MAX_VALUE",
-    "kind": "Variable",
+    "kind": "Constant",
     "language": "JavascriptJsx",
     "path": "tests/fixtures/javascript.jsx",
-    "score": 1005,
+    "score": 1025,
     "start_line": 48,
     "end_line": 48,
     "start_column": 7,
@@ -722,6 +662,18 @@ expression: resolved_symbols
     "end_line": 8,
     "start_column": 10,
     "end_column": 13
+  },
+  {
+    "id": 0,
+    "name": "subtract",
+    "kind": "Function",
+    "language": "Lua",
+    "path": "tests/fixtures/lua.lua",
+    "score": 1025,
+    "start_line": 20,
+    "end_line": 20,
+    "start_column": 1,
+    "end_column": 9
   },
   {
     "id": 0,
@@ -1114,10 +1066,22 @@ expression: resolved_symbols
     "language": "TypeScript",
     "path": "tests/fixtures/typescript.ts",
     "score": 1025,
-    "start_line": 44,
-    "end_line": 44,
+    "start_line": 45,
+    "end_line": 45,
     "start_column": 10,
     "end_column": 25
+  },
+  {
+    "id": 0,
+    "name": "myArrowFunction",
+    "kind": "Function",
+    "language": "TypeScript",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1025,
+    "start_line": 40,
+    "end_line": 40,
+    "start_column": 7,
+    "end_column": 22
   },
   {
     "id": 0,
@@ -1130,6 +1094,18 @@ expression: resolved_symbols
     "end_line": 39,
     "start_column": 10,
     "end_column": 20
+  },
+  {
+    "id": 0,
+    "name": "myGenericArrowFunction",
+    "kind": "Function",
+    "language": "TypeScript",
+    "path": "tests/fixtures/typescript.ts",
+    "score": 1025,
+    "start_line": 46,
+    "end_line": 46,
+    "start_column": 7,
+    "end_column": 29
   },
   {
     "id": 0,
@@ -1254,10 +1230,10 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "MAX_COUNT",
-    "kind": "Variable",
+    "kind": "Constant",
     "language": "TypeScriptJsx",
     "path": "tests/fixtures/typescript.tsx",
-    "score": 1005,
+    "score": 1025,
     "start_line": 38,
     "end_line": 38,
     "start_column": 7,
@@ -1314,10 +1290,10 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "moduleValue",
-    "kind": "Variable",
+    "kind": "Constant",
     "language": "TypeScriptJsx",
     "path": "tests/fixtures/typescript.tsx",
-    "score": 1005,
+    "score": 1025,
     "start_line": 2,
     "end_line": 2,
     "start_column": 14,
@@ -1326,10 +1302,10 @@ expression: resolved_symbols
   {
     "id": 0,
     "name": "multiply",
-    "kind": "Variable",
+    "kind": "Function",
     "language": "TypeScriptJsx",
     "path": "tests/fixtures/typescript.tsx",
-    "score": 1005,
+    "score": 1025,
     "start_line": 34,
     "end_line": 34,
     "start_column": 7,

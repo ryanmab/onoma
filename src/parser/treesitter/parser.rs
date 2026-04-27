@@ -1,9 +1,13 @@
-use std::{path::Path, str::FromStr};
+use std::{collections::HashSet, path::Path, str::FromStr};
 
 use tokio::{fs::File, io::AsyncReadExt};
 use tree_sitter::StreamingIterator;
 
-use crate::{models, parser, utils::normalise_symbol_name};
+use crate::{
+    models::{self, parsed::Symbol},
+    parser,
+    utils::normalise_symbol_name,
+};
 
 /// A source code parser, which can read source code and output a fully parsed
 /// [`crate::models::parsed::Index`].
@@ -106,7 +110,7 @@ impl Parser {
 
         let capture_names = query.capture_names();
 
-        let mut symbols = Vec::new();
+        let mut symbols: HashSet<Symbol> = HashSet::new();
 
         while let Some(m) = matches.next() {
             for c in m.captures {
@@ -144,7 +148,31 @@ impl Parser {
                 );
                 symbol.add_occurrence(occurrence);
 
-                symbols.push(symbol);
+                match symbols.get(&symbol) {
+                    Some(existing_symbol) if existing_symbol.kind < symbol.kind => {
+                        // The symbol is already in the set, but with a lower specificity symbol
+                        // kind.
+                        //
+                        // In other words - we've discovered the symbol before, but this occurrence
+                        // has more semantic meaning than the previously discovered one (i.e. [`SymbolKind::Method`] vs
+                        // [`SymbolKind::Getter`]).
+                        symbols.replace(symbol);
+                    }
+                    Some(existing_symbol) => {
+                        // TODO(RM): There's potentially an optimisation here, in that this
+                        // represents wasted compilation, where we parsed a symbol we've inevitably
+                        // thrown away (because we've already got a more specific version). Partly
+                        // this comes down to the limitations of Treesitter and how exclusive we can
+                        // make the queries, but perhaps we can make this better (or skip earlier),
+                        // so symbols are only captured in their 'ideal' symbol kind.
+                        log::debug!(
+                            "{existing_symbol:?} is already more specific than {symbol:?} so not replacing",
+                        );
+                    }
+                    None => {
+                        symbols.insert(symbol);
+                    }
+                }
             }
         }
 

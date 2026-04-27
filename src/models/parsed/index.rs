@@ -33,6 +33,6 @@ impl Index {
 
     /// Append a symbol to an index.
     pub fn append_symbol(&mut self, symbol: models::parsed::Symbol) {
-        self.symbols.insert(symbol);
+        self.symbols.replace(symbol);
     }
 }
