@@ -193,19 +193,6 @@ pub enum SymbolKind {
     /// ```
     Enum,
 
-    /// A single member (variant) of an enumeration.
-    ///
-    /// This symbol refers specifically to the enum member `Red`,
-    /// not to the enclosing enum `Color`.
-    ///
-    /// ```rust,ignore
-    /// enum Color {
-    ///     Red,
-    ///     // ^^^ enum member
-    /// }
-    /// ```
-    EnumMember,
-
     /// An error type.
     ///
     /// ```rust,ignore
@@ -479,6 +466,19 @@ pub enum SymbolKind {
 
     /// A static property.
     StaticProperty,
+
+    /// A single member (variant) of an enumeration.
+    ///
+    /// This symbol refers specifically to the enum member `Red`,
+    /// not to the enclosing enum `Color`.
+    ///
+    /// ```rust,ignore
+    /// enum Color {
+    ///     Red,
+    ///     // ^^^ enum member
+    /// }
+    /// ```
+    EnumMember,
 
     /// A subscript (Swift).
     ///

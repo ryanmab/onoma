@@ -93,72 +93,6 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: EnumMember,
-            name: "Blue",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 16,
-                        end_line: 16,
-                        start_column: 5,
-                        end_column: 9,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: EnumMember,
-            name: "Green",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 15,
-                        end_line: 15,
-                        start_column: 5,
-                        end_column: 10,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: EnumMember,
-            name: "Red",
-            definition: Some(
-                Occurrence {
-                    language: TypeScriptJsx,
-                    absolute_path: "tests/fixtures/typescript.tsx",
-                    range: Range {
-                        start_line: 14,
-                        end_line: 14,
-                        start_column: 5,
-                        end_column: 8,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
             kind: Interface,
             name: "Props",
             definition: Some(
@@ -324,6 +258,72 @@ IntoIter(
                         end_line: 44,
                         start_column: 21,
                         end_column: 26,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Blue",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 16,
+                        end_line: 16,
+                        start_column: 5,
+                        end_column: 9,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Green",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 15,
+                        end_line: 15,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Red",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 14,
+                        end_line: 14,
+                        start_column: 5,
+                        end_column: 8,
                     },
                     roles: Roles(
                         [

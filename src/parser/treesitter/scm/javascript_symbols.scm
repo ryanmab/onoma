@@ -20,17 +20,6 @@
   name: (identifier) @Variable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Enum-like objects
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(variable_declarator
-  name: (identifier) @Enum
-  (#match? @Enum "^[A-Z][A-Za-z0-9_]*$")
-  value: (object
-    (pair
-      key: (property_identifier) @EnumMember)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Functions & Arrow Functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

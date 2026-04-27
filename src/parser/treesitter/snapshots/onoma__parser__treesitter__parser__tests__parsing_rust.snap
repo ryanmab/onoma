@@ -115,72 +115,6 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: EnumMember,
-            name: "Blue",
-            definition: Some(
-                Occurrence {
-                    language: Rust,
-                    absolute_path: "tests/fixtures/rust.rs",
-                    range: Range {
-                        start_line: 17,
-                        end_line: 17,
-                        start_column: 9,
-                        end_column: 13,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: EnumMember,
-            name: "Green",
-            definition: Some(
-                Occurrence {
-                    language: Rust,
-                    absolute_path: "tests/fixtures/rust.rs",
-                    range: Range {
-                        start_line: 16,
-                        end_line: 16,
-                        start_column: 9,
-                        end_column: 14,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: EnumMember,
-            name: "Red",
-            definition: Some(
-                Occurrence {
-                    language: Rust,
-                    absolute_path: "tests/fixtures/rust.rs",
-                    range: Range {
-                        start_line: 15,
-                        end_line: 15,
-                        start_column: 9,
-                        end_column: 12,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
             kind: Trait,
             name: "Display",
             definition: Some(
@@ -390,6 +324,72 @@ IntoIter(
                         end_line: 38,
                         start_column: 16,
                         end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Blue",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 17,
+                        end_line: 17,
+                        start_column: 9,
+                        end_column: 13,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Green",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 16,
+                        end_line: 16,
+                        start_column: 9,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: EnumMember,
+            name: "Red",
+            definition: Some(
+                Occurrence {
+                    language: Rust,
+                    absolute_path: "tests/fixtures/rust.rs",
+                    range: Range {
+                        start_line: 15,
+                        end_line: 15,
+                        start_column: 9,
+                        end_column: 12,
                     },
                     roles: Roles(
                         [
