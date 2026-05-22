@@ -70,8 +70,8 @@ expression: resolved_symbols
     "language": "Python",
     "path": "tests/fixtures/python.py",
     "score": 1051,
-    "start_line": 48,
-    "end_line": 48,
+    "start_line": 49,
+    "end_line": 49,
     "start_column": 11,
     "end_column": 25
   },
@@ -98,6 +98,42 @@ expression: resolved_symbols
     "end_line": 19,
     "start_column": 15,
     "end_column": 19
+  },
+  {
+    "id": 0,
+    "name": "inner_function",
+    "kind": "Function",
+    "language": "Python",
+    "path": "tests/fixtures/python.py",
+    "score": 1051,
+    "start_line": 61,
+    "end_line": 61,
+    "start_column": 9,
+    "end_column": 23
+  },
+  {
+    "id": 0,
+    "name": "outer_function",
+    "kind": "Function",
+    "language": "Python",
+    "path": "tests/fixtures/python.py",
+    "score": 1051,
+    "start_line": 60,
+    "end_line": 60,
+    "start_column": 5,
+    "end_column": 19
+  },
+  {
+    "id": 0,
+    "name": "top_level_function",
+    "kind": "Function",
+    "language": "Python",
+    "path": "tests/fixtures/python.py",
+    "score": 1051,
+    "start_line": 53,
+    "end_line": 53,
+    "start_column": 5,
+    "end_column": 23
   },
   {
     "id": 0,

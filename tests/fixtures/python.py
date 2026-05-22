@@ -9,59 +9,99 @@ from sys import path
 # Constants / Variables
 ############################
 
-MAX_COUNT = 10        # @Constant
-variable = 5          # @Variable
+MAX_COUNT = 10
+variable = 5
 
 ############################
-# Decorator
+# Decorators
 ############################
 
 def decorator(func):
     return func
 
-@decorator               # @Value
-def decorated_function(x, y):   # @Function + @Parameter
-    local_var = x + y    # @Variable
+@decorator
+def decorated_function(x, y):
+    local_var = x + y
     return local_var
 
 ############################
 # Class
 ############################
 
-class MyClass:           # @Class
-    CLASS_CONST = 100    # @Constant
+class MyClass:
+    CLASS_CONST = 100
 
-    def __init__(self, value):  # @Method + @Parameter
-        self.field = value      # @Field
+    def __init__(self, value):
+        self.field = value
 
-    async def async_method(self, param):  # @Method + @Parameter
-        return self.field + param         # @Property
-
-    def regular_method(self, a, b):       # @Method + @Parameter
-        temp = a * b                      # @Variable
+    def regular_method(self, a, b):
+        temp = a * b
         return temp
 
+    async def async_method(self, param):
+        result = self.field + param
+        return result
+
 ############################
-# Top-level function
+# Top-level functions
 ############################
 
-async def async_function(n):   # @Function + @Parameter
+async def async_function(n):
     return n * 2
 
+
+def top_level_function(a, b):
+    return a + b
+
 ############################
-# Attribute / Property usage
+# Nested functions 
+############################
+
+def outer_function(x):
+    def inner_function(y):
+        return x + y
+    return inner_function(x)
+
+############################
+# Class instance usage
 ############################
 
 obj = MyClass(1)
-value = obj.field              # @Property
+value = obj.field
 
 ############################
-# Literals
+# Literals 
 ############################
 
-string_value = "hello"         # @String
-int_value = 42                 # @Number
-float_value = 3.14             # @Number
-bool_true = True               # @Boolean
-bool_false = False             # @Boolean
-none_value = None              # @Null
+string_value = "hello"
+int_value = 42
+float_value = 3.14
+bool_true = True
+bool_false = False
+none_value = None
+
+############################
+# Enum 
+############################
+
+from enum import Enum
+
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+
+############################
+# Exception 
+############################
+
+class MyError(Exception):
+    pass
+
+############################
+# Typed class 
+############################
+
+class User:
+    name = "alice"
+    AGE = 30

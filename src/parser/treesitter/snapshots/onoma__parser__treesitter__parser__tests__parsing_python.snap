@@ -6,6 +6,28 @@ IntoIter(
     [
         Symbol {
             kind: Module,
+            name: "enum",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 87,
+                        end_line: 87,
+                        start_column: 6,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Module,
             name: "os",
             definition: Some(
                 Occurrence {
@@ -49,28 +71,6 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Attribute,
-            name: "decorator",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 22,
-                        end_line: 22,
-                        start_column: 2,
-                        end_column: 11,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
             kind: Class,
             name: "MyClass",
             definition: Some(
@@ -93,6 +93,72 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
+            kind: Class,
+            name: "User",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 105,
+                        end_line: 105,
+                        start_column: 7,
+                        end_column: 11,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Enum,
+            name: "Color",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 89,
+                        end_line: 89,
+                        start_column: 7,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Error,
+            name: "MyError",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 98,
+                        end_line: 98,
+                        start_column: 7,
+                        end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Variable,
             name: "bool_false",
             definition: Some(
@@ -100,8 +166,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 66,
-                        end_line: 66,
+                        start_line: 80,
+                        end_line: 80,
                         start_column: 1,
                         end_column: 11,
                     },
@@ -122,8 +188,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 65,
-                        end_line: 65,
+                        start_line: 79,
+                        end_line: 79,
                         start_column: 1,
                         end_column: 10,
                     },
@@ -144,8 +210,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 64,
-                        end_line: 64,
+                        start_line: 78,
+                        end_line: 78,
                         start_column: 1,
                         end_column: 12,
                     },
@@ -166,8 +232,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 63,
-                        end_line: 63,
+                        start_line: 77,
+                        end_line: 77,
                         start_column: 1,
                         end_column: 10,
                     },
@@ -210,8 +276,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 67,
-                        end_line: 67,
+                        start_line: 81,
+                        end_line: 81,
                         start_column: 1,
                         end_column: 11,
                     },
@@ -232,10 +298,32 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 55,
-                        end_line: 55,
+                        start_line: 69,
+                        end_line: 69,
                         start_column: 1,
                         end_column: 4,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Variable,
+            name: "result",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 42,
+                        end_line: 42,
+                        start_column: 9,
+                        end_column: 15,
                     },
                     roles: Roles(
                         [
@@ -254,8 +342,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 62,
-                        end_line: 62,
+                        start_line: 76,
+                        end_line: 76,
                         start_column: 1,
                         end_column: 13,
                     },
@@ -276,8 +364,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 41,
-                        end_line: 41,
+                        start_line: 38,
+                        end_line: 38,
                         start_column: 9,
                         end_column: 13,
                     },
@@ -298,8 +386,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 56,
-                        end_line: 56,
+                        start_line: 70,
+                        end_line: 70,
                         start_column: 1,
                         end_column: 6,
                     },
@@ -336,28 +424,6 @@ IntoIter(
         },
         Symbol {
             kind: Constant,
-            name: "CLASS_CONST",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 32,
-                        end_line: 32,
-                        start_column: 5,
-                        end_column: 16,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Constant,
             name: "MAX_COUNT",
             definition: Some(
                 Occurrence {
@@ -379,16 +445,38 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Number,
-            name: "1",
+            kind: Field,
+            name: "AGE",
             definition: Some(
                 Occurrence {
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 55,
-                        end_line: 55,
-                        start_column: 15,
+                        start_line: 107,
+                        end_line: 107,
+                        start_column: 5,
+                        end_column: 8,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Field,
+            name: "CLASS_CONST",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 32,
+                        end_line: 32,
+                        start_column: 5,
                         end_column: 16,
                     },
                     roles: Roles(
@@ -401,17 +489,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Number,
-            name: "10",
+            kind: Field,
+            name: "name",
             definition: Some(
                 Occurrence {
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 12,
-                        end_line: 12,
-                        start_column: 13,
-                        end_column: 15,
+                        start_line: 106,
+                        end_line: 106,
+                        start_column: 5,
+                        end_column: 9,
                     },
                     roles: Roles(
                         [
@@ -423,17 +511,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Number,
-            name: "100",
+            kind: EnumMember,
+            name: "BLUE",
             definition: Some(
                 Occurrence {
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 32,
-                        end_line: 32,
-                        start_column: 19,
-                        end_column: 22,
+                        start_line: 92,
+                        end_line: 92,
+                        start_column: 5,
+                        end_column: 9,
                     },
                     roles: Roles(
                         [
@@ -445,17 +533,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Number,
-            name: "2",
+            kind: EnumMember,
+            name: "GREEN",
             definition: Some(
                 Occurrence {
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 49,
-                        end_line: 49,
-                        start_column: 16,
-                        end_column: 17,
+                        start_line: 91,
+                        end_line: 91,
+                        start_column: 5,
+                        end_column: 10,
                     },
                     roles: Roles(
                         [
@@ -467,215 +555,17 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Number,
-            name: "3.14",
+            kind: EnumMember,
+            name: "RED",
             definition: Some(
                 Occurrence {
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 64,
-                        end_line: 64,
-                        start_column: 15,
-                        end_column: 19,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Number,
-            name: "42",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 63,
-                        end_line: 63,
-                        start_column: 13,
-                        end_column: 15,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Number,
-            name: "5",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 13,
-                        end_line: 13,
-                        start_column: 12,
-                        end_column: 13,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: String,
-            name: "\"hello\"",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 62,
-                        end_line: 62,
-                        start_column: 16,
-                        end_column: 23,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Boolean,
-            name: "False",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 66,
-                        end_line: 66,
-                        start_column: 14,
-                        end_column: 19,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Boolean,
-            name: "True",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 65,
-                        end_line: 65,
-                        start_column: 13,
-                        end_column: 17,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Null,
-            name: "None",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 67,
-                        end_line: 67,
-                        start_column: 14,
-                        end_column: 18,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Property,
-            name: "field",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 35,
-                        end_line: 35,
-                        start_column: 14,
-                        end_column: 19,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Property,
-            name: "field",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 38,
-                        end_line: 38,
-                        start_column: 21,
-                        end_column: 26,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Property,
-            name: "field",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 56,
-                        end_line: 56,
-                        start_column: 13,
-                        end_column: 18,
+                        start_line: 90,
+                        end_line: 90,
+                        start_column: 5,
+                        end_column: 8,
                     },
                     roles: Roles(
                         [
@@ -694,10 +584,32 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 40,
-                        end_line: 40,
+                        start_line: 37,
+                        end_line: 37,
                         start_column: 30,
                         end_column: 31,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "a",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 53,
+                        end_line: 53,
+                        start_column: 24,
+                        end_column: 25,
                     },
                     roles: Roles(
                         [
@@ -716,10 +628,32 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 40,
-                        end_line: 40,
+                        start_line: 37,
+                        end_line: 37,
                         start_column: 33,
                         end_column: 34,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
+            name: "b",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 53,
+                        end_line: 53,
+                        start_column: 27,
+                        end_column: 28,
                     },
                     roles: Roles(
                         [
@@ -760,8 +694,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 48,
-                        end_line: 48,
+                        start_line: 49,
+                        end_line: 49,
                         start_column: 26,
                         end_column: 27,
                     },
@@ -782,76 +716,10 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 37,
-                        end_line: 37,
+                        start_line: 41,
+                        end_line: 41,
                         start_column: 34,
                         end_column: 39,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Parameter,
-            name: "self",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 34,
-                        end_line: 34,
-                        start_column: 18,
-                        end_column: 22,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Parameter,
-            name: "self",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 37,
-                        end_line: 37,
-                        start_column: 28,
-                        end_column: 32,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Parameter,
-            name: "self",
-            definition: Some(
-                Occurrence {
-                    language: Python,
-                    absolute_path: "tests/fixtures/python.py",
-                    range: Range {
-                        start_line: 40,
-                        end_line: 40,
-                        start_column: 24,
-                        end_column: 28,
                     },
                     roles: Roles(
                         [
@@ -908,6 +776,28 @@ IntoIter(
         },
         Symbol {
             kind: Parameter,
+            name: "x",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 60,
+                        end_line: 60,
+                        start_column: 20,
+                        end_column: 21,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Parameter,
             name: "y",
             definition: Some(
                 Occurrence {
@@ -929,6 +819,94 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
+            kind: Parameter,
+            name: "y",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 61,
+                        end_line: 61,
+                        start_column: 24,
+                        end_column: 25,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: SelfParameter,
+            name: "self",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 34,
+                        end_line: 34,
+                        start_column: 18,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: SelfParameter,
+            name: "self",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 37,
+                        end_line: 37,
+                        start_column: 24,
+                        end_column: 28,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: SelfParameter,
+            name: "self",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 41,
+                        end_line: 41,
+                        start_column: 28,
+                        end_column: 32,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: Function,
             name: "async_function",
             definition: Some(
@@ -936,8 +914,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 48,
-                        end_line: 48,
+                        start_line: 49,
+                        end_line: 49,
                         start_column: 11,
                         end_column: 25,
                     },
@@ -995,17 +973,61 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Method,
-            name: "__init__",
+            kind: Function,
+            name: "inner_function",
             definition: Some(
                 Occurrence {
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 34,
-                        end_line: 34,
+                        start_line: 61,
+                        end_line: 61,
                         start_column: 9,
-                        end_column: 17,
+                        end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "outer_function",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 60,
+                        end_line: 60,
+                        start_column: 5,
+                        end_column: 19,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Function,
+            name: "top_level_function",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 53,
+                        end_line: 53,
+                        start_column: 5,
+                        end_column: 23,
                     },
                     roles: Roles(
                         [
@@ -1024,8 +1046,8 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 37,
-                        end_line: 37,
+                        start_line: 41,
+                        end_line: 41,
                         start_column: 15,
                         end_column: 27,
                     },
@@ -1046,10 +1068,32 @@ IntoIter(
                     language: Python,
                     absolute_path: "tests/fixtures/python.py",
                     range: Range {
-                        start_line: 40,
-                        end_line: 40,
+                        start_line: 37,
+                        end_line: 37,
                         start_column: 9,
                         end_column: 23,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constructor,
+            name: "__init__",
+            definition: Some(
+                Occurrence {
+                    language: Python,
+                    absolute_path: "tests/fixtures/python.py",
+                    range: Range {
+                        start_line: 34,
+                        end_line: 34,
+                        start_column: 9,
+                        end_column: 17,
                     },
                     roles: Roles(
                         [
