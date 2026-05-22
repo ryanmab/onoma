@@ -48,7 +48,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! onoma = "0.0.18"
+//! onoma = "0.0.19"
 //! ```
 //!
 //! #### Documentation
