@@ -19,7 +19,7 @@ maintenance = { status = "passively-maintained" }
 
 [dependencies]
 itertools = "0.14.0"
-log = "0.4.29"
+log = "0.4.30"
 notify = "8.2.0"
 notify-debouncer-mini =  "0.7.0"
 thiserror = "2.0.18"
