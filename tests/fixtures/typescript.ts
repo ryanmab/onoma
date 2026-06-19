@@ -52,6 +52,7 @@ const myGenericArrowFunction = <T>(x: T) => {}
 // ==============================
 let myVar = 42;
 const myConst = "constValue";
+const MAX_RETRIES = 5;                        
 
 // ==============================
 // Imports

@@ -56,8 +56,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 74,
-                        end_line: 74,
+                        start_line: 75,
+                        end_line: 75,
                         start_column: 14,
                         end_column: 21,
                     },
@@ -78,8 +78,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 75,
-                        end_line: 75,
+                        start_line: 76,
+                        end_line: 76,
                         start_column: 15,
                         end_column: 22,
                     },
@@ -166,8 +166,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 72,
-                        end_line: 72,
+                        start_line: 73,
+                        end_line: 73,
                         start_column: 10,
                         end_column: 16,
                     },
@@ -276,8 +276,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 73,
-                        end_line: 73,
+                        start_line: 74,
+                        end_line: 74,
                         start_column: 10,
                         end_column: 16,
                     },
@@ -452,8 +452,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 59,
-                        end_line: 59,
+                        start_line: 60,
+                        end_line: 60,
                         start_column: 10,
                         end_column: 23,
                     },
@@ -490,14 +490,36 @@ IntoIter(
         },
         Symbol {
             kind: Constant,
+            name: "MAX_RETRIES",
+            definition: Some(
+                Occurrence {
+                    language: TypeScript,
+                    absolute_path: "tests/fixtures/typescript.ts",
+                    range: Range {
+                        start_line: 55,
+                        end_line: 55,
+                        start_column: 7,
+                        end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constant,
             name: "bFalse",
             definition: Some(
                 Occurrence {
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 75,
-                        end_line: 75,
+                        start_line: 76,
+                        end_line: 76,
                         start_column: 7,
                         end_column: 13,
                     },
@@ -518,8 +540,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 74,
-                        end_line: 74,
+                        start_line: 75,
+                        end_line: 75,
                         start_column: 7,
                         end_column: 12,
                     },
@@ -562,8 +584,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 72,
-                        end_line: 72,
+                        start_line: 73,
+                        end_line: 73,
                         start_column: 7,
                         end_column: 8,
                     },
@@ -584,8 +606,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 76,
-                        end_line: 76,
+                        start_line: 77,
+                        end_line: 77,
                         start_column: 7,
                         end_column: 16,
                     },
@@ -606,8 +628,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 64,
-                        end_line: 64,
+                        start_line: 65,
+                        end_line: 65,
                         start_column: 7,
                         end_column: 10,
                     },
@@ -628,8 +650,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 73,
-                        end_line: 73,
+                        start_line: 74,
+                        end_line: 74,
                         start_column: 7,
                         end_column: 8,
                     },
@@ -672,8 +694,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 72,
-                        end_line: 72,
+                        start_line: 73,
+                        end_line: 73,
                         start_column: 19,
                         end_column: 21,
                     },
@@ -694,8 +716,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 66,
-                        end_line: 66,
+                        start_line: 67,
+                        end_line: 67,
                         start_column: 17,
                         end_column: 20,
                     },
@@ -775,6 +797,28 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
+            kind: Number,
+            name: "5",
+            definition: Some(
+                Occurrence {
+                    language: TypeScript,
+                    absolute_path: "tests/fixtures/typescript.ts",
+                    range: Range {
+                        start_line: 55,
+                        end_line: 55,
+                        start_column: 21,
+                        end_column: 22,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
             kind: String,
             name: "\"constValue\"",
             definition: Some(
@@ -804,8 +848,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 73,
-                        end_line: 73,
+                        start_line: 74,
+                        end_line: 74,
                         start_column: 19,
                         end_column: 26,
                     },
@@ -826,8 +870,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 59,
-                        end_line: 59,
+                        start_line: 60,
+                        end_line: 60,
                         start_column: 31,
                         end_column: 44,
                     },
@@ -848,8 +892,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 65,
-                        end_line: 65,
+                        start_line: 66,
+                        end_line: 66,
                         start_column: 10,
                         end_column: 17,
                     },
@@ -870,8 +914,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 75,
-                        end_line: 75,
+                        start_line: 76,
+                        end_line: 76,
                         start_column: 25,
                         end_column: 30,
                     },
@@ -892,8 +936,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 74,
-                        end_line: 74,
+                        start_line: 75,
+                        end_line: 75,
                         start_column: 24,
                         end_column: 28,
                     },
@@ -914,8 +958,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 76,
-                        end_line: 76,
+                        start_line: 77,
+                        end_line: 77,
                         start_column: 19,
                         end_column: 23,
                     },
@@ -936,8 +980,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 66,
-                        end_line: 66,
+                        start_line: 67,
+                        end_line: 67,
                         start_column: 5,
                         end_column: 15,
                     },
@@ -958,8 +1002,8 @@ IntoIter(
                     language: TypeScript,
                     absolute_path: "tests/fixtures/typescript.ts",
                     range: Range {
-                        start_line: 65,
-                        end_line: 65,
+                        start_line: 66,
+                        end_line: 66,
                         start_column: 5,
                         end_column: 8,
                     },
