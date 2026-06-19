@@ -50,94 +50,6 @@ IntoIter(
         },
         Symbol {
             kind: Variable,
-            name: "Color",
-            definition: Some(
-                Occurrence {
-                    language: Javascript,
-                    absolute_path: "tests/fixtures/javascript.js",
-                    range: Range {
-                        start_line: 28,
-                        end_line: 28,
-                        start_column: 7,
-                        end_column: 12,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
-            name: "MAX_RETRIES",
-            definition: Some(
-                Occurrence {
-                    language: Javascript,
-                    absolute_path: "tests/fixtures/javascript.js",
-                    range: Range {
-                        start_line: 43,
-                        end_line: 43,
-                        start_column: 7,
-                        end_column: 18,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
-            name: "MODULE_NAME",
-            definition: Some(
-                Occurrence {
-                    language: Javascript,
-                    absolute_path: "tests/fixtures/javascript.js",
-                    range: Range {
-                        start_line: 2,
-                        end_line: 2,
-                        start_column: 14,
-                        end_column: 25,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
-            name: "PointType",
-            definition: Some(
-                Occurrence {
-                    language: Javascript,
-                    absolute_path: "tests/fixtures/javascript.js",
-                    range: Range {
-                        start_line: 25,
-                        end_line: 25,
-                        start_column: 7,
-                        end_column: 16,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
             name: "count",
             definition: Some(
                 Occurrence {
@@ -226,6 +138,116 @@ IntoIter(
         },
         Symbol {
             kind: Variable,
+            name: "score",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 50,
+                        end_line: 50,
+                        start_column: 5,
+                        end_column: 10,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constant,
+            name: "Color",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 28,
+                        end_line: 28,
+                        start_column: 7,
+                        end_column: 12,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constant,
+            name: "MAX_RETRIES",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 43,
+                        end_line: 43,
+                        start_column: 7,
+                        end_column: 18,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constant,
+            name: "MODULE_NAME",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 2,
+                        end_line: 2,
+                        start_column: 14,
+                        end_column: 25,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constant,
+            name: "PointType",
+            definition: Some(
+                Occurrence {
+                    language: Javascript,
+                    absolute_path: "tests/fixtures/javascript.js",
+                    range: Range {
+                        start_line: 25,
+                        end_line: 25,
+                        start_column: 7,
+                        end_column: 16,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Constant,
             name: "obj",
             definition: Some(
                 Occurrence {
@@ -247,7 +269,7 @@ IntoIter(
             occurrences: [],
         },
         Symbol {
-            kind: Variable,
+            kind: Constant,
             name: "result",
             definition: Some(
                 Occurrence {
@@ -258,28 +280,6 @@ IntoIter(
                         end_line: 35,
                         start_column: 11,
                         end_column: 17,
-                    },
-                    roles: Roles(
-                        [
-                            Definition,
-                        ],
-                    ),
-                },
-            ),
-            occurrences: [],
-        },
-        Symbol {
-            kind: Variable,
-            name: "score",
-            definition: Some(
-                Occurrence {
-                    language: Javascript,
-                    absolute_path: "tests/fixtures/javascript.js",
-                    range: Range {
-                        start_line: 50,
-                        end_line: 50,
-                        start_column: 5,
-                        end_column: 10,
                     },
                     roles: Roles(
                         [
