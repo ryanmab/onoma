@@ -1669,9 +1669,9 @@ dependencies = [
 
 [[package]]
 name = "sea-query-sqlx"
-version = "0.8.0-rc.16"
+version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce6094cb75079a34c4701aaae6d2c7ac57cff5f96ebc266a935935cd62aed0dc"
+checksum = "c5fec1459e5c033d0602853834cee904e8fcb16a121c8b614de17bea478a756c"
 dependencies = [
  "jiff-sqlx",
  "sea-query",
