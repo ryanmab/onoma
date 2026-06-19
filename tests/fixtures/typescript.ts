@@ -11,6 +11,8 @@ class MyClass {
     myMethod() { }
     get myGetter() { return 1; }
     set mySetter(v: number) { }
+    getAProperty() {}
+    setAProperty() {}
     field!: string;
     property!: string;
 }

@@ -358,8 +358,8 @@ expression: resolved_symbols
     "language": "TypeScript",
     "path": "tests/fixtures/typescript.ts",
     "score": 1025,
-    "start_line": 45,
-    "end_line": 45,
+    "start_line": 47,
+    "end_line": 47,
     "start_column": 10,
     "end_column": 25
   },
@@ -370,8 +370,8 @@ expression: resolved_symbols
     "language": "TypeScript",
     "path": "tests/fixtures/typescript.ts",
     "score": 1025,
-    "start_line": 40,
-    "end_line": 40,
+    "start_line": 42,
+    "end_line": 42,
     "start_column": 7,
     "end_column": 22
   },
@@ -382,8 +382,8 @@ expression: resolved_symbols
     "language": "TypeScript",
     "path": "tests/fixtures/typescript.ts",
     "score": 1025,
-    "start_line": 39,
-    "end_line": 39,
+    "start_line": 41,
+    "end_line": 41,
     "start_column": 10,
     "end_column": 20
   },
@@ -394,8 +394,8 @@ expression: resolved_symbols
     "language": "TypeScript",
     "path": "tests/fixtures/typescript.ts",
     "score": 1025,
-    "start_line": 46,
-    "end_line": 46,
+    "start_line": 48,
+    "end_line": 48,
     "start_column": 7,
     "end_column": 29
   },
@@ -442,8 +442,8 @@ expression: resolved_symbols
     "language": "TypeScriptJsx",
     "path": "tests/fixtures/typescript.tsx",
     "score": 1025,
-    "start_line": 41,
-    "end_line": 41,
+    "start_line": 44,
+    "end_line": 44,
     "start_column": 10,
     "end_column": 13
   },
@@ -454,8 +454,8 @@ expression: resolved_symbols
     "language": "TypeScriptJsx",
     "path": "tests/fixtures/typescript.tsx",
     "score": 1025,
-    "start_line": 51,
-    "end_line": 51,
+    "start_line": 54,
+    "end_line": 54,
     "start_column": 10,
     "end_column": 16
   },
@@ -466,8 +466,8 @@ expression: resolved_symbols
     "language": "TypeScriptJsx",
     "path": "tests/fixtures/typescript.tsx",
     "score": 1025,
-    "start_line": 29,
-    "end_line": 29,
+    "start_line": 32,
+    "end_line": 32,
     "start_column": 10,
     "end_column": 13
   },
@@ -490,8 +490,8 @@ expression: resolved_symbols
     "language": "TypeScriptJsx",
     "path": "tests/fixtures/typescript.tsx",
     "score": 1025,
-    "start_line": 34,
-    "end_line": 34,
+    "start_line": 37,
+    "end_line": 37,
     "start_column": 7,
     "end_column": 15
   }

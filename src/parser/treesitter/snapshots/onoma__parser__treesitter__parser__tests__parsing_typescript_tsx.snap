@@ -122,8 +122,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 37,
-                        end_line: 37,
+                        start_line: 40,
+                        end_line: 40,
                         start_column: 5,
                         end_column: 10,
                     },
@@ -144,8 +144,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 38,
-                        end_line: 38,
+                        start_line: 41,
+                        end_line: 41,
                         start_column: 7,
                         end_column: 16,
                     },
@@ -188,8 +188,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 45,
-                        end_line: 45,
+                        start_line: 48,
+                        end_line: 48,
                         start_column: 19,
                         end_column: 24,
                     },
@@ -232,8 +232,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 43,
-                        end_line: 43,
+                        start_line: 46,
+                        end_line: 46,
                         start_column: 14,
                         end_column: 23,
                     },
@@ -254,8 +254,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 44,
-                        end_line: 44,
+                        start_line: 47,
+                        end_line: 47,
                         start_column: 21,
                         end_column: 26,
                     },
@@ -342,8 +342,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 29,
-                        end_line: 29,
+                        start_line: 32,
+                        end_line: 32,
                         start_column: 14,
                         end_column: 15,
                     },
@@ -364,8 +364,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 29,
-                        end_line: 29,
+                        start_line: 32,
+                        end_line: 32,
                         start_column: 25,
                         end_column: 26,
                     },
@@ -386,8 +386,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 41,
-                        end_line: 41,
+                        start_line: 44,
+                        end_line: 44,
                         start_column: 14,
                         end_column: 19,
                     },
@@ -430,8 +430,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 34,
-                        end_line: 34,
+                        start_line: 37,
+                        end_line: 37,
                         start_column: 19,
                         end_column: 20,
                     },
@@ -452,8 +452,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 41,
-                        end_line: 41,
+                        start_line: 44,
+                        end_line: 44,
                         start_column: 10,
                         end_column: 13,
                     },
@@ -474,8 +474,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 51,
-                        end_line: 51,
+                        start_line: 54,
+                        end_line: 54,
                         start_column: 10,
                         end_column: 16,
                     },
@@ -496,8 +496,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 29,
-                        end_line: 29,
+                        start_line: 32,
+                        end_line: 32,
                         start_column: 10,
                         end_column: 13,
                     },
@@ -518,8 +518,8 @@ IntoIter(
                     language: TypeScriptJsx,
                     absolute_path: "tests/fixtures/typescript.tsx",
                     range: Range {
-                        start_line: 34,
-                        end_line: 34,
+                        start_line: 37,
+                        end_line: 37,
                         start_column: 7,
                         end_column: 15,
                     },
@@ -544,6 +544,50 @@ IntoIter(
                         end_line: 23,
                         start_column: 5,
                         end_column: 14,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Getter,
+            name: "getAProperty",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 27,
+                        end_line: 27,
+                        start_column: 5,
+                        end_column: 17,
+                    },
+                    roles: Roles(
+                        [
+                            Definition,
+                        ],
+                    ),
+                },
+            ),
+            occurrences: [],
+        },
+        Symbol {
+            kind: Setter,
+            name: "setAProperty",
+            definition: Some(
+                Occurrence {
+                    language: TypeScriptJsx,
+                    absolute_path: "tests/fixtures/typescript.tsx",
+                    range: Range {
+                        start_line: 28,
+                        end_line: 28,
+                        start_column: 5,
+                        end_column: 17,
                     },
                     roles: Roles(
                         [

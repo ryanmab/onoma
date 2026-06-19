@@ -23,6 +23,9 @@ class Counter {
     increment(step: number) { // Method + Parameter
         this.count += step;
     }
+
+    getAProperty() { }
+    setAProperty() { }
 }
 
 // Function
