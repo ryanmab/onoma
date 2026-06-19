@@ -502,30 +502,6 @@ pub enum SymbolKind {
     /// ```
     Accessor,
 
-    /// A getter accessor.
-    ///
-    /// This symbol refers specifically to the getter for `name`,
-    /// not to the enclosing property or struct.
-    ///
-    /// ```swift
-    /// var name: String {
-    ///   get { _name }
-    ///   // ^^^ getter
-    /// }
-    /// ```
-    Getter,
-
-    /// A setter accessor.
-    ///
-    /// This symbol refers specifically to the setter for `value`,
-    /// not to the enclosing property.
-    ///
-    /// ```swift
-    /// set { _value = newValue }
-    /// // ^^^ setter
-    /// ```
-    Setter,
-
     /// A function or method parameter.
     ///
     /// This symbol refers specifically to the parameter `x`,
@@ -691,6 +667,30 @@ pub enum SymbolKind {
     /// // ^^^ singleton method
     /// ```
     SingletonMethod,
+
+    /// A getter accessor.
+    ///
+    /// This symbol refers specifically to the getter for `name`,
+    /// not to the enclosing property or struct.
+    ///
+    /// ```swift
+    /// var name: String {
+    ///   get { _name }
+    ///   // ^^^ getter
+    /// }
+    /// ```
+    Getter,
+
+    /// A setter accessor.
+    ///
+    /// This symbol refers specifically to the setter for `value`,
+    /// not to the enclosing property.
+    ///
+    /// ```swift
+    /// set { _value = newValue }
+    /// // ^^^ setter
+    /// ```
+    Setter,
 
     /// An event symbol.
     ///

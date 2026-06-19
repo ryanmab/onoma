@@ -11,6 +11,14 @@ class MyClass {                           // @Class
     sum(a, b) {                              // @Method
         return a + b;                          // @Function (nested value)
     }
+
+    getX() { // @Getter
+        return x
+    }
+
+    setY(y) { // @Setter
+        this.y = y
+    }
 }
 
 // Type alias (heuristic: PascalCase const)       // @TypeAlias

@@ -13,6 +13,14 @@ class MyComponent {
         const localVar = 10;
         return this.field + localVar + param1 + param2;
     }
+
+    
+    getAProperty() { // @Getter
+    }
+
+    setAProperty(y) { // @Setter
+    }
+
 }
 
 //////////////////////////
