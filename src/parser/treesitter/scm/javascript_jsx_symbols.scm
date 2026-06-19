@@ -13,8 +13,7 @@
   name: (identifier) @Class)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Type aliases / Constants (heuristic)
-;; Note: Pure JS doesn't have type aliases
+;; Constants (heuristic)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Capitalized identifiers could be classes (references)
@@ -47,6 +46,18 @@
 (method_definition
   name: (property_identifier) @Constructor
   (#eq? @Constructor "constructor"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Getters & Setters
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(method_definition
+  name: (property_identifier) @Getter
+  (#match? @Getter "^get[A-Z_]*"))
+
+(method_definition
+  name: (property_identifier) @Setter
+  (#match? @Setter "^set[A-Z_]*"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Parameters

@@ -43,6 +43,18 @@
   (#eq? @Constructor "constructor"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Getters & Setters
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(method_definition
+  name: (property_identifier) @Getter
+  (#match? @Getter "^get[A-Z_]*"))
+
+(method_definition
+  name: (property_identifier) @Setter
+  (#match? @Setter "^set[A-Z_]*"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Parameters
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
