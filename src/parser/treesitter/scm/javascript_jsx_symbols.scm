@@ -13,18 +13,17 @@
   name: (identifier) @Class)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Constants (heuristic)
+;; Constants 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Capitalized identifiers could be classes (references)
-(variable_declarator
-  (identifier) @Variable
-  (#match? @Variable "^[A-Z][A-Za-z0-9_]*$"))
+(lexical_declaration
+  kind: "const"
+  (variable_declarator
+    (identifier) @Constant))
 
-;; Uppercase constants (convention)
-(variable_declarator
-  (identifier) @Constant
-  (#match? @Constant "^[A-Z_][A-Z0-9_]*$"))
+(lexical_declaration
+  (variable_declarator
+    (identifier) @Variable))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Functions & Methods

@@ -16,8 +16,14 @@
 ;; Variables / constants (all identifiers)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(variable_declarator
-  name: (identifier) @Variable)
+(lexical_declaration
+  kind: "const"
+  (variable_declarator
+    (identifier) @Constant))
+
+(lexical_declaration
+  (variable_declarator
+    (identifier) @Variable))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Functions & Arrow Functions

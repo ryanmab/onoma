@@ -104,7 +104,7 @@ impl Resolver for DatabaseBackedResolver {
                         symbol.score = scoring::calculate_score(
                             &query,
                             &symbol,
-                            fuzzy_matches.iter(),
+                            fuzzy_matches.into_iter(),
                             ctx.current_file.as_deref(),
                         )
                         .into();
