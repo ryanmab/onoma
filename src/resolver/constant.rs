@@ -6,6 +6,11 @@
 /// See [`resolver::utils::calculate_score`].
 pub const DEFAULT_SCORE: i64 = 1000;
 
+// The minimum score for symbols to be returned when resolved as part of a query.
+//
+// Currently 80% of the default score.
+pub const MIN_RESOLVED_SCORE: i64 = DEFAULT_SCORE - ((DEFAULT_SCORE / 100) * 20);
+
 /// The number of seconds the Resolver thread will attempt to send a resolved
 /// symbol back to the caller, before timing out and shutting down.
 ///
