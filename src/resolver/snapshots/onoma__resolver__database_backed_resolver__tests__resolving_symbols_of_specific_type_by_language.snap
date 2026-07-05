@@ -365,30 +365,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "obj",
-    "kind": "Constant",
-    "language": "Javascript",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1010,
-    "start_line": 53,
-    "end_line": 53,
-    "start_column": 7,
-    "end_column": 10
-  },
-  {
-    "id": 0,
-    "name": "result",
-    "kind": "Constant",
-    "language": "Javascript",
-    "path": "tests/fixtures/javascript.js",
-    "score": 1010,
-    "start_line": 35,
-    "end_line": 35,
-    "start_column": 11,
-    "end_column": 17
-  },
-  {
-    "id": 0,
     "name": "score",
     "kind": "Variable",
     "language": "Javascript",
@@ -521,30 +497,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "boolFalse",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 72,
-    "end_line": 72,
-    "start_column": 7,
-    "end_column": 16
-  },
-  {
-    "id": 0,
-    "name": "boolTrue",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 71,
-    "end_line": 71,
-    "start_column": 7,
-    "end_column": 15
-  },
-  {
-    "id": 0,
     "name": "getAProperty",
     "kind": "Getter",
     "language": "JavascriptJsx",
@@ -554,30 +506,6 @@ expression: resolved_symbols
     "end_line": 18,
     "start_column": 5,
     "end_column": 17
-  },
-  {
-    "id": 0,
-    "name": "jsxVar",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 78,
-    "end_line": 78,
-    "start_column": 7,
-    "end_column": 13
-  },
-  {
-    "id": 0,
-    "name": "localVar",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 13,
-    "end_line": 13,
-    "start_column": 15,
-    "end_column": 23
   },
   {
     "id": 0,
@@ -593,42 +521,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "nul",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 73,
-    "end_line": 73,
-    "start_column": 7,
-    "end_column": 10
-  },
-  {
-    "id": 0,
-    "name": "num",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 70,
-    "end_line": 70,
-    "start_column": 7,
-    "end_column": 10
-  },
-  {
-    "id": 0,
-    "name": "obj",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 63,
-    "end_line": 63,
-    "start_column": 7,
-    "end_column": 10
-  },
-  {
-    "id": 0,
     "name": "regularFunction",
     "kind": "Function",
     "language": "JavascriptJsx",
@@ -641,18 +533,6 @@ expression: resolved_symbols
   },
   {
     "id": 0,
-    "name": "selfClosing",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 91,
-    "end_line": 91,
-    "start_column": 7,
-    "end_column": 18
-  },
-  {
-    "id": 0,
     "name": "setAProperty",
     "kind": "Setter",
     "language": "JavascriptJsx",
@@ -662,30 +542,6 @@ expression: resolved_symbols
     "end_line": 21,
     "start_column": 5,
     "end_column": 17
-  },
-  {
-    "id": 0,
-    "name": "str",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 69,
-    "end_line": 69,
-    "start_column": 7,
-    "end_column": 10
-  },
-  {
-    "id": 0,
-    "name": "valueFromMember",
-    "kind": "Constant",
-    "language": "JavascriptJsx",
-    "path": "tests/fixtures/javascript.jsx",
-    "score": 1010,
-    "start_line": 64,
-    "end_line": 64,
-    "start_column": 7,
-    "end_column": 22
   },
   {
     "id": 0,
@@ -1430,18 +1286,6 @@ expression: resolved_symbols
     "end_line": 23,
     "start_column": 5,
     "end_column": 14
-  },
-  {
-    "id": 0,
-    "name": "moduleValue",
-    "kind": "Constant",
-    "language": "TypeScriptJsx",
-    "path": "tests/fixtures/typescript.tsx",
-    "score": 1010,
-    "start_line": 2,
-    "end_line": 2,
-    "start_column": 14,
-    "end_column": 25
   },
   {
     "id": 0,
