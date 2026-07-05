@@ -18,7 +18,7 @@ repository = "https://github.com/ryanmab/onoma"
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
-itertools = "0.14.0"
+itertools = "0.15.0"
 log = "0.4.32"
 notify = "8.2.0"
 notify-debouncer-mini =  "0.7.0"
