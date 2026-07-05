@@ -214,6 +214,16 @@ where
     }
 }
 
+impl<I> Drop for Watcher<I>
+where
+    I: Indexer + Send + Sync + 'static,
+{
+    fn drop(&mut self) {
+        // Stop the watcher (if its running) when it's being dropped
+        self.stop();
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use std::{
