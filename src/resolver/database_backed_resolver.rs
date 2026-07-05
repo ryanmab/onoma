@@ -109,10 +109,9 @@ impl Resolver for DatabaseBackedResolver {
                         )
                         .into();
 
-                        if *symbol.score < constant::DEFAULT_SCORE {
-                            // The symbol's score is less than the score it started with. This
-                            // indicates that it incurred more penalties than it did bonuses. As
-                            // such, it's likely not a good match.
+                        if *symbol.score < constant::MIN_RESOLVED_SCORE {
+                            // The symbol's score is less than the minimum required score to be
+                            // returned, which means its likely not a good match.
                             //
                             // NB: There is a tradeoff here - in that, a score with penalties
                             // _might_ still be something a user will want to see. If we find

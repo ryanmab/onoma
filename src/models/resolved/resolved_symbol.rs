@@ -90,6 +90,10 @@ impl Ord for ResolvedSymbol {
             core::cmp::Ordering::Equal => {}
             ord => return ord,
         }
-        self.start_line.cmp(&other.start_line)
+        match self.start_line.cmp(&other.start_line) {
+            core::cmp::Ordering::Equal => {}
+            ord => return ord,
+        }
+        self.start_column.cmp(&other.start_column)
     }
 }
