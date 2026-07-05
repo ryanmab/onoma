@@ -13,10 +13,7 @@ mod types;
 
 pub use error::Error;
 use tokio::{
-    sync::{
-        Mutex,
-        mpsc::{self, Receiver},
-    },
+    sync::mpsc::{self, Receiver},
     task::JoinHandle,
 };
 pub use types::Result;
@@ -39,9 +36,9 @@ pub struct Watcher<I>
 where
     I: Indexer + Send + Sync + 'static,
 {
-    debouncer: Arc<Mutex<Option<Debouncer<RecommendedWatcher>>>>,
-    handle: Arc<Mutex<Option<JoinHandle<()>>>>,
-    indexer: Arc<Mutex<I>>,
+    debouncer: Option<Debouncer<RecommendedWatcher>>,
+    handle: Option<JoinHandle<()>>,
+    indexer: Arc<I>,
 }
 
 impl<I> Watcher<I>
@@ -55,9 +52,9 @@ where
     #[must_use]
     pub fn new(indexer: I) -> Self {
         Self {
-            debouncer: Arc::default(),
-            handle: Arc::default(),
-            indexer: Arc::new(Mutex::new(indexer)),
+            debouncer: None,
+            handle: None,
+            indexer: Arc::new(indexer),
         }
     }
 
@@ -70,17 +67,12 @@ where
     ///
     /// Returns a list of errors for each workspace which could not be successfully indexed.
     pub async fn run_full_index(&self) -> std::result::Result<(), Vec<watcher::Error>> {
-        self.indexer
-            .lock()
-            .await
-            .index_workspaces()
-            .await
-            .map_err(|errors| {
-                errors
-                    .into_iter()
-                    .map(watcher::Error::IndexingFailed)
-                    .collect::<Vec<_>>()
-            })?;
+        self.indexer.index_workspaces().await.map_err(|errors| {
+            errors
+                .into_iter()
+                .map(watcher::Error::IndexingFailed)
+                .collect::<Vec<_>>()
+        })?;
 
         Ok(())
     }
@@ -92,12 +84,12 @@ where
     ///
     /// Returns an error if the Watcher could not be started. Generally this occurs if the
     /// underlying filesystem event debouncer fails to start.
-    pub async fn start(&self) -> Result<()> {
-        let (mut rx, debouncer) = self.setup_debouncer().await?;
+    pub fn start(&mut self) -> Result<()> {
+        let (mut rx, debouncer) = self.setup_debouncer()?;
 
-        *self.debouncer.lock().await = Some(debouncer);
+        self.debouncer = Some(debouncer);
 
-        log::debug!("Watching: {:?}", self.indexer.lock().await.get_workspaces());
+        log::debug!("Watching: {:?}", self.indexer.get_workspaces());
 
         let indexer = Arc::clone(&self.indexer);
 
@@ -125,7 +117,7 @@ where
             }
         });
 
-        *self.handle.lock().await = Some(handle);
+        self.handle = Some(handle);
 
         Ok(())
     }
@@ -133,9 +125,9 @@ where
     /// Stop watching for file changes in the indexer's workspaces.
     ///
     /// At any point, the watcher can be restarted by calling [`Watcher::start`].
-    pub async fn stop(&self) {
-        let debouncer = self.debouncer.lock().await.take();
-        let handle = self.handle.lock().await.take();
+    pub fn stop(&mut self) {
+        let debouncer = self.debouncer.take();
+        let handle = self.handle.take();
 
         // They'll both be dropped and safely shut down when they go
         // out of scope, but just for verbosity, drop them explicitly
@@ -151,7 +143,7 @@ where
     /// It is the responsibility of the Indexer to ensure the file is relevant for its
     /// index (i.e. it's a supported programming language, etc.).
     async fn on_event(
-        indexer: Arc<Mutex<I>>,
+        indexer: Arc<I>,
         events: impl IntoIterator<Item = DebouncedEvent> + Send,
     ) -> Result<()> {
         for path in events.into_iter().map(|event| event.path).dedup() {
@@ -168,8 +160,6 @@ where
                     log::trace!("Indexing file change: {}", path.display());
 
                     indexer
-                        .lock()
-                        .await
                         .index(&path)
                         .await
                         .map_err(watcher::Error::IndexingFailed)?;
@@ -181,8 +171,6 @@ where
                     );
 
                     indexer
-                        .lock()
-                        .await
                         .deindex(&path)
                         .await
                         .map_err(watcher::Error::IndexingFailed)?;
@@ -197,7 +185,7 @@ where
     /// Setup a debouncer, and configure a channel to receive the debounced events in real-time from the
     /// filesystem.
     #[must_use = "Watcher has no purpose if events are not picked up from the receiver"]
-    async fn setup_debouncer(&self) -> Result<(Receiver<Event>, Debouncer<RecommendedWatcher>)> {
+    fn setup_debouncer(&self) -> Result<(Receiver<Event>, Debouncer<RecommendedWatcher>)> {
         let (tx, rx) = mpsc::channel(1);
 
         let config = notify_debouncer_mini::Config::with_timeout(
@@ -212,7 +200,7 @@ where
         })
         .map_err(watcher::Error::NotifySetupFailed)?;
 
-        let workspaces = self.indexer.lock().await.get_workspaces();
+        let workspaces = self.indexer.get_workspaces();
 
         let watcher = debouncer.watcher();
 
@@ -262,9 +250,9 @@ mod tests {
             .withf(|path| path.ends_with("foo.txt"))
             .returning(|_| Box::pin(future::ready(Ok(()))));
 
-        let watcher = super::Watcher::new(mock_indexer);
+        let mut watcher = super::Watcher::new(mock_indexer);
 
-        watcher.start().await.expect("Watcher to start");
+        watcher.start().expect("Watcher to start");
 
         fs::create_dir_all(workspace.clone().join("src"))
             .expect("Should always be able to create a test directory");
@@ -274,7 +262,7 @@ mod tests {
 
         tokio::time::sleep(std::time::Duration::from_secs(5)).await;
 
-        watcher.stop().await;
+        watcher.stop();
 
         fs::remove_dir_all(workspace.as_path())
             .expect("Should always be able to clean up temporary project folder");
@@ -308,15 +296,15 @@ mod tests {
             .withf(|path| path.ends_with("foo.txt"))
             .returning(|_| Box::pin(future::ready(Ok(()))));
 
-        let watcher = super::Watcher::new(mock_indexer);
+        let mut watcher = super::Watcher::new(mock_indexer);
 
-        watcher.start().await.expect("Watcher to start");
+        watcher.start().expect("Watcher to start");
 
         fs::remove_file(&path).expect("Should always be able to delete a test file");
 
         tokio::time::sleep(std::time::Duration::from_secs(5)).await;
 
-        watcher.stop().await;
+        watcher.stop();
 
         fs::remove_dir_all(workspace.as_path())
             .expect("Should always be able to clean up temporary project folder");
@@ -346,7 +334,7 @@ mod tests {
 
         mock_indexer.expect_is_inside_workspace().return_const(true);
 
-        // Indexer should never be called for the foo.txt file, because it is in a ignored
+        // Indexer should never be called for the foo.txt file, because it is in an ignored
         // directory
         mock_indexer
             .expect_index()
@@ -354,9 +342,9 @@ mod tests {
             .withf(|path| path.ends_with("target/foo.txt"))
             .returning(|_| Box::pin(future::ready(Ok(()))));
 
-        let watcher = super::Watcher::new(mock_indexer);
+        let mut watcher = super::Watcher::new(mock_indexer);
 
-        watcher.start().await.expect("Watcher to start");
+        watcher.start().expect("Watcher to start");
 
         fs::create_dir_all(temp_dir.path().join("target"))
             .expect("Should always be able to create a test directory");
@@ -366,6 +354,6 @@ mod tests {
 
         tokio::time::sleep(std::time::Duration::from_secs(5)).await;
 
-        watcher.stop().await;
+        watcher.stop();
     }
 }
