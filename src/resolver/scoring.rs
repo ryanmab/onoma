@@ -45,7 +45,6 @@ pub fn get_fuzzy_config(query: &str) -> frizbee::Config {
             },
             ..Default::default()
         },
-        ..Default::default()
     }
 }
 
@@ -417,7 +416,7 @@ mod tests {
         let config = frizbee::Config {
             max_typos: Some(1),
             sort: false,
-            ..Default::default()
+            scoring: frizbee::Scoring::default(),
         };
 
         // Broadly matches the behavior defined in scoring.rs, though not a requirement,
@@ -464,7 +463,7 @@ mod tests {
         let config = frizbee::Config {
             max_typos: Some(1),
             sort: false,
-            ..Default::default()
+            scoring: frizbee::Scoring::default(),
         };
 
         // Broadly matches the behavior defined in scoring.rs, though not a requirement,
