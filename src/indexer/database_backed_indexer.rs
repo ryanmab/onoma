@@ -1,5 +1,5 @@
 use crate::{
-    indexer::{self, Error, Indexer, types},
+    indexer::{self, Error, Indexer, constant, types},
     models::parsed::{FileExtension, Language},
     parser::{self, Parser},
     utils::get_database_path,
@@ -381,21 +381,26 @@ impl Indexer for DatabaseBackedIndexer {
 
         let mut tasks = JoinSet::<()>::new();
 
-        for result in files {
-            match result {
-                Ok(entry) => {
-                    let indexer = self.clone();
+        let chunks = files.chunks(constant::MAX_FILES_PER_INDEX_CHUNK as usize);
 
-                    tasks.spawn(async move {
-                        if let Err(e) = indexer.index_file(entry.as_path()).await {
-                            log::error!("Error indexing file {}: {e:?}", entry.display());
+        while let Some(result) = chunks.into_iter().next() {
+            let indexer = self.clone();
+            let chunk = result.collect::<Vec<_>>();
+
+            tasks.spawn(async move {
+                for file in chunk {
+                    match file {
+                        Ok(entry) => {
+                            if let Err(e) = indexer.index_file(entry.as_path()).await {
+                                log::error!("Error indexing file {}: {e:?}", entry.display());
+                            }
                         }
-                    });
+                        Err(e) => {
+                            log::error!("Error while walking project directory: {e:?}");
+                        }
+                    }
                 }
-                Err(e) => {
-                    log::error!("Error while walking project directory: {e:?}");
-                }
-            }
+            });
         }
 
         tasks.join_all().await;

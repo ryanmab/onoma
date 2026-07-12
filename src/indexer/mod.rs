@@ -3,6 +3,7 @@
 //! This _does not_ handle incremental updates, such as when files change. For that
 //! capability, refer to [`crate::watcher`].
 
+mod constant;
 mod database_backed_indexer;
 mod error;
 mod types;
