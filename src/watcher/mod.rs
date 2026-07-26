@@ -85,7 +85,9 @@ where
     /// Returns an error if the Watcher could not be started. Generally this occurs if the
     /// underlying filesystem event debouncer fails to start.
     pub fn start(&mut self) -> Result<()> {
-        let (mut rx, debouncer) = self.setup_debouncer()?;
+        let (mut rx, debouncer) = self
+            .setup_debouncer()
+            .inspect_err(|err| log::error!("Debounce setup error: {err:?}"))?;
 
         self.debouncer = Some(debouncer);
 
@@ -150,7 +152,7 @@ where
             match path {
                 path if path.exists() && path.is_file() => {
                     if is_ignored!(path.as_path()) {
-                        log::debug!(
+                        log::trace!(
                             "File change is ignored by .gitignore, not indexing: {}",
                             path.display()
                         );

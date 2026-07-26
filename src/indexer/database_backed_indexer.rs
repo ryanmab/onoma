@@ -9,7 +9,6 @@ use sea_query::{Expr, ExprTrait, OnConflict, Query, SqliteQueryBuilder};
 use sea_query_sqlx::SqlxBinder;
 use sqlx::sqlite::SqliteConnectOptions;
 use std::{
-    iter,
     path::{Path, PathBuf},
     sync::Arc,
 };
@@ -85,8 +84,8 @@ impl DatabaseBackedIndexer {
             ));
         }
 
-        log::info!(
-            "Initializing database for indexer at path: {:?}",
+        log::debug!(
+            "Initialising database for indexer at path: {:?}",
             &database_path
         );
 
@@ -140,6 +139,7 @@ impl DatabaseBackedIndexer {
             .map_err(Error::ParsingFailed)?;
 
         log::trace!("Parsed file: {}", path.display());
+
         let now = chrono::Utc::now();
 
         let mut transaction = self
@@ -183,7 +183,7 @@ impl DatabaseBackedIndexer {
         .await
         .map_err(indexer::Error::QueryFailed)?;
 
-        log::debug!(
+        log::trace!(
             "Parsed {} symbols found in {}.",
             index.symbols.len(),
             path.display()
@@ -327,57 +327,68 @@ impl Indexer for DatabaseBackedIndexer {
             ));
         }
 
-        let files: Box<dyn Iterator<Item = std::result::Result<PathBuf, _>> + Send> =
-            if path.is_dir() {
-                // If it's a directory, we need to walk the directory and find all relevant files to
-                // index, based on the supported file extensions
-                let mut types = ignore::types::TypesBuilder::new();
-                for language in Language::iter() {
-                    let file_extension = &*FileExtension::from(language);
+        if path.is_file() {
+            // A single file has changed, which is also in a language we care about, we need to
+            // index it.
+            if Language::try_from(path).is_ok()
+                && let Err(e) = self.index_file(path).await
+            {
+                log::error!("Error indexing file {}: {e:?}", path.display());
+            }
 
-                    if let Err(e) = types.add(file_extension, &format!("*.{file_extension}")) {
-                        log::error!(
-                            "File extension ({file_extension}) could not be added to indexer: {e}"
-                        );
+            return Ok(());
+        }
 
-                        continue;
-                    }
+        let files = {
+            // A whole directory of files has changed, we need to walk the directory and find
+            // all relevant files to index, and index them.
+            let mut types = ignore::types::TypesBuilder::new();
+            for language in Language::iter() {
+                let file_extension = &*FileExtension::from(language);
 
-                    types.select(file_extension);
+                if let Err(e) = types.add(file_extension, &format!("*.{file_extension}")) {
+                    log::error!(
+                        "File extension ({file_extension}) could not be added to indexer: {e}"
+                    );
+
+                    continue;
                 }
-                let types = types.build().expect("Failed to build ignore types");
 
-                let walker = ignore::WalkBuilder::new(path)
-                    .types(types)
-                    .git_global(true)
-                    .ignore_case_insensitive(true)
-                    // This prevents files from nested directories being indexed when not tracked
-                    // by git (usually as part of a full index run).
-                    //
-                    // There's similar logic (handled by the `ignored` crate) in the Watcher, which
-                    // filters out individual filesystem events for files which are matched by `.gitignore`.
-                    .git_ignore(true)
-                    .git_exclude(true)
-                    // By default ignore will only observe `.gitignore` files if in a git repository unless we explicitly
-                    // don't require git.
-                    //
-                    // If we don't do this, it can lead to unexpected scenarios where files are indexed
-                    // which are part of `.gitignore` simply because the repository hasn't yet been
-                    // initialised.
-                    .require_git(false)
-                    .build();
+                types.select(file_extension);
+            }
 
-                Box::new(walker.into_iter().filter_map(|entry| match entry {
-                    Ok(entry) if entry.metadata().is_ok_and(|m| m.is_file()) => {
-                        Some(Ok(entry.into_path()))
-                    }
-                    Ok(_) => None,
-                    Err(e) => Some(Err(e)),
-                }))
-            } else {
-                // If it's a file, we can short-circuit and just index that single file
-                Box::new(iter::once(Ok(path.to_path_buf())))
-            };
+            let walker = ignore::WalkBuilder::new(path)
+                .types(
+                    types
+                        .build()
+                        .expect("File types for directory walker should always be valid"),
+                )
+                .git_global(true)
+                .ignore_case_insensitive(true)
+                // This prevents files from nested directories being indexed when not tracked
+                // by git (usually as part of a full index run).
+                //
+                // There's similar logic (handled by the `ignored` crate) in the Watcher, which
+                // filters out individual filesystem events for files which are matched by `.gitignore`.
+                .git_ignore(true)
+                .git_exclude(true)
+                // By default ignore will only observe `.gitignore` files if in a git repository unless we explicitly
+                // don't require git.
+                //
+                // If we don't do this, it can lead to unexpected scenarios where files are indexed
+                // which are part of `.gitignore` simply because the repository hasn't yet been
+                // initialised.
+                .require_git(false)
+                .build();
+
+            walker.into_iter().filter_map(|entry| match entry {
+                Ok(entry) if entry.metadata().is_ok_and(|m| m.is_file()) => {
+                    Some(Ok(entry.into_path()))
+                }
+                Ok(_) => None,
+                Err(e) => Some(Err(e)),
+            })
+        };
 
         let mut tasks = JoinSet::<()>::new();
 
