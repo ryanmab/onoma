@@ -43,8 +43,8 @@ impl DatabaseBackedResolver {
             );
         }
 
-        log::info!(
-            "Initializing database for resolver at path: {:?}",
+        log::debug!(
+            "Initialising database for resolver at path: {:?}",
             &database_path
         );
 
@@ -78,7 +78,7 @@ impl Resolver for DatabaseBackedResolver {
         let pool = self.pool.clone();
 
         tokio::spawn(async move {
-            log::info!(
+            log::trace!(
                 "Executing query: \"{query}\" (from current file: {:?})",
                 ctx.current_file
             );
@@ -159,9 +159,7 @@ impl Resolver for DatabaseBackedResolver {
                 }
             }
 
-            log::info!(
-                "Returned {count} symbols (until no other symbols left, or stream no longer open)."
-            );
+            log::debug!("Returned symbols for \"{query}\": {count}");
         });
 
         ReceiverStream::new(rx)

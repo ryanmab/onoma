@@ -150,7 +150,7 @@ where
             match path {
                 path if path.exists() && path.is_file() => {
                     if is_ignored!(path.as_path()) {
-                        log::debug!(
+                        log::trace!(
                             "File change is ignored by .gitignore, not indexing: {}",
                             path.display()
                         );

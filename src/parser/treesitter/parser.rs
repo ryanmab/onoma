@@ -165,7 +165,7 @@ impl Parser {
                         // this comes down to the limitations of Treesitter and how exclusive we can
                         // make the queries, but perhaps we can make this better (or skip earlier),
                         // so symbols are only captured in their 'ideal' symbol kind.
-                        log::debug!(
+                        log::trace!(
                             "{existing_symbol:?} is already more specific than {symbol:?} so not replacing",
                         );
                     }

@@ -85,8 +85,8 @@ impl DatabaseBackedIndexer {
             ));
         }
 
-        log::info!(
-            "Initializing database for indexer at path: {:?}",
+        log::debug!(
+            "Initialising database for indexer at path: {:?}",
             &database_path
         );
 
@@ -140,6 +140,7 @@ impl DatabaseBackedIndexer {
             .map_err(Error::ParsingFailed)?;
 
         log::trace!("Parsed file: {}", path.display());
+
         let now = chrono::Utc::now();
 
         let mut transaction = self
@@ -183,7 +184,7 @@ impl DatabaseBackedIndexer {
         .await
         .map_err(indexer::Error::QueryFailed)?;
 
-        log::debug!(
+        log::trace!(
             "Parsed {} symbols found in {}.",
             index.symbols.len(),
             path.display()
