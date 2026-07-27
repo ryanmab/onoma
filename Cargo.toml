@@ -2,7 +2,7 @@
 name = "onoma"
 version = "0.0.23"
 edition = "2024"
-rust-version = "1.88.0"
+rust-version = "1.89.0"
 
 authors = ["Ryan Maber <ryan@ryanmaber.com>"]
 license = "MIT"
