@@ -9,7 +9,7 @@ use crate::{
     models::resolved::ResolvedSymbol,
     resolver::{
         Context, Resolver, constant,
-        scoring::{self, fuzzy_match},
+        scoring::{self},
         utils::{self},
     },
     utils::get_database_path,
@@ -89,25 +89,39 @@ impl Resolver for DatabaseBackedResolver {
                 sqlx::query_as_with::<_, ResolvedSymbol, _>(&sql, values).fetch(&pool);
 
             let mut count = 0;
-            let config = scoring::get_fuzzy_config(&query);
 
+            let mut fuzzy_matcher =
+                frizbee::Matcher::new(&query, &scoring::get_fuzzy_config(&query));
+
+            // TODO: Should we batch the results from SQLite and perform matching on a
+            // larger list? It'll be a tradeoff between Time to First Result and overall
+            // scoring performance. But, is the difference that much? Is it in fact faster
+            // because SIMD is more efficient and the bridges aren't having to continually
+            // repaint for every drip-fed result?
             while let Some(result) = results.next().await {
                 match result {
                     Ok(mut symbol) => {
-                        let fuzzy_matches = fuzzy_match(&query, &symbol, &config);
-
-                        if !query.is_empty() && fuzzy_matches.is_empty() {
-                            // The symbol didn't fuzzy match the query, meaning we can stop here.
-                            continue;
-                        }
-
-                        symbol.score = scoring::calculate_score(
+                        let score = scoring::calculate_score(
                             &query,
                             &symbol,
-                            fuzzy_matches.into_iter(),
+                            fuzzy_matcher.match_list(&[
+                                &symbol.name,
+                                // NB: Include the lowercase name here in order to favour exact matches on symbols
+                                // who contain upper case characters. Frizbee only matches haystack items exactly
+                                // when the case is the same meaning `watcher` (query) and `Watcher` (symbol) will
+                                // not be treated as an exact match unless we include an explicit lowercase haystack
+                                // element.
+                                &symbol.name.to_ascii_lowercase(),
+                            ]),
                             ctx.current_file.as_deref(),
-                        )
-                        .into();
+                        );
+
+                        let Some(score) = score else {
+                            // No score, meaning it's not a valid match, so we can be skipped.
+                            continue;
+                        };
+
+                        symbol.score = score.into();
 
                         if *symbol.score < constant::MIN_RESOLVED_SCORE {
                             // The symbol's score is less than the minimum required score to be
