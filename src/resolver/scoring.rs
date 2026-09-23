@@ -31,8 +31,6 @@ pub fn get_fuzzy_config(query: &str) -> frizbee::Config {
             matching_case_bonus: weight::CASE_SENSITIVE_MATCHING_CASE_BONUS,
             ..Default::default()
         },
-        casing: frizbee::CaseMatching::Smart,
-        matching: frizbee::Matching::Fuzzy,
         ..Default::default()
     }
 }
