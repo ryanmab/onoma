@@ -98,7 +98,7 @@ pub enum SymbolKind {
 
     /// A macro definition.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// macro_rules! debug {
     ///     ($x:expr) => { println!("{:?}", $x) };
     /// }
@@ -129,7 +129,7 @@ pub enum SymbolKind {
 
     /// A type alias.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// type UserId = u64;
     /// ```
     TypeAlias,
@@ -139,7 +139,7 @@ pub enum SymbolKind {
     /// This symbol refers specifically to `T`,
     /// not to the enclosing function `foo`.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// fn foo<T>(x: T) {}
     /// //        ^^^ type parameter
     /// ```
@@ -178,14 +178,14 @@ pub enum SymbolKind {
 
     /// A struct type.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// struct Point { x: i32, y: i32 }
     /// ```
     Struct,
 
     /// An enumeration type.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// enum Color {
     ///     Red,
     ///     Green,
@@ -195,7 +195,7 @@ pub enum SymbolKind {
 
     /// An error type.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// enum ParseError {
     ///     InvalidInput,
     /// }
@@ -222,7 +222,7 @@ pub enum SymbolKind {
 
     /// A trait definition.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// trait Display {
     ///     fn fmt(&self);
     /// }
@@ -313,7 +313,7 @@ pub enum SymbolKind {
     /// This symbol refers specifically to the associated type `Item`,
     /// not to the enclosing trait `Iterator`.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// trait Iterator {
     ///     type Item;
     ///     // ^^^ associated type
@@ -333,56 +333,56 @@ pub enum SymbolKind {
 
     /// A value-level symbol.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// let x = 10;
     /// ```
     Value,
 
     /// A variable binding.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// let mut count = 0;
     /// ```
     Variable,
 
     /// A constant value.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// const MAX_RETRIES: usize = 5;
     /// ```
     Constant,
 
     /// A numeric value or type.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// let n: i64 = 42;
     /// ```
     Number,
 
     /// A string value or type.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// let s = "hello";
     /// ```
     String,
 
     /// A boolean value or type.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// let done: bool = false;
     /// ```
     Boolean,
 
     /// A null or absent value.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// let x: Option<i32> = None;
     /// ```
     Null,
 
     /// An array type or value.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// let xs = [1, 2, 3];
     /// ```
     Array,
@@ -424,7 +424,7 @@ pub enum SymbolKind {
     /// This symbol refers specifically to the field `name`,
     /// not to the enclosing struct `User`.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// struct User {
     ///     name: String,
     ///     // ^^^ field
@@ -472,7 +472,7 @@ pub enum SymbolKind {
     /// This symbol refers specifically to the enum member `Red`,
     /// not to the enclosing enum `Color`.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// enum Color {
     ///     Red,
     ///     // ^^^ enum member
@@ -507,7 +507,7 @@ pub enum SymbolKind {
     /// This symbol refers specifically to the parameter `x`,
     /// not to the enclosing function `foo`.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// fn foo(x: i32) {}
     /// //      ^^^ parameter
     /// ```
@@ -554,7 +554,7 @@ pub enum SymbolKind {
 
     /// A free-standing function.
     ///
-    /// ```rust,ignore
+    /// ```rust
     /// fn add(a: i32, b: i32) -> i32 {
     ///     a + b
     /// }
