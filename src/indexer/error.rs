@@ -11,6 +11,7 @@ use crate::parser::{self};
 /// validating workspace paths, parsing source code, or interacting with the
 /// database. Each variant wraps the relevant context or underlying error.
 #[derive(Error, Debug)]
+#[non_exhaustive]
 pub enum Error {
     /// Failed to create the parent directory for the index file.
     ///
