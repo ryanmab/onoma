@@ -1,4 +1,5 @@
-use std::{ops::Deref, path::Path};
+use std::ops::Deref;
+use std::path::Path;
 
 use serde::{Deserialize, Serialize};
 use strum_macros::EnumIter;

@@ -1,8 +1,6 @@
-use std::{
-    ffi::OsStr,
-    path::{Component, Path},
-    string::ToString,
-};
+use std::ffi::OsStr;
+use std::path::{Component, Path};
+use std::string::ToString;
 
 use sea_query::{Cond, Expr, ExprTrait, SqliteQueryBuilder};
 use sea_query_sqlx::SqlxBinder;

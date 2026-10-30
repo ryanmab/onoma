@@ -1,8 +1,6 @@
-use std::{
-    fmt::Debug,
-    path::{Path, PathBuf},
-    sync::Arc,
-};
+use std::fmt::Debug;
+use std::path::{Path, PathBuf};
+use std::sync::Arc;
 
 #[cfg(test)]
 use mockall::{automock, predicate::*};

@@ -1,6 +1,7 @@
 use crate::parser;
 
-use std::{future::Future, path::Path};
+use std::future::Future;
+use std::path::Path;
 
 /// A parser for reading source code and constructing symbol indexes ([`crate::models::parsed::Index`]).
 pub trait Parser: Default + Send + Sync + Clone {

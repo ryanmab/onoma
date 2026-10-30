@@ -1,19 +1,17 @@
-use std::{path::Path, time::Duration};
+use std::path::Path;
+use std::time::Duration;
 
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
-use tokio::sync::mpsc::{self, error::SendTimeoutError};
+use tokio::sync::mpsc::error::SendTimeoutError;
+use tokio::sync::mpsc::{self};
 use tokio_stream::StreamExt;
 use tokio_stream::wrappers::ReceiverStream;
 
-use crate::{
-    models::resolved::ResolvedSymbol,
-    resolver::{
-        Context, Resolver, constant,
-        scoring::{self},
-        utils::{self},
-    },
-    utils::get_database_path,
-};
+use crate::models::resolved::ResolvedSymbol;
+use crate::resolver::scoring::{self};
+use crate::resolver::utils::{self};
+use crate::resolver::{Context, Resolver, constant};
+use crate::utils::get_database_path;
 
 /// Resolver is a wrapper around an existing index, which allows for querying
 /// and scoring of indexed symbols.
@@ -182,20 +180,17 @@ impl Resolver for DatabaseBackedResolver {
 
 #[cfg(test)]
 mod tests {
-    use std::{collections::HashMap, path::PathBuf};
+    use std::collections::HashMap;
+    use std::path::PathBuf;
 
     use insta::assert_json_snapshot;
     use tempfile::tempdir;
     use tokio_stream::StreamExt;
 
-    use crate::{
-        indexer::{self, Indexer},
-        models::{
-            self,
-            parsed::{Language, SymbolKind},
-        },
-        resolver::{Resolver, SymbolKindFilter},
-    };
+    use crate::indexer::{self, Indexer};
+    use crate::models::parsed::{Language, SymbolKind};
+    use crate::models::{self};
+    use crate::resolver::{Resolver, SymbolKindFilter};
 
     #[tokio::test]
     pub async fn test_resolving_symbols_with_query() {

@@ -5,7 +5,9 @@ use serde::{Deserialize, Serialize};
 use crate::resolver::constant;
 
 /// A score for a symbol.
-#[derive(Debug, sqlx::FromRow, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Debug, sqlx::FromRow, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, Copy, Clone,
+)]
 pub struct Score(i64);
 
 impl Default for Score {

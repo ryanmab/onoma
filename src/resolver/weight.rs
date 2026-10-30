@@ -1,10 +1,6 @@
-use crate::{
-    models::{
-        self,
-        parsed::{Language, SymbolKind},
-    },
-    resolver::constant::{self, DEFAULT_SCORE},
-};
+use crate::models::parsed::{Language, SymbolKind};
+use crate::models::{self};
+use crate::resolver::constant::{self, DEFAULT_SCORE};
 
 /// 8 point bonus during fuzzy matching when the fuzzy match is case-sensitive (i.e. query includes
 /// upper case characters), and a capital letter follows a lowercase letter
@@ -199,10 +195,8 @@ mod tests {
 
     use rstest::rstest;
 
-    use crate::models::{
-        parsed::{Language, SymbolKind},
-        resolved::{ResolvedSymbol, Score},
-    };
+    use crate::models::parsed::{Language, SymbolKind};
+    use crate::models::resolved::{ResolvedSymbol, Score};
 
     #[rstest]
     #[case(0, 0)]

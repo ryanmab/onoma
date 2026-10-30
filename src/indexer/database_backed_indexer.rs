@@ -1,17 +1,13 @@
-use crate::{
-    indexer::{self, Error, Indexer, constant, types},
-    models::parsed::{FileExtension, Language},
-    parser::{self, Parser},
-    utils::get_database_path,
-};
+use crate::indexer::{self, Error, Indexer, constant, types};
+use crate::models::parsed::{FileExtension, Language};
+use crate::parser::{self, Parser};
+use crate::utils::get_database_path;
 use itertools::Itertools;
 use sea_query::{Expr, ExprTrait, OnConflict, Query, SqliteQueryBuilder};
 use sea_query_sqlx::SqlxBinder;
 use sqlx::sqlite::SqliteConnectOptions;
-use std::{
-    path::{Path, PathBuf},
-    sync::Arc,
-};
+use std::path::{Path, PathBuf};
+use std::sync::Arc;
 use strum::IntoEnumIterator;
 use tokio::task::JoinSet;
 use types::Result;
@@ -451,17 +447,13 @@ mod tests {
 
     use insta::assert_json_snapshot;
     use tempfile::tempdir;
-    use tokio::{
-        fs::{self, File},
-        io::AsyncWriteExt,
-    };
+    use tokio::fs::{self, File};
+    use tokio::io::AsyncWriteExt;
     use tokio_stream::StreamExt;
 
-    use crate::{
-        indexer::Indexer,
-        models,
-        resolver::{self, Resolver},
-    };
+    use crate::indexer::Indexer;
+    use crate::models;
+    use crate::resolver::{self, Resolver};
 
     #[tokio::test]
     pub async fn test_indexing_project() {

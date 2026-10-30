@@ -1,13 +1,15 @@
-use std::{collections::HashSet, path::Path, str::FromStr};
+use std::collections::HashSet;
+use std::path::Path;
+use std::str::FromStr;
 
-use tokio::{fs::File, io::AsyncReadExt};
+use tokio::fs::File;
+use tokio::io::AsyncReadExt;
 use tree_sitter::StreamingIterator;
 
-use crate::{
-    models::{self, parsed::Symbol},
-    parser,
-    utils::normalise_symbol_name,
-};
+use crate::models::parsed::Symbol;
+use crate::models::{self};
+use crate::parser;
+use crate::utils::normalise_symbol_name;
 
 /// A source code parser, which can read source code and output a fully parsed
 /// [`crate::models::parsed::Index`].
@@ -187,7 +189,8 @@ mod tests {
     use insta::assert_debug_snapshot;
     use itertools::Itertools;
 
-    use crate::parser::{Parser, treesitter::Context};
+    use crate::parser::Parser;
+    use crate::parser::treesitter::Context;
 
     #[tokio::test]
     pub async fn test_parsing_rust() {

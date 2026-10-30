@@ -1,9 +1,7 @@
-use std::{
-    collections::HashMap,
-    fmt::Debug,
-    path::{Path, PathBuf},
-    sync::Arc,
-};
+use std::collections::HashMap;
+use std::fmt::Debug;
+use std::path::{Path, PathBuf};
+use std::sync::Arc;
 
 #[cfg(test)]
 use mockall::{automock, predicate::*};

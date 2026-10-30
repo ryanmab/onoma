@@ -1,6 +1,8 @@
 //! Incremental indexing using [`crate::indexer::Indexer`] and filesystem events.
 
-use std::{path::Path, sync::Arc, time::Duration};
+use std::path::Path;
+use std::sync::Arc;
+use std::time::Duration;
 
 use ignored::is_ignored;
 use itertools::Itertools;
@@ -12,16 +14,13 @@ mod error;
 mod types;
 
 pub use error::Error;
-use tokio::{
-    sync::mpsc::{self, Receiver},
-    task::JoinHandle,
-};
+use tokio::sync::mpsc::{self, Receiver};
+use tokio::task::JoinHandle;
 pub use types::Result;
 
-use crate::{
-    indexer::Indexer,
-    watcher::{self, types::Event},
-};
+use crate::indexer::Indexer;
+use crate::watcher::types::Event;
+use crate::watcher::{self};
 
 /// Watcher acts as the bridge between the [`Indexer`] and the filesystem.
 ///
@@ -228,11 +227,9 @@ where
 
 #[cfg(test)]
 mod tests {
-    use std::{
-        fs::{self, File},
-        future,
-        sync::Arc,
-    };
+    use std::fs::{self, File};
+    use std::future;
+    use std::sync::Arc;
 
     use tempfile::tempdir;
 

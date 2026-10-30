@@ -1,13 +1,10 @@
-use std::{ffi::OsStr, path::Path};
+use std::ffi::OsStr;
+use std::path::Path;
 
-use crate::{
-    models::{self},
-    resolver::{
-        constant::DEFAULT_SCORE,
-        utils,
-        weight::{self, calculate_camel_case_constant_penalty},
-    },
-};
+use crate::models::{self};
+use crate::resolver::constant::DEFAULT_SCORE;
+use crate::resolver::utils;
+use crate::resolver::weight::{self, calculate_camel_case_constant_penalty};
 
 /// Get the fuzzy matching config for a particular query.
 ///
@@ -159,13 +156,9 @@ mod tests {
     use rstest::rstest;
     use std::path::PathBuf;
 
-    use crate::{
-        models::{
-            parsed::{Language, SymbolKind},
-            resolved::{ResolvedSymbol, Score},
-        },
-        resolver::scoring::DEFAULT_SCORE,
-    };
+    use crate::models::parsed::{Language, SymbolKind};
+    use crate::models::resolved::{ResolvedSymbol, Score};
+    use crate::resolver::scoring::DEFAULT_SCORE;
 
     #[test]
     pub fn test_scoring_struct_in_entrypoint_file() {
