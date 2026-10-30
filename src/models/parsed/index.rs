@@ -3,7 +3,8 @@ use std::collections::HashSet;
 use crate::models;
 
 /// A type of parser which can create indexes.
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
+#[non_exhaustive]
 pub enum Type {
     /// Treesitter (see [`crate::parser::treesitter::Parser`]) was
     /// used to construct the index.

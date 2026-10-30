@@ -2,10 +2,8 @@ use std::path::PathBuf;
 
 use thiserror::Error;
 
-use crate::{
-    models,
-    parser::{self},
-};
+use crate::models;
+use crate::parser::{self};
 
 /// Errors that can occur during file indexing, parsing, and database operations.
 ///

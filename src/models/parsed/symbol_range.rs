@@ -1,7 +1,7 @@
 /// A start and end position in a source file.
 ///
 /// A range may span one or more lines.
-#[derive(Debug, Clone, Hash, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
 pub struct Range {
     /// The start line for the definition of the symbol.
     ///

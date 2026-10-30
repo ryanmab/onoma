@@ -1,6 +1,7 @@
 use std::hash::Hash;
 
-use crate::models::{self, parsed::SymbolRole};
+use crate::models::parsed::SymbolRole;
+use crate::models::{self};
 
 /// A symbol which has been parsed out of a source file.
 ///
