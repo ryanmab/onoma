@@ -41,10 +41,7 @@ impl DatabaseBackedResolver {
             );
         }
 
-        log::debug!(
-            "Initialising database for resolver at path: {:?}",
-            &database_path
-        );
+        log::debug!("Initialising database for resolver at path: {database_path:?}");
 
         let options = SqliteConnectOptions::new()
             .create_if_missing(false)
@@ -166,7 +163,7 @@ impl Resolver for DatabaseBackedResolver {
                         count += 1;
                     }
                     Err(e) => {
-                        log::error!("Error returned from query listing matching symbols: {e}",);
+                        log::error!("Error returned from query listing matching symbols: {e}");
                     }
                 }
             }

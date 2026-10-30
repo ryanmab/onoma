@@ -6,6 +6,7 @@ use std::ops::Deref;
 /// For example, a particular occurrence might represent the definition of a
 /// symbol, a reference, or something else.
 #[derive(Debug, Hash, Eq, PartialEq, Ord, PartialOrd)]
+#[non_exhaustive]
 pub enum SymbolRole {
     /// The occurrence is where the Symbol was defined.
     Definition,

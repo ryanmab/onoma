@@ -107,9 +107,7 @@ where
                                 .collect::<Vec<&Path>>()
                         );
 
-                        if let Err(e) =
-                            Self::on_event(Arc::clone(&indexer), events.into_iter()).await
-                        {
+                        if let Err(e) = Self::on_event(Arc::clone(&indexer), events).await {
                             log::error!("Indexing error: {e:?}");
                         }
                     }

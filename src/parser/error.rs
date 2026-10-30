@@ -8,6 +8,7 @@ use tree_sitter::LanguageError;
 ///
 /// Each variant wraps the relevant context or underlying error where applicable.
 #[derive(Error, Debug)]
+#[non_exhaustive]
 pub enum Error {
     /// The provided URI is invalid.
     ///

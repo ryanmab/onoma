@@ -10,6 +10,7 @@ use crate::indexer;
 ///
 /// Each variant wraps the underlying error from the respective subsystem.
 #[derive(Error, Debug)]
+#[non_exhaustive]
 pub enum Error {
     /// An error occurred while setting up the filesystem debouncer.
     ///

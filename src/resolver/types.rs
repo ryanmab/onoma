@@ -21,6 +21,7 @@ use crate::models::{self};
 /// - restrict to a fixed set applied globally, or
 /// - restrict per language.
 #[derive(Debug)]
+#[non_exhaustive]
 pub enum SymbolKindFilter {
     /// Restrict results to the given symbol kinds, regardless of language.
     ///

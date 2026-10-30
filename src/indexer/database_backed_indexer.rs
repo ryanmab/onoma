@@ -80,10 +80,7 @@ impl DatabaseBackedIndexer {
             ));
         }
 
-        log::debug!(
-            "Initialising database for indexer at path: {:?}",
-            &database_path
-        );
+        log::debug!("Initialising database for indexer at path: {database_path:?}");
 
         let options = SqliteConnectOptions::new()
             .create_if_missing(true)
@@ -211,14 +208,14 @@ impl DatabaseBackedIndexer {
             let range = &definition.range;
 
             let start_line: i32 = i32::try_from(range.start_line)
-                .map_err(|_| indexer::Error::InvalidRange(range.clone()))?;
+                .map_err(|_| indexer::Error::InvalidRange(*range))?;
             let start_column: i32 = i32::try_from(range.start_column)
-                .map_err(|_| indexer::Error::InvalidRange(range.clone()))?;
+                .map_err(|_| indexer::Error::InvalidRange(*range))?;
 
-            let end_line: i32 = i32::try_from(range.end_line)
-                .map_err(|_| indexer::Error::InvalidRange(range.clone()))?;
+            let end_line: i32 =
+                i32::try_from(range.end_line).map_err(|_| indexer::Error::InvalidRange(*range))?;
             let end_column: i32 = i32::try_from(range.end_column)
-                .map_err(|_| indexer::Error::InvalidRange(range.clone()))?;
+                .map_err(|_| indexer::Error::InvalidRange(*range))?;
 
             let (sql, values) = sea_query::Query::insert()
                 .into_table("symbol")
